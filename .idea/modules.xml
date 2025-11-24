@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kaderbdms_fo528ab0baec7_marketplace_mobileapp.iml" filepath="$PROJECT_DIR$/kaderbdms_fo528ab0baec7_marketplace_mobileapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/kaderbdms_fo528ab0baec7_marketplace_mobileapp_android.iml" filepath="$PROJECT_DIR$/android/kaderbdms_fo528ab0baec7_marketplace_mobileapp_android.iml" />
+    </modules>
+  </component>
+</project>
