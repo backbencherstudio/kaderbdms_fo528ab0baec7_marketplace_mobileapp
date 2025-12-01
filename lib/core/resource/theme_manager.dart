@@ -40,6 +40,7 @@ ThemeData getApplicationTheme() {
       titleTextStyle: getSemiBoldStyle(
         color: ColorManager.whiteColor,
         fontSize: FontSize.s16,
+        fontFamily: FontConstants.fontFamily,
       ),
     ),
 
@@ -75,6 +76,7 @@ ThemeData getApplicationTheme() {
       headlineLarge: getSemiBoldStyle(
         color: ColorManager.blackColor,
         fontSize: FontSize.s20,
+        fontFamily: FontConstants.fontFamily,
       ),
       titleMedium: getMediunStyle(
         color: ColorManager.blackColor,
@@ -87,10 +89,6 @@ ThemeData getApplicationTheme() {
       bodySmall: getRegularStyle(
         color: ColorManager.subtitleText,
         fontSize: FontSize.s12,
-      ),
-      labelLarge: getSemiBoldStyle(
-        color: ColorManager.primary,
-        fontSize: FontSize.s14,
       ),
     ),
 
