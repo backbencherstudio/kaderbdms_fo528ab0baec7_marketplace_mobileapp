@@ -1,5 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31379bab-200b-47d4-9908-020b4f506dd1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_12_25,_4_22 PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_12_25__4_22PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Inter_18pt-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Manrope-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/bell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/hi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/people.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/shopping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/promo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/successreg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/welcomeback.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/young2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/young3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/youngwoman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/fonts/Inter_18pt-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/fonts/Manrope-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/bell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/hi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/people.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/icons/shopping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/promo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/successreg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/welcomeback.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/young2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/young3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/images/youngwoman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/fonts/Inter_18pt-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/fonts/Manrope-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/bell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/hi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/people.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/shopping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/promo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/successreg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/welcomeback.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/young2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/young3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/youngwoman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/project/PROJECT@v11_mod=bd0d2010c9e0cacfa2875b77206751ea_hash=bfdfe7dc352907fc980b868725387e98plugins=1OJSG6M1FOV3XYQCBH7Z29RZ0FPR9XDE1-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=0c7027c6328c90a1f9f2ba32721ea574-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=1736d2982aa30b61a254a351eca7693e-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=2c9090df211b3cc307efff5433e3ac3e-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=32194fc5658032c280aaa75a91397012-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=36e461bd6c88deae2b2c97f4b21dbf49-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=497ac2cd63c397ad0d6526a607dbfb67-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=4f0c28dde67fd90b62eb0b0b1ac7a690-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=4f9f19d8a4955dac46f9a2ada0286cb4-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=58140a7e509467e32c287a628f90fc58-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=8d68046afec0442f975de14a6f634084-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=9c1fe5cdfa2e78480e3fa5ae4a6a40d4-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=9e174bfa7998d26d4ce46d8556dfe797-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=aa08f61661ca7051b8bc285bf6bf814b-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=ae876901a53ce5fa02dd1d792019738d-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=b2e6695830dfa340cf297a6daf37a5d2-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=b914ddafc06e3129510a2a6618a7a82f-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=c225e52c056da263e9ae469dab5caaa9-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=c566278988eafbea476b746a2cdce22f-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=e78ed4c30f362a35dc786d80f6f389c7-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=ee9ec715a025b47fd901e3c576c4afc8-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/target/TARGET@v11_hash=f2d77948177a6058baaa84c5f8dbd4e6-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/XCBuildData/PIFCache/workspace/WORKSPACE@v11_hash=(null)_subobjects=ffbebfdf451a97ab40ab7428a53e2f32-json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/fonts/Inter_18pt-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/fonts/Manrope-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/bell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/cart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/hi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/people.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/icons/shopping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/promo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/successreg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/welcomeback.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/young2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/young3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/images/youngwoman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/route/build_page_with_transition.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/route/route_import_part.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/core/route/route_name.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/Onboarding/view/onboarding_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/Onboarding/widgets/custom_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/common/widgets/CircleCheckIcon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/common/widgets/common_pincode_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/common/widgets/custom_text_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signin/view/PasswordRecovery/view/forgot_password.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signin/view/PasswordRecovery/view/new_password_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signin/view/PasswordRecovery/view/otp_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signin/widgets/password_requirment.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signup/view/signup_otp.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signup/view/widgets/footer_section.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signup/view/widgets/header_section.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signup/view/widgets/signup_form.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/signup/view/widgets/social_divider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/welcomepage/success_reg_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/welcomepage/success_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/welcomepage/welcome_back_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/welcomepage/widgets/common_welcome_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/cart_page_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/category_page_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/chat_page_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/home_page_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/profile_page_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/widgets/HomePage/banner.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/widgets/HomePage/home_header.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/widgets/HomePage/search_box.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/splash/view/widgets/loader_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/extension_discovery/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/extension_discovery/vs_code.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/debug_ios_bundle_flutter_assets.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/debug_ios_bundle_flutter_assets.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/kernel_snapshot_program.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/kernel_snapshot_program.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/flutter_build/f77fd6b4f5d63eccac501ffbff848fe5/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/c49e888c9372d2f8fbca74ff068d4fa4.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/c49e888c9372d2f8fbca74ff068d4fa4.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/App" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/App" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/FontManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/FontManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/DKImagePickerController" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/DKImagePickerController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Modules/DKImagePickerController.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Modules/DKImagePickerController.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Modules/DKImagePickerController.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/Modules/DKImagePickerController.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/DKPhotoGallery" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/DKPhotoGallery" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/Modules/DKPhotoGallery.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/Modules/DKPhotoGallery.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/Modules/DKPhotoGallery.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/Modules/DKPhotoGallery.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/DKPhotoGallery/DKPhotoGallery.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/App" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/App" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Runner" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/Runner" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.app/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/Runner.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/Modules/SwiftyGif.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/Modules/SwiftyGif.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/Modules/SwiftyGif.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/Modules/SwiftyGif.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/SwiftyGif" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/SwiftyGif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/Debug-iphonesimulator/SwiftyGif/SwiftyGif.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/App" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/App" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/FontManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NOTICES.Z" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/NOTICES.Z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Runner" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/Runner" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/iphonesimulator/Runner.app/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/ios/pod_inputs.fingerprint" beforeDir="false" afterPath="$PROJECT_DIR$/build/ios/pod_inputs.fingerprint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaderbdms_fo528ab0baec7_marketplace_mobileapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kaderbdms_fo528ab0baec7_marketplace_mobileapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constansts/app_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constansts/app_colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constansts/app_icons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constansts/app_icons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/constansts/app_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/constansts/app_images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/resource/font_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/resource/font_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/resource/style_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/resource/style_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/resource/theme_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/resource/theme_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/route/route_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/core/route/route_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/signin/view/signin_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/signin/view/signin_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/signup/view/signup_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/signup/view/signup_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/bottom_nav_bar_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/bottom_nav/view/bottom_nav_bar_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/splash/view/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/view/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
@@ -13,24 +264,71 @@
       </file>
     </leaf>
   </component>
-  <component name="ToolWindowManager">
-    <editor active="true" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-    </layout>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="36Ej2t7HAgQYT29onVIv4sqvmxX" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-    </navigator>
+    <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
       <pane id="ProjectPane">
         <option name="show-excluded-files" value="false" />
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="show.migrate.to.gradle.popup" value="false" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Merging rashedul",
+    "io.flutter.project.isFirstOpen": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/macmini-04/Desktop/Santo/kaderbdms_fo528ab0baec7_marketplace_mobileapp",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31379bab-200b-47d4-9908-020b4f506dd1" name="Changes" comment="" />
+      <created>1764578420712</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764578420712</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+    </layout>
   </component>
 </project>
