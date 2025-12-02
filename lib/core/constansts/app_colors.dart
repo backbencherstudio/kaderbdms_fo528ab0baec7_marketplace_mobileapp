@@ -27,6 +27,8 @@ class AppColors {
   static const Color conGoogleText = Color(0xFF1D1F2C);
   static const Color textErrorOrOffer = Color(0xFFEB3D4D);
   static const Color bannerTextColor = Color(0xFFE6ECF2);
+  static const Color innerCircleColor = Color(0xFFE6ECF2);
+  static const Color innerCircleTextColor = Color(0xFF547CAA);
   static const Color onPrimary = Color(0xffE9E9EA);
   static const Color bgColor1 = Color(0xffFF6B6B);
   static const Color bgColor2 = Color(0xffFFA726);
