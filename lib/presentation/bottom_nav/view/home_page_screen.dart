@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/widgets/HomePage/banner.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/widgets/HomePage/home_header.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/widgets/HomePage/search_box.dart';

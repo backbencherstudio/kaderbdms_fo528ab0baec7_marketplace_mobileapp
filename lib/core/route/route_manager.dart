@@ -11,8 +11,8 @@ class AppRouter {
       case RouteName.onBoadingRoute:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
 
-      case RouteName.bottomNavRoute:
-        return MaterialPageRoute(builder: (_) => const BottomNavBarScreen());
+      case RouteName.bottomNavBar:
+        return MaterialPageRoute(builder: (_) => const BottomNavBar());
 
       case RouteName.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginScreen());

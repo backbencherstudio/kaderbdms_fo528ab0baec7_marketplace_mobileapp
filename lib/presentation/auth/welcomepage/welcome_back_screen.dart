@@ -17,7 +17,7 @@ class WelcomeBackPage extends StatelessWidget {
               "Nice to see you again. Let’s find your\nfavorite products and services!",
           buttonText: "Go to Home",
           onButtonTap: () {
-            Navigator.pushNamed(context, RouteName.loginRoute);
+            Navigator.pushNamed(context, RouteName.bottomNavBar);
           },
         ),
       ),

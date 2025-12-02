@@ -1,85 +1,70 @@
-// // import 'package:flutter/material.dart';
-// // import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-// // import '../viewmodel/bottom_nav_bar_viewmodel.dart';
-
-// // class BottomNavBarScreen extends ConsumerStatefulWidget {
-// //   const BottomNavBarScreen({super.key});
-
-// //   @override
-// //   ConsumerState<BottomNavBarScreen> createState() => _BottomNavBarScreenState();
-// // }
-
-// // class _BottomNavBarScreenState extends ConsumerState<BottomNavBarScreen> {
-// //   final List<Widget> _screenList = [
-// //     Scaffold(body: Center(child: Text("Home"))),
-// //     Scaffold(body: Center(child: Text("dangerous"))),
-// //     Scaffold(body: Center(child: Text("search"))),
-// //     Scaffold(body: Center(child: Text("settings"))),
-// //   ];
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //       body: _screenList[ref.watch(bottomNavBarProvider)],
-// //       bottomNavigationBar: BottomNavigationBar(
-// //         onTap: ref.read(bottomNavBarProvider.notifier).onItemTapped,
-// //         items: [
-// //           BottomNavigationBarItem(icon: Icon(Icons.home)),
-// //           BottomNavigationBarItem(icon: Icon(Icons.dangerous)),
-// //           BottomNavigationBarItem(icon: Icon(Icons.search)),
-// //           BottomNavigationBarItem(icon: Icon(Icons.settings)),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/cart_page_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/category_page_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/chat_page_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/home_page_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_nav/view/profile_page_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../core/resource/constansts/color_manger.dart';
+import '../../../core/resource/constansts/icon_manager.dart';
+import '../viewmodel/bottom_nav_bar_viewmodel.dart';
 
-class BottomNavBarScreen extends StatefulWidget {
-  const BottomNavBarScreen({super.key});
+class BottomNavBar extends ConsumerStatefulWidget {
+  const BottomNavBar({super.key});
 
   @override
-  State<BottomNavBarScreen> createState() => BottomNavBarScreenState();
+  ConsumerState<BottomNavBar> createState() => _BottomNavBarState();
 }
 
-class BottomNavBarScreenState extends State<BottomNavBarScreen> {
-  int currentIndex = 0;
-
-  final screens = [
-    HomePageScreen(),
-    CategoryPageScreen(),
-    ChatPageScreen(),
-    CartPageScreen(),
-    ProfilePageScreen(),
+class _BottomNavBarState extends ConsumerState<BottomNavBar> {
+  final List<Widget> _screens = const [
+    Scaffold(body: Center(child: Text('Home'))),
+    Scaffold(body: Center(child: Text('Category'))),
+    Scaffold(body: Center(child: Text('Chat'))),
+    Scaffold(body: Center(child: Text('Cart'))),
+    Scaffold(body: Center(child: Text('Profile'))),
   ];
 
   @override
   Widget build(BuildContext context) {
+    final currentIndex = ref.watch(bottomNavBarProvider);
+
     return Scaffold(
       backgroundColor: Colors.white,
-      body: screens[currentIndex],
+      body: _screens[currentIndex],
       bottomNavigationBar: Container(
-        height: 110.h,
-        decoration: BoxDecoration(),
+        height: 80, // adjust as needed
+        color: Colors.white,
         child: Padding(
-          padding: const EdgeInsets.all(6.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              navItem("assets/icons/home.png", "Home", 0),
-              navItem("assets/icons/element.png", "Categories", 1),
-              navItem("assets/icons/chat.png", "Chat", 2),
-              navItem("assets/icons/cart.png", "Cart", 3),
-              navItem("assets/icons/profile.png", "Profile", 4),
+              _navItem(
+                icon: IconManager.homeIcon,
+                label: 'Home',
+                index: 0,
+                currentIndex: currentIndex,
+              ),
+              _navItem(
+                icon: IconManager.elementIcon,
+                label: 'Categories',
+                index: 1,
+                currentIndex: currentIndex,
+              ),
+              _navItem(
+                icon: IconManager.chatIcon,
+                label: 'Chat',
+                index: 2,
+                currentIndex: currentIndex,
+              ),
+              _navItem(
+                icon: IconManager.cartIcon,
+                label: 'Cart',
+                index: 3,
+                currentIndex: currentIndex,
+              ),
+              _navItem(
+                icon: IconManager.profileIcon,
+                label: 'Profile',
+                index: 4,
+                currentIndex: currentIndex,
+              ),
             ],
           ),
         ),
@@ -87,48 +72,46 @@ class BottomNavBarScreenState extends State<BottomNavBarScreen> {
     );
   }
 
-  Widget navItem(String icon, String label, int index) {
+  Widget _navItem({
+    required String icon,
+    required String label,
+    required int index,
+    required int currentIndex,
+  }) {
     final bool isActive = currentIndex == index;
 
     return InkWell(
       onTap: () {
-        setState(() {
-          currentIndex = index;
-        });
+        ref.read(bottomNavBarProvider.notifier).onItemTapped(index);
       },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // top indicator bar
           Container(
             height: 3,
             width: 55,
             decoration: BoxDecoration(
-              color: isActive ? AppColors.primary : Colors.transparent,
+              color: isActive ? ColorManager.primary : Colors.transparent,
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-
           const SizedBox(height: 8),
           Image.asset(
             icon,
-            height: 25.h,
-            width: 25.w,
-            color: isActive ? AppColors.primary : Colors.black,
+            height: 24,
+            width: 24,
+            color: isActive ? ColorManager.primary : Colors.black,
           ),
-
           const SizedBox(height: 8),
-
           Text(
             label,
-            style: customTextStyle(
-              fontFamily: FontConstants.fontFamilyInter,
-              fontWeight: isActive
-                  ? FontWeightManager.semiBold600
-                  : FontWeightManager.regural400,
-              fontSize: 14,
-              color: isActive ? AppColors.primary : Colors.black,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+              color: isActive ? ColorManager.primary : Colors.black,
             ),
           ),
         ],
