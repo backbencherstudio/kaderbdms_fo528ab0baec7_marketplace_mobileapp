@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/profile_screen.dart';
 
 import '../../presentation/Onboarding/view/onboarding_page.dart';
 import '../../presentation/auth/signin/view/PasswordRecovery/view/forgot_password.dart';

@@ -16,58 +16,85 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // decoration: BoxDecoration(
+        //   borderRadius: BorderRadius.only(
+        //     bottomLeft: Radius.circular(20.r),
+        //     bottomRight: Radius.circular(20.r),
+        //   ),
+        // ),
         color: AppColors.primary,
         height: 170.h,
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Container(
-                height: 80.w,
-                width: 70.w,
-                decoration: const BoxDecoration(
-                  color: AppColors.innerCircleColor,
-                  shape: BoxShape.circle,
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  "JB",
-                  style: getSemiBoldStyle(
-                    fontFamily: FontConstants.fontFamilyInter,
-                    fontWeight: FontWeightManager.bold700,
-                    fontSize: 28.sp,
-                    color: AppColors.innerCircleTextColor,
-                  ),
-                ),
-              ),
-              SizedBox(width: 15.w),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  SizedBox(height: 20.h),
-                  Text(
-                    "John Brown",
-                    style: getSemiBoldStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
-                      fontWeight: FontWeightManager.semiBold600,
-                      fontSize: 18.sp,
-                      color: AppColors.onPrimary,
+                  Container(
+                    height: 80.w,
+                    width: 70.w,
+                    decoration: const BoxDecoration(
+                      color: AppColors.innerCircleColor,
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "JB",
+                      style: getSemiBoldStyle(
+                        fontFamily: FontConstants.fontFamilyInter,
+                        fontWeight: FontWeightManager.bold700,
+                        fontSize: 28.sp,
+                        color: AppColors.innerCircleTextColor,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 5.h),
 
-                  Text(
-                    "jontahanbustos@gmail.com",
-                    style: getSemiBoldStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
-                      fontWeight: FontWeightManager.regural400,
-                      fontSize: 12.sp,
-                      color: AppColors.onPrimary,
-                    ),
+                  SizedBox(width: 15.w),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 50.h),
+                      Text(
+                        "Jonathan Bustos",
+                        style: getSemiBoldStyle(
+                          fontFamily: FontConstants.fontFamilyInter,
+                          fontWeight: FontWeightManager.semiBold600,
+                          fontSize: 18.sp,
+                          color: AppColors.onPrimary,
+                        ),
+                      ),
+                      SizedBox(height: 5.h),
+
+                      Text(
+                        "jonathanbustos@gmail.com",
+                        style: getSemiBoldStyle(
+                          fontFamily: FontConstants.fontFamilyInter,
+                          fontWeight: FontWeightManager.regural400,
+                          fontSize: 12.sp,
+                          color: AppColors.onPrimary,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
+              ),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 30),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Image.asset(
+                    "assets/icons/edit.png",
+                    color: AppColors.whiteTextColor,
+                    width: 40,
+                    height: 40,
+                  ),
+                ),
               ),
             ],
           ),

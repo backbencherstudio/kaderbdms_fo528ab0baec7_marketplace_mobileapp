@@ -1,12 +1,10 @@
 part of "route_import_part.dart";
 
-
-
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case RouteName.splashRoute:
-        return MaterialPageRoute(builder: (_) => SplashScreen());
+        return MaterialPageRoute(builder: (_) => ProfilePageScreen());
 
       case RouteName.onBoadingRoute:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
