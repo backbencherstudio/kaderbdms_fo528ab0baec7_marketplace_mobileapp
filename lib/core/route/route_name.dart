@@ -11,5 +11,6 @@ class RouteName {
   static const String registerRoute = "/register";
   static const String signupOtpRoute = "/signupotp";
   static const String successRegistrationRoute = "/successRegistration";
+  static const String editProfileRoute = "/editProfile";
   static const String storeDetailsRoute = "/storeDetails";
 }

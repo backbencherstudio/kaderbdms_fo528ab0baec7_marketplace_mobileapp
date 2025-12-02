@@ -35,8 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Text(
               "Hi! Welcome Back",
-              style: getSemiBoldStyle(
-                fontFamily: FontConstants.fontFamilyInter,
+              style: getSemiBold600Style12(
                 fontWeight: FontWeightManager.semiBold600,
                 fontSize: 24.sp,
                 color: AppColors.textColorBlack,
@@ -47,8 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Text(
               "Log in to your account",
-              style: getSemiBoldStyle(
-                fontFamily: FontConstants.fontFamilyInter,
+              style: getSemiBold600Style12(
                 fontWeight: FontWeightManager.medium500,
                 fontSize: 18.sp,
                 color: AppColors.secondaryTextColor,
@@ -61,8 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 "E-mail",
-                style: getSemiBoldStyle(
-                  fontFamily: FontConstants.fontFamilyInter,
+                style: getSemiBold600Style12(
                   fontWeight: FontWeightManager.medium500,
                   fontSize: 16.sp,
                   color: AppColors.textColorBlack,

@@ -18,12 +18,14 @@ class ColorManager {
 
   // ===== Text Colors =====
   static const Color textPrimary = Color(0xFF212121);
+  static const Color textPrimaryBlack = Color(0xFF070707);
   static const Color textSecondary = Color(0xFF757575);
   static const Color titleText = Color(0xFF2F3131);
   static const Color titleText1 = Color(0xFF535353);
   static const Color subtitleText = Color(0xFF686868);
   static const Color subtitleText1 = Color(0xFF60655C);
   static const Color mediumText = Color(0xFF363A33);
+  static const Color logoutText = Color(0xFFD33415);
 
   // ===== Button & Label Colors =====
   static const Color buttonText = Color(0xFF334289);

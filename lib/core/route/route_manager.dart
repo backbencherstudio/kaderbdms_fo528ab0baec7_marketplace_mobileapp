@@ -39,6 +39,9 @@ class AppRouter {
       case RouteName.successRegistrationRoute:
         return MaterialPageRoute(builder: (_) => SuccessRegistrationPage());
 
+      case RouteName.editProfileRoute:
+        return MaterialPageRoute(builder: (_) => const editProfileScreen());
+
       default:
         return unDefineRoute();
     }
