@@ -17,7 +17,7 @@ TextStyle _getTextStyle(
 }
 
 //light text style
-TextStyle getLightStyle({
+TextStyle getLight300Style12({
   double fontSize = FontSize.s12,
   FontWeight fontWeight = FontWeightManager.light300,
   required Color color,
@@ -26,7 +26,7 @@ TextStyle getLightStyle({
 }
 
 //regular  text style
-TextStyle getRegularStyle({
+TextStyle getRegular400Style12({
   double fontSize = FontSize.s12,
   FontWeight fontWeight = FontWeightManager.regural400,
   required Color color,
@@ -35,7 +35,7 @@ TextStyle getRegularStyle({
 }
 
 //mediun text style
-TextStyle getMediunStyle({
+TextStyle getMedium500Style12({
   double fontSize = FontSize.s12,
   FontWeight fontWeight = FontWeightManager.medium500,
   required Color color,
@@ -44,13 +44,12 @@ TextStyle getMediunStyle({
 }
 
 //semi bold text style
-TextStyle getSemiBoldStyle({
+TextStyle getSemiBold600Style12({
   double fontSize = FontSize.s12,
   FontWeight fontWeight = FontWeightManager.semiBold600,
   required Color color,
-  required String fontFamily,
 }) {
-  return _getTextStyle(fontSize, fontFamily, fontWeight, color);
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
 
 // text_styles.dart
@@ -59,7 +58,6 @@ TextStyle customTextStyle({
   required FontWeight fontWeight,
   required double fontSize,
   required Color color,
-  final Color? textColor,
 }) {
   return TextStyle(
     fontFamily: fontFamily,
@@ -70,10 +68,12 @@ TextStyle customTextStyle({
 }
 
 //bold text style
-TextStyle getBoldStyle({
+TextStyle getBold700Style18({
   double fontSize = FontSize.s18,
   FontWeight fontWeight = FontWeightManager.bold700,
   required Color color,
 }) {
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
+
+
