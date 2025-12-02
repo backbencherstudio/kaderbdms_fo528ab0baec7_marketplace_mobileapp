@@ -1,12 +1,20 @@
 class IconManager {
   static String baseUrl = 'assets/icons';
-  static String notificationSvg = '$baseUrl/notification.svg';
-  static String checkmarkSvg = '$baseUrl/checkmark.svg';
-  static String favoritePng = '$baseUrl/heart.png';
-  static String homeNav = '$baseUrl/homeSvg.svg';
-  static String libraryNav = '$baseUrl/libraryNav.svg';
-  static String menuNav = '$baseUrl/menuNav.svg';
-  static String favouriteNav = '$baseUrl/favouriteNav.svg';
-  static String searchSvg = '$baseUrl/Search.svg';
-  static String downloadSvg = '$baseUrl/download.svg';
+  static String ballIcon = '$baseUrl/ball.png';
+  static String calenderIcon = '$baseUrl/calender.png';
+  static String cartIcon = '$baseUrl/cart.png';
+  static String chatIcon = '$baseUrl/chat.png';
+  static String elementIcon = '$baseUrl/element.png';
+  static String emailIcon = '$baseUrl/email.png';
+  static String eyeIcon = '$baseUrl/eye.png';
+  static String googleIcon = '$baseUrl/google.png';
+  static String hiIcon = '$baseUrl/hi.png';
+  static String homeIcon = '$baseUrl/home.png';
+  static String loadingIcon = '$baseUrl/loading.png';
+  static String logoIcon = '$baseUrl/LOGO.png';
+  static String passwordIcon = '$baseUrl/password.png';
+  static String profileIcon = '$baseUrl/profile.png';
+  static String peopleIcon = '$baseUrl/people.png';
+  static String searchIcon = '$baseUrl/search.png';
+  static String shoppingIcon = '$baseUrl/shopping.png';
 }

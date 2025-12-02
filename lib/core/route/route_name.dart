@@ -1,7 +1,7 @@
 class RouteName {
   static const String splashRoute = "/";
   static const String onBoadingRoute = "/onboarding";
-  static const String bottomNavRoute = "/bottomNav";
+  static const String bottomNavBar = "/BottomNavBar";
   static const String loginRoute = "/login";
   static const String welcomeRoute = "/welcome";
   static const String forgotPasswordRoute = "/forgotPassword";
