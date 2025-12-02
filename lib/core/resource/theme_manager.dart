@@ -37,10 +37,9 @@ ThemeData getApplicationTheme() {
       backgroundColor: ColorManager.primary,
       elevation: AppSize.s4,
       iconTheme: IconThemeData(color: ColorManager.whiteColor),
-      titleTextStyle: getSemiBoldStyle(
+      titleTextStyle: getSemiBold600Style12(
         color: ColorManager.whiteColor,
         fontSize: FontSize.s16,
-        fontFamily: FontConstants.fontFamily,
       ),
     ),
 
@@ -57,7 +56,7 @@ ThemeData getApplicationTheme() {
       style: ElevatedButton.styleFrom(
         backgroundColor: ColorManager.primary,
         foregroundColor: ColorManager.whiteColor,
-        textStyle: getRegularStyle(
+        textStyle: getRegular400Style12(
           color: ColorManager.whiteColor,
           fontSize: FontSize.s16,
         ),
@@ -73,20 +72,19 @@ ThemeData getApplicationTheme() {
 
     // ===== Text Theme =====
     textTheme: TextTheme(
-      headlineLarge: getSemiBoldStyle(
+      headlineLarge: getSemiBold600Style12(
         color: ColorManager.blackColor,
         fontSize: FontSize.s20,
-        fontFamily: FontConstants.fontFamily,
       ),
-      titleMedium: getMediunStyle(
+      titleMedium: getMedium500Style12(
         color: ColorManager.blackColor,
         fontSize: FontSize.s16,
       ),
-      bodyMedium: getRegularStyle(
+      bodyMedium: getRegular400Style12(
         color: ColorManager.blackColor,
         fontSize: FontSize.s14,
       ),
-      bodySmall: getRegularStyle(
+      bodySmall: getRegular400Style12(
         color: ColorManager.subtitleText,
         fontSize: FontSize.s12,
       ),
@@ -103,10 +101,10 @@ ThemeData getApplicationTheme() {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: ColorManager.whiteColor,
-      hintStyle: getRegularStyle(color: ColorManager.textSecondary),
-      labelStyle: getMediunStyle(color: ColorManager.blackColor),
-      helperStyle: getRegularStyle(color: ColorManager.blackColor),
-      errorStyle: getRegularStyle(color: ColorManager.errorColor),
+      hintStyle: getRegular400Style12(color: ColorManager.textSecondary),
+      labelStyle: getMedium500Style12(color: ColorManager.blackColor),
+      helperStyle: getRegular400Style12(color: ColorManager.blackColor),
+      errorStyle: getRegular400Style12(color: ColorManager.errorColor),
       contentPadding: const EdgeInsets.all(AppPadding.p12),
 
       enabledBorder: OutlineInputBorder(
