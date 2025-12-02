@@ -34,8 +34,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                 alignment: Alignment.center,
                 child: Text(
                   "JB",
-                  style: getSemiBoldStyle(
-                    fontFamily: FontConstants.fontFamilyInter,
+                  style: getSemiBold600Style12(
                     fontWeight: FontWeightManager.bold700,
                     fontSize: 28.sp,
                     color: AppColors.innerCircleTextColor,
@@ -49,8 +48,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                   SizedBox(height: 20.h),
                   Text(
                     "John Brown",
-                    style: getSemiBoldStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
+                    style: getSemiBold600Style12(
                       fontWeight: FontWeightManager.semiBold600,
                       fontSize: 18.sp,
                       color: AppColors.onPrimary,
@@ -60,8 +58,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
 
                   Text(
                     "jontahanbustos@gmail.com",
-                    style: getSemiBoldStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
+                    style: getSemiBold600Style12(
                       fontWeight: FontWeightManager.regural400,
                       fontSize: 12.sp,
                       color: AppColors.onPrimary,
