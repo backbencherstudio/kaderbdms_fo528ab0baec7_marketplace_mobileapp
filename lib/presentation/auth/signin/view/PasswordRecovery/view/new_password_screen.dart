@@ -24,6 +24,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
   bool checkedTwo = false;
   bool checkedThree = false;
   bool showPassword = false;
+  bool confirmShowPassword = false;
 
   @override
   void dispose() {
@@ -140,14 +141,18 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     child: Image.asset("assets/icons/password.png"),
                   ),
                   controller: passwordControllerTwo,
-                  isPassword: !showPassword,
+                  isPassword: !confirmShowPassword,
                   suffixIcon: IconButton(
                     icon: Icon(
-                      showPassword ? Icons.visibility : Icons.visibility_off,
+                      confirmShowPassword
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                       color: AppColors.blackHeadline,
                     ),
                     onPressed: () {
-                      setState(() => showPassword = !showPassword);
+                      setState(
+                        () => confirmShowPassword = !confirmShowPassword,
+                      );
                     },
                   ),
                 ),
