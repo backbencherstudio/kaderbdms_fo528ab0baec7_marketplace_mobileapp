@@ -17,4 +17,5 @@ class IconManager {
   static String peopleIcon = '$baseUrl/people.png';
   static String searchIcon = '$baseUrl/search.png';
   static String shoppingIcon = '$baseUrl/shopping.png';
+  static String arrowLeft = '$baseUrl/arrow_left.png';
 }

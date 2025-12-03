@@ -15,7 +15,7 @@ class BannerWidget extends StatelessWidget {
         height: 170.h,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: AppColors.primary, // color must be inside decoration
+          color: AppColors.primary, 
           borderRadius: BorderRadius.circular(30.r),
         ),
         child: Stack(

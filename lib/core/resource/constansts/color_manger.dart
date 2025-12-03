@@ -9,18 +9,28 @@ class ColorManager {
   static const Color primary = Color(0xFF00136B);
   static const Color primaryLight = Color(0xFF334289);
   static const Color primaryDark = Color(0xFF000C48);
+  static const Color primaryColor = Color(0xFF003C80);
 
   // ===== Background Colors =====
   static const Color background = Color(0xFFF5F5F5);
   static const Color backgroundDark = Color(0xFF121212);
   static const Color scaffoldLight = Color(0xFFFFFFFF);
   static const Color scaffoldDark = Color(0xFF1E1E1E);
+  static const Color buttonSecondaryColor = Color(0xFFECEFF3);
 
   // ===== Text Colors =====
   static const Color textPrimary = Color(0xFF212121);
   static const Color textPrimaryBlack = Color(0xFF070707);
-  static const Color textSecondary = Color(0xFF757575);
-  static const Color titleText = Color(0xFF2F3131);
+  static const Color textSecondary = Color(0xFF4A4C56);
+  static const Color textSecondaryTwo = Color(0xFFA5A5AB);
+  static const Color textSecondaryThree = Color(0xFF777980);
+  static const Color itemTextColor = Color(0xFF232F30);
+
+  static const Color fieldText = Color(0xFFE9E9EA);
+  static const Color textRedColor = Color(0xFFEB3D4D);
+  static const Color textGreenColor = Color(0xFF22CAAD);
+  static const Color textGreenStatusColor = Color(0xFFE9FAF7);
+static const Color titleText = Color(0xFF2F3131);
   static const Color titleText1 = Color(0xFF535353);
   static const Color subtitleText = Color(0xFF686868);
   static const Color subtitleText1 = Color(0xFF60655C);
@@ -30,6 +40,7 @@ class ColorManager {
   // ===== Button & Label Colors =====
   static const Color buttonText = Color(0xFF334289);
   static const Color hintText = Color(0xFF5B5F5F);
+  
 
   // ===== Neutral Colors =====
   static const Color blackColor = Color(0xFF000000);

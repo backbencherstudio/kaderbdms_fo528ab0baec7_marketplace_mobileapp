@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hint;
@@ -15,6 +16,8 @@ class CustomTextField extends StatelessWidget {
   final String? label;
   final Function(String)? onChanged;
   final VoidCallback? onTap;
+  final Color? borderColor;
+  final double? borderRadius;
 
   const CustomTextField({
     super.key,
@@ -30,6 +33,8 @@ class CustomTextField extends StatelessWidget {
     this.label,
     this.onChanged,
     this.onTap,
+    this.borderColor,
+    this.borderRadius,
   });
 
   @override
@@ -53,12 +58,37 @@ class CustomTextField extends StatelessWidget {
             horizontal: 16.h,
             vertical: 14.w,
           ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100.r),
+
+          // border: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(100.r),
+          //   borderSide: BorderSide(
+          //     color: borderColor ?? ColorManager.fieldText,
+          //   ),
+          // ),
+          // focusedBorder: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(100.r),
+          //   borderSide: BorderSide(
+          //     color: borderColor ?? ColorManager.fieldText,
+          //   ),
+          // ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
+            borderSide: BorderSide(
+              color: borderColor ?? ColorManager.fieldText,
+              width: 1,
+            ),
           ),
+
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100.r),
-            borderSide: const BorderSide(color: AppColors.borderColor),
+            borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
+            borderSide: BorderSide(
+              color: borderColor ?? ColorManager.fieldText,
+              width: 1.5,
+            ),
+          ),
+
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
           ),
         ),
       ),

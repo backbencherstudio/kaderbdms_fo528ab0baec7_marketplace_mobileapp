@@ -42,6 +42,15 @@ class AppRouter {
       case RouteName.editProfileRoute:
         return MaterialPageRoute(builder: (_) => const editProfileScreen());
 
+         case RouteName.myordersRoute:
+        return MaterialPageRoute(builder: (_) => const MyOrderScreen());
+
+         case RouteName.orderDetailsRoute:
+        return MaterialPageRoute(builder: (_) => const orderDetails());
+
+         case RouteName.reviewRoute:
+        return MaterialPageRoute(builder: (_) => const ReviewScreen());
+
       default:
         return unDefineRoute();
     }

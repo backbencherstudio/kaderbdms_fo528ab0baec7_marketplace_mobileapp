@@ -117,7 +117,9 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
           SettingRowList(
             iconPath: "assets/icons/order.png",
             title: "My Orders",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.myordersRoute);
+            },
           ),
 
           SizedBox(height: 5.h),
