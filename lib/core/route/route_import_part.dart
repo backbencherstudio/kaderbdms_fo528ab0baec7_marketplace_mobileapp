@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/FAQ/view/faq_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_list.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_setting.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/privacyPolicy/view/privacy_policy_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/edit_profile/view/edit_profile_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/my_order/view/my_order_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_details/review_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_list/view/order_list_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/review/view/review_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_details/view/order_details.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/profile_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/wish_list/view/wish_list.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/wish_list/view/wish_list_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/termsofuse/view/termsofuse_screen.dart';
 
 import '../../presentation/Onboarding/view/onboarding_page.dart';
 import '../../presentation/auth/signin/view/PasswordRecovery/view/forgot_password.dart';

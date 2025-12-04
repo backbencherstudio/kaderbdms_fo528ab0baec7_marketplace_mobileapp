@@ -18,4 +18,14 @@ class IconManager {
   static String searchIcon = '$baseUrl/search.png';
   static String shoppingIcon = '$baseUrl/shopping.png';
   static String arrowLeft = '$baseUrl/arrow_left.png';
+  static String like = '$baseUrl/like.png';
+  static String cartbutton = '$baseUrl/cartbutton.png';
+  static String rating = '$baseUrl/rating.png';
+  static String openbox = '$baseUrl/openbox.png';
+  static String closebox = '$baseUrl/closebox.png';
+  static String notificationBell = '$baseUrl/notification_bell.png';
+  static String securityalart = '$baseUrl/security_alart.png';
+  static String arrowDown = '$baseUrl/arrow_down.png';
+  static String arrowUp = '$baseUrl/arrow_up.png';
+  static String logout = '$baseUrl/logout.png';
 }

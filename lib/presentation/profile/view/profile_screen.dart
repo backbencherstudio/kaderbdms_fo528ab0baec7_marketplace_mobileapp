@@ -5,6 +5,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/widgets/log_out_popUp.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/widgets/setting_row.dart';
 
 class ProfilePageScreen extends StatefulWidget {
@@ -97,7 +98,6 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                           context,
                           RouteName.editProfileRoute,
                         );
-                        //  Navigator.pushNamed(context, RouteName.forgotPasswordRoute);
                       },
                       child: Image.asset(
                         "assets/icons/edit.png",
@@ -165,7 +165,15 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 15.h),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) {
+                    return LogoutDialog(onConfirm: () {});
+                  },
+                );
+              },
               child: Row(
                 children: [
                   Row(

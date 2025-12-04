@@ -25,6 +25,14 @@ TextStyle getLight300Style12({
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
 
+TextStyle getRegular400Style10({
+  double fontSize = FontSize.s10,
+  FontWeight fontWeight = FontWeightManager.regural400,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
 //regular  text style
 TextStyle getRegular400Style12({
   double fontSize = FontSize.s12,
@@ -126,6 +134,14 @@ TextStyle getSemiBold600Style16({
 
 TextStyle getSemiBold600Style18({
   double fontSize = FontSize.s18,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style20({
+  double fontSize = FontSize.s20,
   FontWeight fontWeight = FontWeightManager.semiBold600,
   required Color color,
 }) {

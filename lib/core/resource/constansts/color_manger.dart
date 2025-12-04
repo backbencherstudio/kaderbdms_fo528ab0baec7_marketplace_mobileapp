@@ -16,7 +16,11 @@ class ColorManager {
   static const Color backgroundDark = Color(0xFF121212);
   static const Color scaffoldLight = Color(0xFFFFFFFF);
   static const Color scaffoldDark = Color(0xFF1E1E1E);
+  static const Color textFieldInnerColor = Color(0xFFF6F8FA);
   static const Color buttonSecondaryColor = Color(0xFFECEFF3);
+  static const Color toggleOnColor = Color(0xFF2F54EB);
+  static const Color toggleOffColor = Color(0xFFE8E8E8);
+  static const Color arrowColor = Color(0xFF091412);
 
   // ===== Text Colors =====
   static const Color textPrimary = Color(0xFF212121);
@@ -24,6 +28,7 @@ class ColorManager {
   static const Color textSecondary = Color(0xFF4A4C56);
   static const Color textSecondaryTwo = Color(0xFFA5A5AB);
   static const Color textSecondaryThree = Color(0xFF777980);
+  static const Color textBackgroundColor = Color(0xFFF6F8FA);
   static const Color itemTextColor = Color(0xFF232F30);
 
   static const Color fieldText = Color(0xFFE9E9EA);
