@@ -19,4 +19,6 @@ class RouteName {
   static const String wishListRoute = "/wishList";
   static const String wishListScreenRoute = "/wishListScreen";
   static const String storeDetailsRoute = "/storeDetails";
+  static const String fashionScreenRoute = "/fashion";
+  static const String jewelryScreenRoute = "/jewelry";
 }

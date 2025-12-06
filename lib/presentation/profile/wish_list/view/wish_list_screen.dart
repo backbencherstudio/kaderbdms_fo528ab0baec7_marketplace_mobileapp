@@ -12,6 +12,9 @@ class WishListScreen extends StatefulWidget {
 }
 
 class _WishListScreenState extends State<WishListScreen> {
+  bool isLiked = false;
+  List<bool> likedStatus = List.generate(10, (index) => false);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +39,12 @@ class _WishListScreenState extends State<WishListScreen> {
                       price: '€321.99',
                       rating: '4.9',
                       onCartTap: () {},
-                      onLikeTap: () {},
+                      isLiked: isLiked,
+                      onLikeTap: () {
+                        setState(() {
+                          isLiked = !isLiked;
+                        });
+                      },
                     ),
                   ),
                   SizedBox(width: 10.w),
@@ -48,7 +56,12 @@ class _WishListScreenState extends State<WishListScreen> {
                       price: '€321.99',
                       rating: '4.9',
                       onCartTap: () {},
-                      onLikeTap: () {},
+                      isLiked: isLiked,
+                      onLikeTap: () {
+                        setState(() {
+                          isLiked = !isLiked;
+                        });
+                      },
                     ),
                   ),
                 ],
@@ -66,7 +79,12 @@ class _WishListScreenState extends State<WishListScreen> {
                       price: '€321.99',
                       rating: '4.9',
                       onCartTap: () {},
-                      onLikeTap: () {},
+                      isLiked: isLiked,
+                      onLikeTap: () {
+                        setState(() {
+                          isLiked = !isLiked;
+                        });
+                      },
                     ),
                   ),
                   SizedBox(width: 10.w),
@@ -78,7 +96,12 @@ class _WishListScreenState extends State<WishListScreen> {
                       price: '€321.99',
                       rating: '4.9',
                       onCartTap: () {},
-                      onLikeTap: () {},
+                      isLiked: isLiked,
+                      onLikeTap: () {
+                        setState(() {
+                          isLiked = !isLiked;
+                        });
+                      },
                     ),
                   ),
                 ],

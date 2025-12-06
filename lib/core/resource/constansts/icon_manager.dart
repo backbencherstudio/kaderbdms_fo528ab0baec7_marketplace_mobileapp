@@ -10,6 +10,8 @@ class IconManager {
   static String googleIcon = '$baseUrl/google.png';
   static String hiIcon = '$baseUrl/hi.png';
   static String homeIcon = '$baseUrl/home.png';
+  static String cart = '$baseUrl/cart.png';
+  static String bell = '$baseUrl/bell.png';
   static String loadingIcon = '$baseUrl/loading.png';
   static String logoIcon = '$baseUrl/LOGO.png';
   static String passwordIcon = '$baseUrl/password.png';
@@ -19,6 +21,7 @@ class IconManager {
   static String shoppingIcon = '$baseUrl/shopping.png';
   static String arrowLeft = '$baseUrl/arrow_left.png';
   static String like = '$baseUrl/like.png';
+  static String nolike = '$baseUrl/nolike.png';
   static String cartbutton = '$baseUrl/cartbutton.png';
   static String rating = '$baseUrl/rating.png';
   static String openbox = '$baseUrl/openbox.png';
@@ -26,6 +29,8 @@ class IconManager {
   static String notificationBell = '$baseUrl/notification_bell.png';
   static String securityalart = '$baseUrl/security_alart.png';
   static String arrowDown = '$baseUrl/arrow_down.png';
+  static String arrowRight = '$baseUrl/arrow_right.png';
   static String arrowUp = '$baseUrl/arrow_up.png';
   static String logout = '$baseUrl/logout.png';
+  static String clockwise = '$baseUrl/clockwise.png';
 }

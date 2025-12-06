@@ -28,7 +28,7 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
       backgroundColor: Colors.white,
       body: _screens[currentIndex],
       bottomNavigationBar: Container(
-        height: 80, // adjust as needed
+        height: 80,
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),

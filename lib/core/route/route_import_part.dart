@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/FAQ/view/faq_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/fashion/view/fashion_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/search_items/view/search_item_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/view/home_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/jewelry/view/jewelry_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_list.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_setting.dart';
