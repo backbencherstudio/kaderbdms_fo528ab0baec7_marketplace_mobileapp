@@ -21,4 +21,6 @@ class RouteName {
   static const String storeDetailsRoute = "/storeDetails";
   static const String fashionScreenRoute = "/fashion";
   static const String jewelryScreenRoute = "/jewelry";
+  static const String menShirtScreenRoute = "/menShirt";
+  static const String categoryScreenRoute = "/category";
 }

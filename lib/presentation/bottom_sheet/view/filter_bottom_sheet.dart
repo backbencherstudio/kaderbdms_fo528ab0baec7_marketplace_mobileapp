@@ -1,0 +1,343 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_sheet/view/widgets/primary_border.dart';
+
+class _FilterBottomSheet extends StatefulWidget {
+  const _FilterBottomSheet({super.key});
+
+  @override
+  _FilterBottomSheetState createState() => _FilterBottomSheetState();
+}
+
+class _FilterBottomSheetState extends State<_FilterBottomSheet> {
+  List<String> sizes = ["S", "M", "L", "XL", "XXXL"];
+  String selectedSize = "L";
+
+  List<String> colors = [
+    "Gray",
+    "White",
+    "Red",
+    "Violet",
+    "Green",
+    "Yellow",
+    "Blue",
+    "Black",
+  ];
+  List<String> selectedColors = ["Gray", "White", "Red"];
+
+  RangeValues price = RangeValues(0, 800000);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+        left: 20,
+        right: 20,
+        top: 40,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              width: 50.w,
+              height: 5.h,
+              decoration: BoxDecoration(
+                color: ColorManager.categoryTextColor,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 15.h),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Filter",
+                style: getSemiBold600Style24(
+                  fontSize: 24.sp,
+                  color: ColorManager.textPrimaryBlack,
+                ),
+              ),
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Icon(Icons.close, size: 25),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 20),
+
+          Text(
+            "Size",
+            style: getMedium500Style20(
+              fontSize: 20.sp,
+              color: ColorManager.textPrimaryBlack,
+            ),
+          ),
+          SizedBox(height: 10),
+
+          Wrap(
+            spacing: 20,
+            children: sizes.map((size) {
+              bool isSelected = selectedSize == size;
+              return ChoiceChip(
+                label: Text(size),
+                selected: isSelected,
+                onSelected: (val) {
+                  setState(() => selectedSize = size);
+                },
+                selectedColor: ColorManager.primaryColor,
+                labelStyle: TextStyle(
+                  color: isSelected ? Colors.white : Colors.black,
+                ),
+                backgroundColor: ColorManager.backgroundColor,
+              );
+            }).toList(),
+          ),
+
+          SizedBox(height: 20),
+
+          Text(
+            "Price",
+            style: getMedium500Style20(
+              fontSize: 20.sp,
+              color: ColorManager.textPrimaryBlack,
+            ),
+          ),
+
+          SizedBox(height: 15.h),
+
+          Row(
+            children: [
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "From  ",
+                      style: getRegular400Style16(
+                        color: ColorManager.textbackgroundColor,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "\$${price.start.toInt()}",
+                      style: getRegular400Style16(
+                        color: ColorManager.primaryColor,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 15.w),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "To  ",
+                      style: getRegular400Style16(
+                        color: ColorManager.textbackgroundColor,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "\$${price.end.toInt()}",
+                      style: getRegular400Style16(
+                        color: ColorManager.primaryColor,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 20.h),
+
+          SizedBox(
+            width: double.infinity,
+            child: SliderTheme(
+              data: SliderTheme.of(context).copyWith(
+                trackHeight: 8,
+                inactiveTrackColor: ColorManager.textBackgroundColor,
+                activeTrackColor: ColorManager.primaryColor,
+                overlayColor: ColorManager.primaryColor,
+                rangeThumbShape: PrimaryBorderThumb(),
+                activeTickMarkColor: Colors.transparent,
+                inactiveTickMarkColor: Colors.transparent,
+              ),
+              child: RangeSlider(
+                values: price,
+                min: 0,
+                max: 1000000,
+                divisions: 20,
+                onChanged: (values) {
+                  setState(() {
+                    price = values;
+                  });
+                },
+              ),
+            ),
+          ),
+
+          SizedBox(height: 5.h),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "\$0",
+                style: getRegular400Style16(
+                  color: ColorManager.textbackgroundColor,
+                  fontSize: 14.sp,
+                ),
+              ),
+              Text(
+                "\$10,000,000",
+                style: getRegular400Style16(
+                  color: ColorManager.textbackgroundColor,
+                  fontSize: 14.sp,
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 25.h),
+
+          Text(
+            "Color",
+            style: getMedium500Style20(
+              fontSize: 20.sp,
+              color: ColorManager.textPrimaryBlack,
+            ),
+          ),
+
+          SizedBox(height: 10.h),
+
+          Wrap(
+            spacing: 20,
+            runSpacing: 15,
+            children: colors.map((color) {
+              bool isSelected = selectedColors.contains(color);
+
+              return FilterChip(
+                selected: isSelected,
+                onSelected: (val) {
+                  setState(() {
+                    if (isSelected) {
+                      selectedColors.remove(color);
+                    } else {
+                      selectedColors.add(color);
+                    }
+                  });
+                },
+                selectedColor: ColorManager.primaryColor,
+                checkmarkColor: Colors.white,
+                backgroundColor: Colors.grey.shade200,
+
+                label: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      color,
+                      style: getMedium500Style14(
+                        fontSize: 14.sp,
+                        color: isSelected ? Colors.white : Colors.black,
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+
+                    ClipOval(
+                      child: Image.asset(
+                        _getColorImage(color),
+                        width: 20.w,
+                        height: 20.h,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ),
+
+          SizedBox(height: 30),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    selectedSize = "L";
+                    selectedColors = [];
+                    price = RangeValues(0, 1000000);
+                  });
+                },
+                child: Text(
+                  "Clear all filters",
+                  style: getSemiBold600Style16(
+                    color: ColorManager.textRedColor,
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorManager.primaryColor,
+                  padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100.r),
+                  ),
+                ),
+                onPressed: () {},
+                child: Text(
+                  "Apply Filter",
+                  style: getSemiBold600Style14(
+                    color: Colors.white,
+                    fontSize: 14.sp,
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 20),
+        ],
+      ),
+    );
+  }
+
+  String _getColorImage(String name) {
+    switch (name.toLowerCase()) {
+      case "gray":
+        return IconManager.gray;
+      case "white":
+        return IconManager.white;
+      case "red":
+        return IconManager.red;
+      case "violet":
+        return IconManager.violet;
+      case "green":
+        return IconManager.green;
+      case "yellow":
+        return IconManager.yellow;
+      case "blue":
+        return IconManager.blue;
+      case "black":
+        return IconManager.black;
+      default:
+        return IconManager.gray;
+    }
+  }
+}

@@ -33,4 +33,14 @@ class IconManager {
   static String arrowUp = '$baseUrl/arrow_up.png';
   static String logout = '$baseUrl/logout.png';
   static String clockwise = '$baseUrl/clockwise.png';
+  static String vector = '$baseUrl/vector.png';
+  static String slider = '$baseUrl/slider.png';
+  static String yellow = '$baseUrl/yellow.png';
+  static String white = '$baseUrl/white.png';
+  static String violet = '$baseUrl/violet.png';
+  static String red = '$baseUrl/red.png';
+  static String green = '$baseUrl/green.png';
+  static String gray = '$baseUrl/gray.png';
+  static String blue = '$baseUrl/blue.png';
+  static String black = '$baseUrl/black.png';
 }

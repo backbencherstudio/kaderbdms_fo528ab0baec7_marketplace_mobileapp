@@ -55,7 +55,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              RouteName.categoryScreenRoute,
+                            );
+                          },
                           child: Text(
                             "See All",
                             style: getMedium500Style14(

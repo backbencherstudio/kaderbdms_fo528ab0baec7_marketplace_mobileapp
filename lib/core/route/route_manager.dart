@@ -4,7 +4,7 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case RouteName.splashRoute:
-        return MaterialPageRoute(builder: (_) => SearchItemScreen());
+        return MaterialPageRoute(builder: (_) => MenShirtScreen());
 
       case RouteName.onBoadingRoute:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
@@ -65,6 +65,12 @@ class AppRouter {
 
       case RouteName.jewelryScreenRoute:
         return MaterialPageRoute(builder: (_) => const JewelryScreen());
+
+      case RouteName.menShirtScreenRoute:
+        return MaterialPageRoute(builder: (_) => const MenShirtScreen());
+
+      case RouteName.categoryScreenRoute:
+        return MaterialPageRoute(builder: (_) => const CategoryScreen());
 
       default:
         return unDefineRoute();

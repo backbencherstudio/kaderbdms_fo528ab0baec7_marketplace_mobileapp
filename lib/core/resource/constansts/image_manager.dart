@@ -41,4 +41,20 @@ class ImageManager {
   static const String languageTutor = '$baseUrl/language_tutor.jpg';
   static const String leatherJacket = '$baseUrl/leather_jacket.jpg';
   static const String menShoes = '$baseUrl/shoes.jpg';
+  static const String notFound = '$baseUrl/not_found.png';
+  static const String cDenim = '$baseUrl/c_denim.png';
+  static const String cJacket = '$baseUrl/c_jacket.png';
+  static const String cShirt = '$baseUrl/c_shirt.png';
+  static const String cBelts = '$baseUrl/c_belts.png';
+  static const String cCasualshirt = '$baseUrl/c_casualshirt.png';
+  static const String cHandbags = '$baseUrl/c_handbags.png';
+  static const String cJeans = '$baseUrl/c_jeans.png';
+  static const String cMaternity = '$baseUrl/c_maternity.png';
+  static const String cPolo = '$baseUrl/c_polo.png';
+  static const String cShorts = '$baseUrl/c_shorts.png';
+  static const String cSkirts = '$baseUrl/c_skirts.png';
+  static const String cSleepwear = '$baseUrl/c_sleepwear.png';
+  static const String cSuits = '$baseUrl/c_suits.png';
+  static const String cTops = '$baseUrl/c_tops.png';
+  static const String cUnderwear = '$baseUrl/c_underwear.png';
 }
