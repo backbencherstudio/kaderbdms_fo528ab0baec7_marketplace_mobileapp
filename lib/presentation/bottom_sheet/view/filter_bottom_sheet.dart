@@ -3,16 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_sheet/view/filter_related_product.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_sheet/view/widgets/primary_border.dart';
 
-class _FilterBottomSheet extends StatefulWidget {
-  const _FilterBottomSheet({super.key});
+class FilterBottomSheet extends StatefulWidget {
+  const FilterBottomSheet({super.key});
 
   @override
-  _FilterBottomSheetState createState() => _FilterBottomSheetState();
+  FilterBottomSheetState createState() => FilterBottomSheetState();
 }
 
-class _FilterBottomSheetState extends State<_FilterBottomSheet> {
+class FilterBottomSheetState extends State<FilterBottomSheet> {
   List<String> sizes = ["S", "M", "L", "XL", "XXXL"];
   String selectedSize = "L";
 
@@ -37,21 +38,37 @@ class _FilterBottomSheetState extends State<_FilterBottomSheet> {
         bottom: MediaQuery.of(context).viewInsets.bottom,
         left: 20,
         right: 20,
-        top: 40,
+        top: 30,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Container(
-              width: 50.w,
-              height: 5.h,
-              decoration: BoxDecoration(
-                color: ColorManager.categoryTextColor,
-                borderRadius: BorderRadius.circular(10.r),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Center(
+                  child: Container(
+                    width: 50.w,
+                    height: 5.h,
+                    margin: EdgeInsets.only(bottom: 20.h),
+                    decoration: BoxDecoration(
+                      color: ColorManager.categoryTextColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
               ),
-            ),
+
+              Transform.translate(
+                offset: Offset(0, -10),
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Icon(Icons.close, size: 24),
+                ),
+              ),
+            ],
           ),
 
           SizedBox(height: 15.h),
@@ -65,10 +82,6 @@ class _FilterBottomSheetState extends State<_FilterBottomSheet> {
                   fontSize: 24.sp,
                   color: ColorManager.textPrimaryBlack,
                 ),
-              ),
-              GestureDetector(
-                onTap: () => Navigator.pop(context),
-                child: Icon(Icons.close, size: 25),
               ),
             ],
           ),
@@ -88,17 +101,37 @@ class _FilterBottomSheetState extends State<_FilterBottomSheet> {
             spacing: 20,
             children: sizes.map((size) {
               bool isSelected = selectedSize == size;
+
               return ChoiceChip(
-                label: Text(size),
                 selected: isSelected,
+                backgroundColor: ColorManager.backgroundColor,
+                selectedColor: ColorManager.primaryColor,
                 onSelected: (val) {
                   setState(() => selectedSize = size);
                 },
-                selectedColor: ColorManager.primaryColor,
-                labelStyle: TextStyle(
-                  color: isSelected ? Colors.white : Colors.black,
+
+                label: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    if (isSelected) ...[
+                      SizedBox(width: 5.w),
+                      Icon(Icons.check, color: Colors.white, size: 18.sp),
+                    ],
+
+                    SizedBox(width: 5.w),
+
+                    Text(
+                      size,
+                      style: getMedium500Style14(
+                        color: isSelected
+                            ? Colors.white
+                            : ColorManager.textPrimaryBlack,
+                        fontSize: 14.sp,
+                      ),
+                    ),
+                  ],
                 ),
-                backgroundColor: ColorManager.backgroundColor,
               );
             }).toList(),
           ),
@@ -288,7 +321,7 @@ class _FilterBottomSheetState extends State<_FilterBottomSheet> {
                   style: getSemiBold600Style16(
                     color: ColorManager.textRedColor,
                     fontSize: 16.sp,
-                  ),
+                  ).copyWith(decoration: TextDecoration.underline),
                 ),
               ),
 
@@ -300,7 +333,9 @@ class _FilterBottomSheetState extends State<_FilterBottomSheet> {
                     borderRadius: BorderRadius.circular(100.r),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showRelatedProductsBottomSheet(context);
+                },
                 child: Text(
                   "Apply Filter",
                   style: getSemiBold600Style14(

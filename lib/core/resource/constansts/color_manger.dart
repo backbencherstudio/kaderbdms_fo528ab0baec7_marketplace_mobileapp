@@ -23,6 +23,8 @@ class ColorManager {
   static const Color arrowColor = Color(0xFF091412);
   static const Color backgroundColor = Color(0xFFf2f4f7);
   static const Color textbackgroundColor = Color(0xFFA5A5AB);
+  static const Color testbackgroundColor = Color(0xFFf5f7fa);
+  static const Color textFieldBorder = Color(0xFFd9d9d9);
 
   // ===== Text Colors =====
   static const Color textPrimary = Color(0xFF212121);
@@ -33,12 +35,13 @@ class ColorManager {
   static const Color textBackgroundColor = Color(0xFFF6F8FA);
   static const Color itemTextColor = Color(0xFF232F30);
   static const Color categoryTextColor = Color(0xFF1D1D35);
+  static const Color chatTextColor = Color(0xFF9A9A9A);
 
   static const Color fieldText = Color(0xFFE9E9EA);
   static const Color textRedColor = Color(0xFFEB3D4D);
   static const Color textGreenColor = Color(0xFF22CAAD);
   static const Color textGreenStatusColor = Color(0xFFE9FAF7);
-static const Color titleText = Color(0xFF2F3131);
+  static const Color titleText = Color(0xFF2F3131);
   static const Color titleText1 = Color(0xFF535353);
   static const Color subtitleText = Color(0xFF686868);
   static const Color subtitleText1 = Color(0xFF60655C);
@@ -48,7 +51,6 @@ static const Color titleText = Color(0xFF2F3131);
   // ===== Button & Label Colors =====
   static const Color buttonText = Color(0xFF334289);
   static const Color hintText = Color(0xFF5B5F5F);
-  
 
   // ===== Neutral Colors =====
   static const Color blackColor = Color(0xFF000000);

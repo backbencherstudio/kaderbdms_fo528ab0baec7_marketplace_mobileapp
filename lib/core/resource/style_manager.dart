@@ -155,6 +155,13 @@ TextStyle getSemiBold600Style24({
 }) {
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
+TextStyle getBold700Style16({
+  double fontSize = FontSize.s16,
+  FontWeight fontWeight = FontWeightManager.bold700,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
 
 //large text style
 

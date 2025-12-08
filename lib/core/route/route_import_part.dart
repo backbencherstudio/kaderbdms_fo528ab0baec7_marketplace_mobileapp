@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/FAQ/view/faq_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/category/view/category_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chat_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chatting_history_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/Shirt/view/men_shirt_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/fashion/view/fashion_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/search_item_pages/view/not_found_screen.dart';
@@ -12,6 +14,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notif
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/notification_setting.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/privacyPolicy/view/privacy_policy_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/product_details/view/product_details_page.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/edit_profile/view/edit_profile_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/my_order/view/my_order_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_list/view/order_list_screen.dart';

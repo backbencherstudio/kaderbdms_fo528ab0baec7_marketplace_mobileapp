@@ -57,4 +57,19 @@ class ImageManager {
   static const String cSuits = '$baseUrl/c_suits.png';
   static const String cTops = '$baseUrl/c_tops.png';
   static const String cUnderwear = '$baseUrl/c_underwear.png';
+  static const String productShirt = '$baseUrl/product_shirt.png';
+  static const String productRed = '$baseUrl/p_red.png';
+  static const String productMerun = '$baseUrl/p_merun.png';
+  static const String productGray = '$baseUrl/p_gray.png';
+  static const String productDeepRed = '$baseUrl/p_deepred.png';
+  static const String productBlack = '$baseUrl/p_black.png';
+  static const String reviewer1 = '$baseUrl/reviewer1.png';
+  static const String review2 = '$baseUrl/review2.png';
+  static const String review3 = '$baseUrl/review3.png';
+  static const String chatPerson1 = '$baseUrl/chat_person1.png';
+  static const String chatPerson2 = '$baseUrl/chat_person2.png';
+  static const String chatPerson3 = '$baseUrl/chat_person3.png';
+  static const String chatPerson4 = '$baseUrl/chat_person4.png';
+  static const String chatPerson5 = '$baseUrl/chat_person5.png';
+  static const String chatPerson6 = '$baseUrl/chat_person6.png';
 }

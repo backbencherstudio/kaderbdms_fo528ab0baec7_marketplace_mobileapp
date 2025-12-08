@@ -43,4 +43,11 @@ class IconManager {
   static String gray = '$baseUrl/gray.png';
   static String blue = '$baseUrl/blue.png';
   static String black = '$baseUrl/black.png';
+  static String cartCount = '$baseUrl/cart_count.png';
+  static String share = '$baseUrl/share.png';
+  static String starEmpty = '$baseUrl/star_empty.png';
+  static String ratingColor = '$baseUrl/rating_color.png';
+  static String message = '$baseUrl/message.png';
+  static String searchChat = '$baseUrl/search_chat.png';
+  static String plxLogo = '$baseUrl/plx_logo.png';
 }
