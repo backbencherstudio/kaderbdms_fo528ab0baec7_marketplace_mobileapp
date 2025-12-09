@@ -50,4 +50,16 @@ class IconManager {
   static String message = '$baseUrl/message.png';
   static String searchChat = '$baseUrl/search_chat.png';
   static String plxLogo = '$baseUrl/plx_logo.png';
+  static String trash = '$baseUrl/trash.png';
+  static String plus = '$baseUrl/plus.png';
+  static String minus = '$baseUrl/minus.png';
+  static String one = '$baseUrl/one.png';
+  static String one2 = '$baseUrl/one2.png';
+  static String two = '$baseUrl/two.png';
+  static String two2 = '$baseUrl/two2.png';
+  static String orderArrow = '$baseUrl/order_arrow.png';
+  static String locationArrow = '$baseUrl/location_arrow.png';
+  static String myLocation = '$baseUrl/location.png';
+  static String card = '$baseUrl/card.png';
+  static String close = '$baseUrl/close.png';
 }

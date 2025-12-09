@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/widgets/left_msg_bubble.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/widgets/right_msg_bubble.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -82,6 +84,50 @@ class _ChatScreenState extends State<ChatScreen> {
                     color: ColorManager.textSecondaryTwo,
                   ),
                 ),
+              ),
+              SizedBox(height: 10.h),
+
+              Leftmsgbubble(message: 'Hello, Anita', isTop: false),
+              SizedBox(height: 3.h),
+              Leftmsgbubble(message: 'Ask me anything about PLX!', isTop: true),
+              SizedBox(height: 3.h),
+              Align(
+                alignment: Alignment.topRight,
+                child: Text(
+                  "08:01 am",
+                  style: getRegular400Style12(
+                    fontSize: 12.sp,
+                    color: ColorManager.textSecondaryTwo,
+                  ),
+                ),
+              ),
+              SizedBox(height: 5.h),
+              Rightmsgbubble(
+                message: 'You sit too long. Try drinking lots of water',
+              ),
+
+              SizedBox(height: 10.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "08:50 am",
+                  style: getRegular400Style12(
+                    fontSize: 12.sp,
+                    color: ColorManager.textSecondaryTwo,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.h),
+
+              Leftmsgbubble(message: 'Oh like that.', isTop: false),
+              SizedBox(height: 3.h),
+              Leftmsgbubble(message: 'Thanks a lot doc 😍', isTop: true),
+              SizedBox(height: 3.h),
+
+              SizedBox(height: 3.h),
+              Leftmsgbubble(
+                message: ' ok doc. I will drink lots of water and exercise.',
+                isTop: true,
               ),
             ],
           ),

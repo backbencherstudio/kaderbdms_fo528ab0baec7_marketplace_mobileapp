@@ -13,6 +13,8 @@ class PrimaryButton extends StatelessWidget {
     this.padding,
     required this.borderRadius,
     this.onTap,
+    this.borderColor,
+    this.borderWidth,
   });
 
   final String title;
@@ -21,6 +23,8 @@ class PrimaryButton extends StatelessWidget {
   final EdgeInsets? padding;
   final BorderRadius borderRadius;
   final VoidCallback? onTap;
+  final Color? borderColor;
+  final double? borderWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +32,17 @@ class PrimaryButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-
         decoration: BoxDecoration(
           color: containColor ?? AppColors.primary,
           borderRadius: borderRadius,
+          border: (borderColor != null)
+              ? Border.all(color: borderColor!, width: borderWidth ?? 1)
+              : null,
         ),
+
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+          padding:
+              padding ?? EdgeInsets.symmetric(horizontal: 15.h, vertical: 15.w),
           child: Text(
             textAlign: TextAlign.center,
             title,

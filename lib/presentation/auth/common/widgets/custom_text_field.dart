@@ -6,6 +6,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 class CustomTextField extends StatelessWidget {
   final String hint;
   final double width;
+  final double? height;
   final EdgeInsets? padding;
   final Widget? prefixIcon;
   final bool isPassword;
@@ -18,6 +19,7 @@ class CustomTextField extends StatelessWidget {
   final VoidCallback? onTap;
   final Color? borderColor;
   final double? borderRadius;
+  final Color? fillcolor;
 
   const CustomTextField({
     super.key,
@@ -35,6 +37,8 @@ class CustomTextField extends StatelessWidget {
     this.onTap,
     this.borderColor,
     this.borderRadius,
+    this.fillcolor,
+    this.height,
   });
 
   @override
@@ -48,6 +52,8 @@ class CustomTextField extends StatelessWidget {
         keyboardType: keyboardType,
         onChanged: onChanged,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: fillcolor,
           labelText: label,
           hintText: hint,
           prefixIcon: prefixIcon,
@@ -55,7 +61,7 @@ class CustomTextField extends StatelessWidget {
           prefixIconConstraints: BoxConstraints(minWidth: 50, minHeight: 30),
 
           contentPadding: EdgeInsets.symmetric(
-            horizontal: 16.h,
+            horizontal: 10.h,
             vertical: 14.w,
           ),
 

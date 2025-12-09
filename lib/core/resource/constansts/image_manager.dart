@@ -72,4 +72,8 @@ class ImageManager {
   static const String chatPerson4 = '$baseUrl/chat_person4.png';
   static const String chatPerson5 = '$baseUrl/chat_person5.png';
   static const String chatPerson6 = '$baseUrl/chat_person6.png';
+  static const String cartList = '$baseUrl/cart_list.png';
+  static const String orderPlace = '$baseUrl/order_place.png';
+  static const String cartProduct = '$baseUrl/cart_product1.png';
+  static const String cartProduct2 = '$baseUrl/cart_product2.png';
 }
