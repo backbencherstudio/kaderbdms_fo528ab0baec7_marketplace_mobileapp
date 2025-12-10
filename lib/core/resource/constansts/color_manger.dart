@@ -41,6 +41,9 @@ class ColorManager {
   static const Color categoryTextColor = Color(0xFF1D1D35);
   static const Color chatTextColor = Color(0xFF9A9A9A);
   static const Color chatTextColorTwo = Color(0xFF4b4d57);
+  static const Color forgotPasstext = Color(0xFF1E78F0);
+  static const Color defaultColor = Color(0xFF707070);
+  static const Color googleText = Color(0xFF1D1F2C);
 
   static const Color fieldText = Color(0xFFE9E9EA);
   static const Color textRedColor = Color(0xFFEB3D4D);

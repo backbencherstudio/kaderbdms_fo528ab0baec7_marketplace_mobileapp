@@ -4,6 +4,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/ap
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -39,7 +40,7 @@ class HomeHeader extends StatelessWidget {
                         width: 20.w,
                         height: 20.h,
                         child: Image.asset(
-                          "assets/icons/hi.png",
+                          IconManager.hiIcon,
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -60,7 +61,9 @@ class HomeHeader extends StatelessWidget {
               Row(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteName.cartScreenRoute);
+                    },
                     child: SizedBox(
                       width: 25.w,
                       height: 25.h,
@@ -69,7 +72,12 @@ class HomeHeader extends StatelessWidget {
                   ),
                   SizedBox(width: 15.w),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        RouteName.notificationScreenRoute,
+                      );
+                    },
                     child: SizedBox(
                       width: 25.w,
                       height: 25.h,

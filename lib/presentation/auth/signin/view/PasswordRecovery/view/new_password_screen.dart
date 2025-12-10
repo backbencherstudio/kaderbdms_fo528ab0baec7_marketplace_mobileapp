@@ -106,6 +106,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     onPressed: () {
                       setState(() => showPassword = !showPassword);
                     },
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                   ),
                 ),
 
@@ -154,6 +156,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                         () => confirmShowPassword = !confirmShowPassword,
                       );
                     },
+                    splashColor: Colors.transparent, // Disable splash effect
+                    highlightColor: Colors.transparent,
                   ),
                 ),
 

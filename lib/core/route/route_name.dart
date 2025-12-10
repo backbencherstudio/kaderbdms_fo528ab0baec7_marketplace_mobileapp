@@ -23,4 +23,19 @@ class RouteName {
   static const String jewelryScreenRoute = "/jewelry";
   static const String menShirtScreenRoute = "/menShirt";
   static const String categoryScreenRoute = "/category";
+  static const String searchItemScreenRoute = "/searchItem";
+  static const String productSearchScreenRoute = "/productsearch";
+  static const String productDetailsPageRoute = "/productdetails";
+  static const String chatScreenRoute = "/chat";
+  static const String homeScreenRoute = "/home";
+  static const String orderAddressScreenRoute = "/orderaddress";
+  static const String confirmOrderScreenRoute = "/confirmorder";
+  static const String cartScreenRoute = "/cartScreen";
+  static const String orderPlaceScreenRoute = "/orderplace";
+  static const String faqScreenRoute = "/faq";
+  static const String privacyPolicyScreenRoute = "/privacypolicy";
+  static const String termsofuseScreenRoute = "/termsofuse";
+  static const String notificationListRoute = "/notificationLisT";
+  static const String notificationSettingRoute = "/notificationSetting";
+  static const String notificationScreenRoute = "/notificationScreen";
 }

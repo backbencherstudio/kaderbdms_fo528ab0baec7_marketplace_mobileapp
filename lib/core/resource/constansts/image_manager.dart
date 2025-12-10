@@ -76,4 +76,7 @@ class ImageManager {
   static const String orderPlace = '$baseUrl/order_place.png';
   static const String cartProduct = '$baseUrl/cart_product1.png';
   static const String cartProduct2 = '$baseUrl/cart_product2.png';
+  static const String welcomeback = '$baseUrl/welcomeback.png';
+  static const String success = '$baseUrl/success.png';
+  static const String successreg = '$baseUrl/successreg.png';
 }

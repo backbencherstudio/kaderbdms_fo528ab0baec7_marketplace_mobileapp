@@ -1,6 +1,8 @@
 class IconManager {
   static String baseUrl = 'assets/icons';
   static String ballIcon = '$baseUrl/ball.png';
+  static String splashLogo = '$baseUrl/LOGO.png';
+  static String google = '$baseUrl/google.png';
   static String calenderIcon = '$baseUrl/calender.png';
   static String cartIcon = '$baseUrl/cart.png';
   static String chatIcon = '$baseUrl/chat.png';
@@ -62,4 +64,10 @@ class IconManager {
   static String myLocation = '$baseUrl/location.png';
   static String card = '$baseUrl/card.png';
   static String close = '$baseUrl/close.png';
+  static String edit = '$baseUrl/edit.png';
+  static String order = '$baseUrl/order.png';
+  static String notification = '$baseUrl/notification.png';
+  static String wish = '$baseUrl/wish.png';
+  static String faq = '$baseUrl/faq.png';
+  static String privacy = '$baseUrl/privacy.png';
 }

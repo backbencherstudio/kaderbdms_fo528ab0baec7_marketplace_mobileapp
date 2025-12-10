@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/view/cart_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/category/view/category_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chatting_history_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/view/home_screen.dart';
+
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/profile_screen.dart';
 import '../../../core/resource/constansts/color_manger.dart';
 import '../../../core/resource/constansts/icon_manager.dart';
 import '../viewmodel/bottom_nav_bar_viewmodel.dart';
@@ -13,11 +19,16 @@ class BottomNavBar extends ConsumerStatefulWidget {
 
 class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   final List<Widget> _screens = const [
-    Scaffold(body: Center(child: Text('Home'))),
-    Scaffold(body: Center(child: Text('Category'))),
-    Scaffold(body: Center(child: Text('Chat'))),
-    Scaffold(body: Center(child: Text('Cart'))),
-    Scaffold(body: Center(child: Text('Profile'))),
+    // Scaffold(body: Center(child: Text('Home'))),
+    // Scaffold(body: Center(child: Text('Category'))),
+    // Scaffold(body: Center(child: Text('Chat'))),
+    // Scaffold(body: Center(child: Text('Cart'))),
+    // Scaffold(body: Center(child: Text('Profile'))),
+    HomeScreen(),
+    CategoryScreen(),
+    ChattingHistoryScreen(),
+    CartScreen(),
+    ProfilePageScreen(),
   ];
 
   @override

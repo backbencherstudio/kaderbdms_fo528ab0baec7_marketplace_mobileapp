@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import '../../../core/resource/style_manager.dart';
@@ -40,11 +41,9 @@ class OnboardingScreen extends StatelessWidget {
           Text(
             "Welcome to BaakZon!",
             textAlign: TextAlign.center,
-            style: customTextStyle(
-              fontFamily: FontConstants.fontFamilyInter,
-              fontWeight: FontWeightManager.semiBold600,
+            style: getSemiBold600Style24(
               fontSize: 24.sp,
-              color: AppColors.textColor,
+              color: ColorManager.whiteColor,
             ),
           ),
 
@@ -53,11 +52,9 @@ class OnboardingScreen extends StatelessWidget {
           Text(
             "Your new trusted marketplace.",
             textAlign: TextAlign.center,
-            style: customTextStyle(
-              fontFamily: FontConstants.fontFamilyInter,
-              fontWeight: FontWeightManager.semiBold600,
+            style: getSemiBold600Style14(
               fontSize: 14.sp,
-              color: AppColors.textColor,
+              color: ColorManager.whiteColor,
             ),
           ),
 
@@ -72,7 +69,7 @@ class OnboardingScreen extends StatelessWidget {
               clipper: TopArcClipper(),
               child: Container(
                 width: double.infinity,
-                color: Colors.white,
+                color: ColorManager.whiteColor,
 
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -88,21 +85,19 @@ class OnboardingScreen extends StatelessWidget {
                           fontFamily: FontConstants.fontFamilyManrope,
                           fontWeight: FontWeightManager.semiBold600,
                           fontSize: 20.sp,
-                          color: AppColors.textColorBlack,
+                          color: ColorManager.textPrimaryBlack,
                         ),
                       ),
 
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 30.h),
 
                       PrimaryButton(
-                        textStyle: TextStyle(
-                          color: AppColors.textColor,
+                        textStyle: getSemiBold600Style16(
+                          color: ColorManager.whiteColor,
                           fontSize: 16.sp,
-                          fontFamily: FontConstants.fontFamilyInter,
-                          fontWeight: FontWeightManager.semiBold600,
                         ),
-                        containColor: AppColors.primary,
-                        title: 'SignUp',
+                        containColor: ColorManager.primaryColor,
+                        title: 'Sign up',
                         padding: EdgeInsets.symmetric(
                           horizontal: 12.h,
                           vertical: 12.w,
@@ -116,14 +111,12 @@ class OnboardingScreen extends StatelessWidget {
                       SizedBox(height: 10.h),
 
                       PrimaryButton(
-                        textStyle: TextStyle(
-                          color: AppColors.buttonSecTextColor,
+                        textStyle: getSemiBold600Style16(
+                          color: ColorManager.textSecondaryThree,
                           fontSize: 16.sp,
-                          fontFamily: FontConstants.fontFamilyInter,
-                          fontWeight: FontWeightManager.semiBold600,
                         ),
-                        containColor: AppColors.buttonColorNoHover,
-                        title: 'Login',
+                        containColor: ColorManager.buttonSecondaryColor,
+                        title: 'Log in',
                         padding: EdgeInsets.symmetric(
                           horizontal: 12.h,
                           vertical: 12.w,

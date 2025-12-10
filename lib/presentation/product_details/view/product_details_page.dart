@@ -5,6 +5,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/product_details/view/widgets/clickable_rating.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/product_details/view/widgets/review_card.dart';
@@ -394,7 +395,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              RouteName.cartScreenRoute,
+                            );
+                          },
                           child: Container(
                             height: 45.h,
                             width: 150.w,
@@ -420,7 +426,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                         SizedBox(width: 4.w),
 
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              RouteName.orderAddressScreenRoute,
+                            );
+                          },
                           child: Container(
                             height: 45.h,
                             width: 150.w,

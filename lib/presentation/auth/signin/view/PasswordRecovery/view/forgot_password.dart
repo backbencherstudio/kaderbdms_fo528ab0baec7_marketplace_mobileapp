@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
@@ -68,7 +69,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(12),
                     child: Image.asset(
-                      "assets/icons/email.png",
+                      IconManager.emailIcon,
                       width: 22,
                       height: 22,
                     ),

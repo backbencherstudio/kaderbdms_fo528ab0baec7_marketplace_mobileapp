@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/custom_search_bar.dart';
 
@@ -59,7 +60,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: CommonHeader(title: "Categories"),
+              child: CommonHeader(
+                onTap: () {
+                  Navigator.pop(context, RouteName.bottomNavBar);
+                },
+                title: "Categories",
+              ),
             ),
 
             SizedBox(height: 10.h),

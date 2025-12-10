@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/welcomepage/widgets/common_welcome_widget.dart';
 import '../../../core/route/route_name.dart';
 
@@ -10,7 +11,7 @@ class successPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: CommonWelcomeWidget(
-          imagePath: "assets/images/success.png",
+          imagePath: ImageManager.success,
           title: "Successful",
           subtitle:
               "Congratulations! Your password has\nbeen successfully updated. Click\nContinue to login",

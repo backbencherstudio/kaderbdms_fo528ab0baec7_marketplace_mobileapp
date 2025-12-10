@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
@@ -100,10 +101,11 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                         );
                       },
                       child: Image.asset(
-                        "assets/icons/edit.png",
+                        IconManager.edit,
                         color: AppColors.whiteTextColor,
-                        width: 40,
-                        height: 40,
+                        width: 25.w,
+                        height: 25.h,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -115,7 +117,7 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
           SizedBox(height: 20.h),
 
           SettingRowList(
-            iconPath: "assets/icons/order.png",
+            iconPath: IconManager.order,
             title: "My Orders",
             onTap: () {
               Navigator.pushNamed(context, RouteName.myordersRoute);
@@ -125,41 +127,51 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
           SizedBox(height: 5.h),
 
           SettingRowList(
-            iconPath: "assets/icons/notification.png",
+            iconPath: IconManager.notification,
             title: "Notification",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.notificationSettingRoute);
+            },
           ),
 
           SizedBox(height: 5.h),
 
           SettingRowList(
-            iconPath: "assets/icons/wish.png",
+            iconPath: IconManager.wish,
             title: "Wishlist",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.wishListScreenRoute);
+            },
           ),
 
           SizedBox(height: 5.h),
 
           SettingRowList(
-            iconPath: "assets/icons/faq.png",
+            iconPath: IconManager.faq,
             title: "Frequently Asked Questions",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.faqScreenRoute);
+            },
           ),
 
           SizedBox(height: 5.h),
 
           SettingRowList(
-            iconPath: "assets/icons/order.png",
+            iconPath: IconManager.order,
             title: "Terms of Use",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.termsofuseScreenRoute);
+            },
           ),
 
           SizedBox(height: 5.h),
 
           SettingRowList(
-            iconPath: "assets/icons/privacy.png",
+            iconPath: IconManager.privacy,
             title: "Privacy Policy",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.privacyPolicyScreenRoute);
+            },
           ),
 
           Padding(
@@ -170,7 +182,11 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                   context: context,
                   barrierDismissible: false,
                   builder: (context) {
-                    return LogoutDialog(onConfirm: () {});
+                    return LogoutDialog(
+                      onConfirm: () {
+                        Navigator.pushNamed(context, RouteName.loginRoute);
+                      },
+                    );
                   },
                 );
               },

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 
 class LoaderWidget extends StatefulWidget {
   const LoaderWidget({super.key});
@@ -14,7 +15,6 @@ class _LoaderWidgetState extends State<LoaderWidget> {
   void initState() {
     super.initState();
 
-    /// Navigate after 4 seconds
     Timer(const Duration(seconds: 4), () {
       if (mounted) {
         Navigator.pushReplacementNamed(context, "");
@@ -29,8 +29,8 @@ class _LoaderWidgetState extends State<LoaderWidget> {
       height: 65.h,
       child: CircularProgressIndicator(
         strokeWidth: 9.w,
-        valueColor: AlwaysStoppedAnimation(Colors.white),
-        // backgroundColor: Colors.white24,
+        valueColor: AlwaysStoppedAnimation(ColorManager.whiteColor),
+
         backgroundColor: Colors.white24,
       ),
     );

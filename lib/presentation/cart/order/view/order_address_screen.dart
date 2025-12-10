@@ -5,6 +5,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 
@@ -304,7 +305,12 @@ class _OrderAddressScreenState extends State<OrderAddressScreen> {
                       title: 'Save and Continue',
 
                       borderRadius: BorderRadius.circular(100.r),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          RouteName.confirmOrderScreenRoute,
+                        );
+                      },
                     ),
 
                     SizedBox(height: 20.h),

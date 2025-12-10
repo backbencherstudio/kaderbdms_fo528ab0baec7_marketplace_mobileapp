@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key});
@@ -34,19 +35,24 @@ class SearchBarWidget extends StatelessWidget {
               ),
             ),
 
-            Container(
-              height: 55.h,
-              width: 55.h,
-              margin: const EdgeInsets.only(right: 5),
-              decoration: const BoxDecoration(
-                color: ColorManager.primaryColor,
-                shape: BoxShape.circle,
-              ),
-              child: Center(
-                child: Image.asset(
-                  IconManager.searchIcon,
-                  height: 24.h,
-                  width: 24.w,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, RouteName.searchItemScreenRoute);
+              },
+              child: Container(
+                height: 55.h,
+                width: 55.h,
+                margin: const EdgeInsets.only(right: 5),
+                decoration: const BoxDecoration(
+                  color: ColorManager.primaryColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Image.asset(
+                    IconManager.searchIcon,
+                    height: 24.h,
+                    width: 24.w,
+                  ),
                 ),
               ),
             ),

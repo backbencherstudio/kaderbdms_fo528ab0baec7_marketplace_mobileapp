@@ -60,10 +60,7 @@ class CustomTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           prefixIconConstraints: BoxConstraints(minWidth: 50, minHeight: 30),
 
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: 10.h,
-            vertical: 14.w,
-          ),
+          contentPadding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 14.w),
 
           // border: OutlineInputBorder(
           //   borderRadius: BorderRadius.circular(100.r),

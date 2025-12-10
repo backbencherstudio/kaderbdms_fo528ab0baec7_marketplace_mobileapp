@@ -17,7 +17,6 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  // Controllers
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final dateController = TextEditingController();
@@ -25,38 +24,36 @@ class _SignupScreenState extends State<SignupScreen> {
   final confirmPassController = TextEditingController();
 
   bool showPassword = false;
+  bool confirmshowPassword = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 50.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 10.h),
-
             const HeaderSection(),
-
             SizedBox(height: 25.h),
-
             SignupForm(
-              nameController: TextEditingController(),
-              emailController: TextEditingController(),
-              dateController: TextEditingController(),
-              passController: TextEditingController(),
-              confirmpassController: TextEditingController(),
-
+              nameController: nameController,
+              emailController: emailController,
+              dateController: dateController,
+              passController: passController,
+              confirmpassController: confirmPassController,
               showPassword: showPassword,
               onTogglePassword: () {
                 setState(() => showPassword = !showPassword);
               },
+              confirmshowPassword: confirmshowPassword,
+              onconfirmTogglePassword: () {
+                setState(() => confirmshowPassword = !confirmshowPassword);
+              },
             ),
-
             SizedBox(height: 20.h),
-
             PrimaryButton(
               title: "Continue",
               containColor: AppColors.primary,
@@ -72,13 +69,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 Navigator.pushNamed(context, RouteName.signupOtpRoute);
               },
             ),
-
             SizedBox(height: 25.h),
-
             const SocialLoginSection(),
-
             SizedBox(height: 25.h),
-
             const FooterSection(),
           ],
         ),

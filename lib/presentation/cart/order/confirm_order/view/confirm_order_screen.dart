@@ -8,8 +8,8 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/order/add_card_bottom_sheet/view/add_card_bottom_sheet.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/order/view/widgets/order_product_card.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/order/add_card_bottom_sheet/view/add_card_bottom_sheet.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/order/view/widgets/order_product_card.dart';
 
 class ConfirmOrderScreen extends StatefulWidget {
   const ConfirmOrderScreen({super.key});
