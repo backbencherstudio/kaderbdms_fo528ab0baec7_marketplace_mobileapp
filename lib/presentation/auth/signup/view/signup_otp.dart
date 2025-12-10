@@ -33,7 +33,7 @@ class SignupOtpState extends State<SignupOtp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /// Title
+              
               Text(
                 "Enter OTP",
                 style: customTextStyle(

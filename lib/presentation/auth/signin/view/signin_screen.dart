@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomTextField(
               prefixIcon: Padding(
                 padding: EdgeInsets.all(12),
-                child: Image.asset("assets/icons/password.png"),
+                child: Image.asset(IconManager.passwordIcon),
               ),
 
               hint: "Enter your password",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
@@ -94,7 +95,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   ),
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(12),
-                    child: Image.asset("assets/icons/password.png"),
+                    child: Image.asset(IconManager.passwordIcon),
                   ),
                   controller: passwordControllerOne,
                   isPassword: !showPassword,
@@ -140,7 +141,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   ),
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(12),
-                    child: Image.asset("assets/icons/password.png"),
+                    child: Image.asset(IconManager.passwordIcon),
                   ),
                   controller: passwordControllerTwo,
                   isPassword: !confirmShowPassword,
@@ -156,7 +157,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                         () => confirmShowPassword = !confirmShowPassword,
                       );
                     },
-                    splashColor: Colors.transparent, // Disable splash effect
+                    splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                   ),
                 ),

@@ -5,6 +5,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/widgets/chat_preview_card.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 
@@ -48,33 +49,16 @@ class _ChattingHistoryScreenState extends State<ChattingHistoryScreen> {
                     ),
                   ),
 
-                  child: TextField(
+                  child: CustomTextField(
+                    controller: TextEditingController(),
+                    borderRadius: 6.r,
+                    prefixIcon: Image.asset(IconManager.searchChat),
+                    hint: 'Search in chats',
                     style: getRegular400Style12(
                       fontSize: 12.sp,
-                      color: ColorManager.chatTextColor,
+                      color: ColorManager.textSecondaryThree,
                     ),
-                    textAlignVertical: TextAlignVertical.center,
-                    decoration: InputDecoration(
-                      prefixIcon: Padding(
-                        padding: EdgeInsets.only(left: 12.w, right: 8.w),
-                        child: Image.asset(
-                          IconManager.searchChat,
-                          height: 24.h,
-                          width: 24.w,
-                        ),
-                      ),
-                      prefixIconConstraints: BoxConstraints(
-                        minWidth: 40.w,
-                        minHeight: 24.h,
-                      ),
-                      hintText: "Search in chats",
-                      hintStyle: getRegular400Style12(
-                        fontSize: 12.sp,
-                        color: ColorManager.chatTextColor,
-                      ),
-                      border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(vertical: 12.h),
-                    ),
+                    borderColor: null,
                   ),
                 ),
 
