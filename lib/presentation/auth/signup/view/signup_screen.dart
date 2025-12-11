@@ -7,27 +7,47 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/widgets/footer_section.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/widgets/signup_form.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/widgets/social_divider.dart';
+import 'package:riverpod/legacy.dart';
 import '../../../../core/route/route_name.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+final nameColtrollerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final emailControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final dateControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final passControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final confirmpassProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final showPasswordProvider = StateProvider<bool>((ref) => false);
+final confirmPasswordProvider = StateProvider<bool>((ref) => false);
+
+class SignupScreen extends ConsumerWidget {
+  SignupScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final nameController = ref.watch(nameColtrollerProvider);
+    final emailController = ref.watch(emailControllerProvider);
+    final dateController = ref.watch(dateControllerProvider);
+    final passController = ref.watch(passControllerProvider);
+    final confirmPassController = ref.watch(confirmpassProvider);
 
-class _SignupScreenState extends State<SignupScreen> {
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final dateController = TextEditingController();
-  final passController = TextEditingController();
-  final confirmPassController = TextEditingController();
+    final showPassword = ref.watch(showPasswordProvider);
+    final confirmshowPassword = ref.watch(confirmPasswordProvider);
 
-  bool showPassword = false;
-  bool confirmshowPassword = false;
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -46,11 +66,15 @@ class _SignupScreenState extends State<SignupScreen> {
               confirmpassController: confirmPassController,
               showPassword: showPassword,
               onTogglePassword: () {
-                setState(() => showPassword = !showPassword);
+                ref.read(showPasswordProvider.notifier).state = !ref.read(
+                  showPasswordProvider,
+                );
               },
               confirmshowPassword: confirmshowPassword,
               onconfirmTogglePassword: () {
-                setState(() => confirmshowPassword = !confirmshowPassword);
+                ref.read(confirmPasswordProvider.notifier).state = !ref.read(
+                  confirmPasswordProvider,
+                );
               },
             ),
             SizedBox(height: 20.h),

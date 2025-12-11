@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
@@ -6,33 +8,36 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/styl
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_sheet/view/filter_related_product.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_sheet/view/widgets/primary_border.dart';
 
-class FilterBottomSheet extends StatefulWidget {
-  const FilterBottomSheet({super.key});
+final selectedSizeProvider = StateProvider<String>((ref) => "L");
+final selectedColorProvider = StateProvider<List<String>>(
+  (ref) => ["Gray", "White", "Red"],
+);
+final priceRangeProvider = StateProvider<RangeValues>(
+  (ref) => RangeValues(0, 800000),
+);
+
+class FilterBottomSheet extends ConsumerWidget {
+  FilterBottomSheet({super.key});
 
   @override
-  FilterBottomSheetState createState() => FilterBottomSheetState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedSize = ref.watch(selectedSizeProvider);
+    final selectedColors = ref.watch(selectedColorProvider);
+    final price = ref.watch(priceRangeProvider);
 
-class FilterBottomSheetState extends State<FilterBottomSheet> {
-  List<String> sizes = ["S", "M", "L", "XL", "XXXL"];
-  String selectedSize = "L";
+    List<String> sizes = ["S", "M", "L", "XL", "XXXL"];
 
-  List<String> colors = [
-    "Gray",
-    "White",
-    "Red",
-    "Violet",
-    "Green",
-    "Yellow",
-    "Blue",
-    "Black",
-  ];
-  List<String> selectedColors = ["Gray", "White", "Red"];
+    List<String> colors = [
+      "Gray",
+      "White",
+      "Red",
+      "Violet",
+      "Green",
+      "Yellow",
+      "Blue",
+      "Black",
+    ];
 
-  RangeValues price = RangeValues(0, 800000);
-
-  @override
-  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -107,7 +112,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
                 backgroundColor: ColorManager.backgroundColor,
                 selectedColor: ColorManager.primaryColor,
                 onSelected: (val) {
-                  setState(() => selectedSize = size);
+                  ref.read(selectedSizeProvider.notifier).state = size;
                 },
 
                 label: Row(
@@ -214,9 +219,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
                 max: 1000000,
                 divisions: 20,
                 onChanged: (values) {
-                  setState(() {
-                    price = values;
-                  });
+                  ref.read(priceRangeProvider.notifier).state = values;
                 },
               ),
             ),
@@ -265,13 +268,17 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
               return FilterChip(
                 selected: isSelected,
                 onSelected: (val) {
-                  setState(() {
+                  {
                     if (isSelected) {
-                      selectedColors.remove(color);
+                      ref.read(selectedColorProvider.notifier).state =
+                          selectedColors.where((c) => c != color).toList();
                     } else {
-                      selectedColors.add(color);
+                      ref.read(selectedColorProvider.notifier).state = [
+                        ...selectedColors,
+                        color,
+                      ];
                     }
-                  });
+                  }
                 },
                 selectedColor: ColorManager.primaryColor,
                 checkmarkColor: Colors.white,
@@ -310,11 +317,12 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             children: [
               TextButton(
                 onPressed: () {
-                  setState(() {
-                    selectedSize = "L";
-                    selectedColors = [];
-                    price = RangeValues(0, 1000000);
-                  });
+                  ref.read(selectedSizeProvider.notifier).state = "L";
+                  ref.read(selectedColorProvider.notifier).state = [];
+                  ref.read(priceRangeProvider.notifier).state = RangeValues(
+                    0,
+                    1000000,
+                  );
                 },
                 child: Text(
                   "Clear all filters",

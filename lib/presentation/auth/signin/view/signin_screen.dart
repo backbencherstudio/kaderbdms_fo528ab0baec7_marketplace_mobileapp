@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
@@ -9,23 +10,31 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboa
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/CircleCheckIcon.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import '../../../../core/route/route_name.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+final showPasswordProvider = StateProvider<bool>((ref) => false);
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
+final emailControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
 
-class _LoginScreenState extends State<LoginScreen> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+final passwordControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+// ignore: must_be_immutable
+class LoginScreen extends ConsumerWidget {
+  LoginScreen({super.key});
 
   bool rememberMe = false;
   bool showPassword = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) { 
+    final showPassword = ref.watch(showPasswordProvider);
+    final emailController = ref.watch(emailControllerProvider);
+    final passwordController = ref.watch(passwordControllerProvider);
+
     return Scaffold(
       backgroundColor: ColorManager.whiteColor,
       body: SingleChildScrollView(
@@ -112,9 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   showPassword ? Icons.visibility : Icons.visibility_off,
                   color: AppColors.blackHeadline,
                 ),
-                onPressed: () {
-                  setState(() => showPassword = !showPassword);
-                },
+                onPressed: () {},
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
               ),
@@ -133,9 +140,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       activeColor: ColorManager.forgotPasstext,
                       inactiveColor: ColorManager.defaultColor,
                       onTap: () {
-                        setState(() {
-                          rememberMe = !rememberMe;
-                        });
+                        ref.read(showPasswordProvider.notifier).state = !ref
+                            .read(showPasswordProvider);
                       },
                     ),
 

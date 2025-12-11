@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
@@ -8,31 +9,33 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboa
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 
+final nameControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final phoneControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final emailControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final addressControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
 // ignore: camel_case_types
-class editProfileScreen extends StatefulWidget {
+class editProfileScreen extends ConsumerWidget {
   const editProfileScreen({super.key});
 
   @override
-  State<editProfileScreen> createState() => _editProfileScreenState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final nameController = ref.watch(nameControllerProvider);
+    final phoneController = ref.watch(phoneControllerProvider);
+    final emailController = ref.watch(emailControllerProvider);
+    final addressController = ref.watch(addressControllerProvider);
 
-class _editProfileScreenState extends State<editProfileScreen> {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController addressController = TextEditingController();
-
-  @override
-  void dispose() {
-    nameController.dispose();
-    phoneController.dispose();
-    emailController.dispose();
-    addressController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -194,7 +197,9 @@ class _editProfileScreenState extends State<editProfileScreen> {
                 title: 'Save',
                 padding: EdgeInsets.symmetric(horizontal: 14.h, vertical: 14.w),
                 borderRadius: BorderRadius.circular(100.r),
-                onTap: () {},
+                onTap: () {
+                  
+                },
               ),
             ],
           ),

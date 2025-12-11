@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
@@ -7,35 +8,35 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/styl
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signin/widgets/password_requirment.dart';
-
 import '../../../../../../core/route/route_name.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NewPasswordPage extends StatefulWidget {
+final passwordControllerOneProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final passwordControllerTwoProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+final checkedOneProvider = StateProvider<bool>((ref) => false);
+final checkedTwoProvider = StateProvider<bool>((ref) => false);
+final checkedThreeProvider = StateProvider<bool>((ref) => false);
+final showPasswordProvider = StateProvider<bool>((ref) => false);
+final confirmShowPasswordProvider = StateProvider<bool>((ref) => false);
+
+class NewPasswordPage extends ConsumerWidget {
   const NewPasswordPage({super.key});
 
   @override
-  State<NewPasswordPage> createState() => _NewPasswordPageState();
-}
-
-class _NewPasswordPageState extends State<NewPasswordPage> {
-  final passwordControllerOne = TextEditingController();
-  final passwordControllerTwo = TextEditingController();
-
-  bool checkedOne = false;
-  bool checkedTwo = false;
-  bool checkedThree = false;
-  bool showPassword = false;
-  bool confirmShowPassword = false;
-
-  @override
-  void dispose() {
-    passwordControllerOne.dispose();
-    passwordControllerTwo.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final passwordControllerOne = ref.watch(passwordControllerOneProvider);
+    final passwordControllerTwo = ref.watch(passwordControllerTwoProvider);
+    final checkedOne = ref.watch(checkedOneProvider);
+    final checkedTwo = ref.watch(checkedTwoProvider);
+    final checkedThree = ref.watch(checkedThreeProvider);
+    final showPassword = ref.watch(showPasswordProvider);
+    final confirmShowPassword = ref.watch(confirmShowPasswordProvider);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -105,7 +106,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       color: AppColors.blackHeadline,
                     ),
                     onPressed: () {
-                      setState(() => showPassword = !showPassword);
+                      ref.read(showPasswordProvider.notifier).state =
+                          !showPassword;
                     },
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
@@ -153,9 +155,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       color: AppColors.blackHeadline,
                     ),
                     onPressed: () {
-                      setState(
-                        () => confirmShowPassword = !confirmShowPassword,
-                      );
+                      ref.read(confirmShowPasswordProvider.notifier).state =
+                          !confirmShowPassword;
                     },
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
@@ -168,21 +169,27 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   children: [
                     PasswordRequirementItem(
                       value: checkedOne,
-                      onChanged: (v) => setState(() => checkedOne = v),
+                      onChanged: (v) {
+                        ref.read(checkedOneProvider.notifier).state = v;
+                      },
 
                       text: "Must be at least 8 characters",
                     ),
 
                     PasswordRequirementItem(
                       value: checkedTwo,
-                      onChanged: (v) => setState(() => checkedTwo = v),
+                      onChanged: (v) {
+                        ref.read(checkedTwoProvider.notifier).state = v;
+                      },
 
                       text: "Can’t include your name or email address",
                     ),
 
                     PasswordRequirementItem(
                       value: checkedThree,
-                      onChanged: (v) => setState(() => checkedThree = v),
+                      onChanged: (v) {
+                        ref.read(checkedThreeProvider.notifier).state = v;
+                      },
 
                       text: "Must have at least a symbol or number",
                     ),

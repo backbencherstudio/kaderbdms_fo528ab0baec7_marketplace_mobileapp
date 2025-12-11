@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
@@ -7,15 +9,10 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_n
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/custom_search_bar.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({super.key});
+final selectedIndexProvider = StateProvider<int>((ref) => 0);
 
-  @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
-}
-
-class _CategoryScreenState extends State<CategoryScreen> {
-  int selectedIndex = 0;
+class CategoryScreen extends ConsumerWidget {
+  CategoryScreen({super.key});
 
   final List<String> categories = [
     "Fashion",
@@ -51,7 +48,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedIndex = ref.watch(selectedIndexProvider);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -93,7 +91,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            setState(() => selectedIndex = index);
+                            ref.read(selectedIndexProvider.notifier).state =
+                                index;
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(

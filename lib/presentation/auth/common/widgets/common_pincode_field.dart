@@ -4,7 +4,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/ap
 
 class CommonPinField extends StatelessWidget {
   final int length;
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   final double fieldHeight;
   final double fieldWidth;
@@ -25,7 +25,7 @@ class CommonPinField extends StatelessWidget {
   const CommonPinField({
     super.key,
     required this.length,
-    required this.controller,
+    this.controller,
     this.fieldHeight = 55,
     this.fieldWidth = 55,
 

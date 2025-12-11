@@ -1,30 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 
-class CartItemCard extends StatefulWidget {
+final quantityProvider =
+    StateNotifierProvider.family<QuantityNotifier, int, String>(
+      (ref, productId) => QuantityNotifier(),
+    );
+
+class QuantityNotifier extends StateNotifier<int> {
+  QuantityNotifier() : super(1);
+
+  void increment() => state++;
+  void decrement() {
+    if (state > 1) state--;
+  }
+}
+
+class CartItemCard extends ConsumerWidget {
+  final String id;
   final String title;
   final String price;
   final String imagepath;
 
   const CartItemCard({
     super.key,
+    required this.id,
     required this.title,
     required this.price,
     required this.imagepath,
   });
 
   @override
-  State<CartItemCard> createState() => _CartItemCardState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final quantityCount = ref.watch(quantityProvider(id));
 
-class _CartItemCardState extends State<CartItemCard> {
-  int quantity = 1;
-
-  @override
-  Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
@@ -36,23 +49,19 @@ class _CartItemCardState extends State<CartItemCard> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Product Image
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.r),
                 child: Image.asset(
-                  widget.imagepath,
+                  imagepath,
                   height: 80.h,
                   width: 80.h,
                   fit: BoxFit.cover,
                 ),
               ),
-
               SizedBox(width: 12.w),
-
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +69,7 @@ class _CartItemCardState extends State<CartItemCard> {
                       children: [
                         Expanded(
                           child: Text(
-                            widget.title,
+                            title,
                             style: getMedium500Style14(
                               fontSize: 14.sp,
                               color: ColorManager.textPrimaryBlack,
@@ -68,36 +77,34 @@ class _CartItemCardState extends State<CartItemCard> {
                           ),
                         ),
                         SizedBox(width: 8.w),
-                        Image.asset(
-                          IconManager.trash,
-                          height: 18.h,
-                          width: 18.w,
-                          fit: BoxFit.contain,
+                        GestureDetector(
+                          onTap: () {},
+                          child: Image.asset(
+                            IconManager.trash,
+                            height: 18.h,
+                            width: 18.w,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ],
                     ),
-
                     SizedBox(height: 12.h),
-
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          widget.price,
+                          price,
                           style: getSemiBold600Style18(
                             fontSize: 18.sp,
                             color: ColorManager.primaryColor,
                           ),
                         ),
-
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             GestureDetector(
-                              onTap: () {
-                                if (quantity > 1) setState(() => quantity--);
-                              },
+                              onTap: () => ref
+                                  .read(quantityProvider(id).notifier)
+                                  .decrement(),
                               child: Container(
                                 height: 28.h,
                                 width: 28.h,
@@ -111,23 +118,19 @@ class _CartItemCardState extends State<CartItemCard> {
                                 ),
                               ),
                             ),
-
                             SizedBox(width: 12.w),
-
-                            // Quantity Text
                             Text(
-                              quantity.toString(),
+                              quantityCount.toString(),
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-
                             SizedBox(width: 12.w),
-
-                            // Plus Button
                             GestureDetector(
-                              onTap: () => setState(() => quantity++),
+                              onTap: () => ref
+                                  .read(quantityProvider(id).notifier)
+                                  .increment(),
                               child: Container(
                                 height: 28.h,
                                 width: 28.h,
@@ -150,7 +153,6 @@ class _CartItemCardState extends State<CartItemCard> {
             ],
           ),
         ),
-
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: Divider(color: ColorManager.chatBoxbgColor, thickness: 1),

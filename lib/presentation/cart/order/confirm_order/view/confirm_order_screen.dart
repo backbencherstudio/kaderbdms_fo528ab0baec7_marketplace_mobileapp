@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
@@ -11,17 +13,14 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/commo
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/order/add_card_bottom_sheet/view/add_card_bottom_sheet.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/order/view/widgets/order_product_card.dart';
 
-class ConfirmOrderScreen extends StatefulWidget {
+final isCheckedProvider = StateProvider<bool>((ref) => false);
+
+class ConfirmOrderScreen extends ConsumerWidget {
   const ConfirmOrderScreen({super.key});
 
   @override
-  State<ConfirmOrderScreen> createState() => _ConfirmOrderScreenState();
-}
-
-class _ConfirmOrderScreenState extends State<ConfirmOrderScreen> {
-  bool isChecked = false;
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isChecked = ref.watch(isCheckedProvider);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -296,9 +295,8 @@ class _ConfirmOrderScreenState extends State<ConfirmOrderScreen> {
                       value: isChecked,
                       activeColor: ColorManager.primaryColor,
                       onChanged: (value) {
-                        setState(() {
-                          isChecked = value!;
-                        });
+                        ref.read(isCheckedProvider.notifier).state =
+                            value ?? false;
                       },
                     ),
 

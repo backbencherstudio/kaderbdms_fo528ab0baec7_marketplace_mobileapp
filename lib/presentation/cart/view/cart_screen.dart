@@ -32,6 +32,7 @@ class _CartScreenState extends State<CartScreen> {
                 title: '705 Special Badge Premium Shirt For Men 2023',
                 price: '\$128.99',
                 imagepath: ImageManager.cartProduct,
+                id: '1',
               ),
               SizedBox(height: 5.h),
 
@@ -39,6 +40,7 @@ class _CartScreenState extends State<CartScreen> {
                 title: '705 Special Badge Premium Shirt For Men 2023',
                 price: '\$128.99',
                 imagepath: ImageManager.cartProduct2,
+                id: '2',
               ),
 
               SizedBox(height: 300.h),
@@ -76,7 +78,10 @@ class _CartScreenState extends State<CartScreen> {
 
                 borderRadius: BorderRadius.circular(10.r),
                 onTap: () {
-                  Navigator.pushNamed(context, RouteName.orderAddressScreenRoute);
+                  Navigator.pushNamed(
+                    context,
+                    RouteName.orderAddressScreenRoute,
+                  );
                 },
               ),
             ],

@@ -7,24 +7,19 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboa
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/common_pincode_field.dart';
 import '../../../../core/route/route_name.dart';
 
-class SignupOtp extends StatefulWidget {
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final otpControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+class SignupOtp extends ConsumerWidget {
   const SignupOtp({super.key});
 
   @override
-  State<SignupOtp> createState() => SignupOtpState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final otpController = ref.watch(otpControllerProvider);
 
-class SignupOtpState extends State<SignupOtp> {
-  final TextEditingController _otpController = TextEditingController();
-
-  @override
-  void dispose() {
-    _otpController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -33,7 +28,6 @@ class SignupOtpState extends State<SignupOtp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
               Text(
                 "Enter OTP",
                 style: customTextStyle(
@@ -60,10 +54,8 @@ class SignupOtpState extends State<SignupOtp> {
 
               CommonPinField(
                 length: 6,
-                onCompleted: (otp) {
-                  print("OTP → $otp");
-                },
-                controller: _otpController,
+                onCompleted: (otp) {},
+                controller: otpController,
               ),
 
               SizedBox(height: 5.h),
@@ -80,7 +72,10 @@ class SignupOtpState extends State<SignupOtp> {
                 padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
                 borderRadius: BorderRadius.circular(100.r),
                 onTap: () {
-                  Navigator.pushNamed(context, RouteName.successRegistrationRoute);
+                  Navigator.pushNamed(
+                    context,
+                    RouteName.successRegistrationRoute,
+                  );
                 },
               ),
             ],

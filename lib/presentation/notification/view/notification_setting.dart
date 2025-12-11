@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/notification/view/widgets/notification_alart.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NotificationSetting extends StatefulWidget {
-  const NotificationSetting({super.key});
+final pushProvider = StateProvider<bool>((ref) => false);
+final soundProvider = StateProvider<bool>((ref) => false);
+final vibrateProvider = StateProvider<bool>((ref) => false);
 
+class NotificationSetting extends ConsumerWidget {
+  NotificationSetting({super.key});
   @override
-  State<NotificationSetting> createState() => _NotificationSettingState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final push = ref.watch(pushProvider);
+    final sound = ref.watch(soundProvider);
+    final vibrate = ref.watch(vibrateProvider);
 
-class _NotificationSettingState extends State<NotificationSetting> {
-  bool push = true;
-  bool sound = true;
-  bool vibrate = false;
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -31,7 +32,9 @@ class _NotificationSettingState extends State<NotificationSetting> {
               SettingBox(
                 title: "Push Notifications",
                 value: push,
-                onChanged: (v) => setState(() => push = v),
+                onChanged: (v) {
+                  ref.read(pushProvider.notifier).state = v;
+                },
               ),
 
               SizedBox(height: 15.h),
@@ -39,7 +42,9 @@ class _NotificationSettingState extends State<NotificationSetting> {
               SettingBox(
                 title: "Sound",
                 value: sound,
-                onChanged: (v) => setState(() => sound = v),
+                onChanged: (v) {
+                  ref.read(soundProvider.notifier).state = v;
+                },
               ),
 
               SizedBox(height: 15.h),
@@ -47,7 +52,9 @@ class _NotificationSettingState extends State<NotificationSetting> {
               SettingBox(
                 title: "Vibrate",
                 value: vibrate,
-                onChanged: (v) => setState(() => vibrate = v),
+                onChanged: (v) {
+                  ref.read(vibrateProvider.notifier).state = v;
+                },
               ),
             ],
           ),

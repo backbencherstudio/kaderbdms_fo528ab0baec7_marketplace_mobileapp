@@ -18,17 +18,12 @@ class BottomNavBar extends ConsumerStatefulWidget {
 }
 
 class _BottomNavBarState extends ConsumerState<BottomNavBar> {
-  final List<Widget> _screens = const [
-    // Scaffold(body: Center(child: Text('Home'))),
-    // Scaffold(body: Center(child: Text('Category'))),
-    // Scaffold(body: Center(child: Text('Chat'))),
-    // Scaffold(body: Center(child: Text('Cart'))),
-    // Scaffold(body: Center(child: Text('Profile'))),
-    HomeScreen(),
+  final List<Widget> _screens = [
+    const HomeScreen(),
     CategoryScreen(),
-    ChattingHistoryScreen(),
-    CartScreen(),
-    ProfilePageScreen(),
+    const ChattingHistoryScreen(),
+    const CartScreen(),
+    const ProfilePageScreen(),
   ];
 
   @override
