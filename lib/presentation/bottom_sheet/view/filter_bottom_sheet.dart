@@ -38,7 +38,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
         bottom: MediaQuery.of(context).viewInsets.bottom,
         left: 20,
         right: 20,
-        top: 20,
+        top: 25,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
