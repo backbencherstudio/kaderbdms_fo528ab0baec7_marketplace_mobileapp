@@ -86,7 +86,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 10.h),
+          SizedBox(height: 15.h),
 
           Text(
             "Size",
