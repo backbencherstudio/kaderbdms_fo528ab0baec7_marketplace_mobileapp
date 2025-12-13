@@ -68,8 +68,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           onTap: () {},
                           child: Image.asset(
                             IconManager.cartCount,
-                            height: 32.h,
-                            width: 32.w,
+                            height: 35.h,
+                            width: 35.w,
                           ),
                         ),
                       ],
@@ -282,7 +282,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 SizedBox(height: 20.h),
 
                 Wrap(
-                  spacing: 20,
+                  spacing: 10,
                   children: sizes.map((size) {
                     bool isSelected = selectedSize == size;
 

@@ -187,7 +187,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       text: "Must have at least a symbol or number",
                     ),
 
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 20.h),
 
                     PrimaryButton(
                       textStyle: TextStyle(

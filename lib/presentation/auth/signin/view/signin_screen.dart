@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     CircleCheckIcon(
                       isChecked: rememberMe,
-                      size: 16,
+                      size: 18,
                       activeColor: ColorManager.forgotPasstext,
                       inactiveColor: ColorManager.defaultColor,
                       onTap: () {
@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ),
 
-                    SizedBox(width: 8.w),
+                    SizedBox(width: 5.w),
                     Text(
                       "Remember me",
                       style: getRegular400Style16(

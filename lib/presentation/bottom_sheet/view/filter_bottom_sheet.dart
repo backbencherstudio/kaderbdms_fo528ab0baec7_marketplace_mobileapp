@@ -38,7 +38,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
         bottom: MediaQuery.of(context).viewInsets.bottom,
         left: 20,
         right: 20,
-        top: 30,
+        top: 20,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -71,7 +71,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 15.h),
+          SizedBox(height: 10.h),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +86,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 10.h),
 
           Text(
             "Size",
@@ -95,10 +95,10 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
               color: ColorManager.textPrimaryBlack,
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 5.h),
 
           Wrap(
-            spacing: 20,
+            spacing: 10,
             children: sizes.map((size) {
               bool isSelected = selectedSize == size;
 
@@ -136,7 +136,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             }).toList(),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 15.h),
 
           Text(
             "Price",
@@ -146,7 +146,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ),
           ),
 
-          SizedBox(height: 15.h),
+          SizedBox(height: 10.h),
 
           Row(
             children: [
@@ -194,7 +194,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 10.h),
 
           SizedBox(
             width: double.infinity,
@@ -244,7 +244,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 25.h),
+          SizedBox(height: 15.h),
 
           Text(
             "Color",
@@ -257,8 +257,8 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
           SizedBox(height: 10.h),
 
           Wrap(
-            spacing: 20,
-            runSpacing: 15,
+            spacing: 10,
+            runSpacing: 10,
             children: colors.map((color) {
               bool isSelected = selectedColors.contains(color);
 
@@ -292,8 +292,8 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
                     ClipOval(
                       child: Image.asset(
                         _getColorImage(color),
-                        width: 20.w,
-                        height: 20.h,
+                        width: 15.w,
+                        height: 15.h,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -303,7 +303,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             }).toList(),
           ),
 
-          SizedBox(height: 30),
+          SizedBox(height: 20.h),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -347,7 +347,7 @@ class FilterBottomSheetState extends State<FilterBottomSheet> {
             ],
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 15.h),
         ],
       ),
     );
