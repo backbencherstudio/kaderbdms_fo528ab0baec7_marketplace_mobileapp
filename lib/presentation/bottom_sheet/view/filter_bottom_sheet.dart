@@ -43,7 +43,7 @@ class FilterBottomSheet extends ConsumerWidget {
         bottom: MediaQuery.of(context).viewInsets.bottom,
         left: 20,
         right: 20,
-        top: 30,
+        top: 25,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -76,7 +76,7 @@ class FilterBottomSheet extends ConsumerWidget {
             ],
           ),
 
-          SizedBox(height: 15.h),
+          SizedBox(height: 10.h),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,7 +91,7 @@ class FilterBottomSheet extends ConsumerWidget {
             ],
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 15.h),
 
           Text(
             "Size",
@@ -100,10 +100,10 @@ class FilterBottomSheet extends ConsumerWidget {
               color: ColorManager.textPrimaryBlack,
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 5.h),
 
           Wrap(
-            spacing: 20,
+            spacing: 10,
             children: sizes.map((size) {
               bool isSelected = selectedSize == size;
 
@@ -141,7 +141,7 @@ class FilterBottomSheet extends ConsumerWidget {
             }).toList(),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 15.h),
 
           Text(
             "Price",
@@ -151,7 +151,7 @@ class FilterBottomSheet extends ConsumerWidget {
             ),
           ),
 
-          SizedBox(height: 15.h),
+          SizedBox(height: 10.h),
 
           Row(
             children: [
@@ -199,7 +199,7 @@ class FilterBottomSheet extends ConsumerWidget {
             ],
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 10.h),
 
           SizedBox(
             width: double.infinity,
@@ -247,7 +247,7 @@ class FilterBottomSheet extends ConsumerWidget {
             ],
           ),
 
-          SizedBox(height: 25.h),
+          SizedBox(height: 15.h),
 
           Text(
             "Color",
@@ -260,8 +260,8 @@ class FilterBottomSheet extends ConsumerWidget {
           SizedBox(height: 10.h),
 
           Wrap(
-            spacing: 20,
-            runSpacing: 15,
+            spacing: 10,
+            runSpacing: 10,
             children: colors.map((color) {
               bool isSelected = selectedColors.contains(color);
 
@@ -299,8 +299,8 @@ class FilterBottomSheet extends ConsumerWidget {
                     ClipOval(
                       child: Image.asset(
                         _getColorImage(color),
-                        width: 20.w,
-                        height: 20.h,
+                        width: 15.w,
+                        height: 15.h,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -310,7 +310,7 @@ class FilterBottomSheet extends ConsumerWidget {
             }).toList(),
           ),
 
-          SizedBox(height: 30),
+          SizedBox(height: 20.h),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -355,7 +355,7 @@ class FilterBottomSheet extends ConsumerWidget {
             ],
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 15.h),
         ],
       ),
     );

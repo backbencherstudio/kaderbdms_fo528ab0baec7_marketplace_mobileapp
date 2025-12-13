@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
@@ -36,7 +35,7 @@ class _orderDetailsState extends State<orderDetails> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Container(
-                    height: 300.h,
+                    height: 330.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
@@ -144,7 +143,7 @@ class _orderDetailsState extends State<orderDetails> {
                           SizedBox(height: 10.h),
 
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -154,7 +153,7 @@ class _orderDetailsState extends State<orderDetails> {
                                   height: 24,
                                 ),
 
-                                SizedBox(width: 10),
+                                SizedBox(width: 5.w),
 
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,33 +291,32 @@ class _orderDetailsState extends State<orderDetails> {
 
                 SizedBox(height: 40.h),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CustomButton(
-                        text: "Cancel",
-                        bgColor: ColorManager.buttonSecondaryColor,
-                        textColor: ColorManager.textSecondaryThree,
-                        onTap: () {},
-                      ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomButton(
+                      text: "Cancel",
+                      bgColor: ColorManager.buttonSecondaryColor,
+                      textColor: ColorManager.textSecondaryThree,
+                      onTap: () {},
+                    ),
 
-                      SizedBox(width: 10.w),
+                    SizedBox(width: 10.w),
 
-                      CustomButton(
-                        text: "Review",
-                        bgColor: ColorManager.primaryColor,
-                        textColor: Colors.white,
-                        onTap: () {
-                          Navigator.pushNamed(context, RouteName.reviewRoute);
-                        },
-                      ),
+                    CustomButton(
+                      text: "Review",
+                      bgColor: ColorManager.primaryColor,
+                      textColor: Colors.white,
+                      onTap: () {
+                        Navigator.pushNamed(context, RouteName.reviewRoute);
+                      },
+                    ),
 
-                      SizedBox(height: 20.h),
-                    ],
-                  ),
+                    SizedBox(height: 40.h),
+                  ],
                 ),
+
+                SizedBox(height: 20.h),
               ],
             ),
           ),

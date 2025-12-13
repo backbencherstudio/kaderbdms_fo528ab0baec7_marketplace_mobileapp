@@ -62,7 +62,7 @@ class CommonPinField extends StatelessWidget {
         fieldHeight: fieldHeight,
         fieldWidth: fieldWidth,
 
-        borderWidth: 1.4,
+        borderWidth: 1,
 
         activeColor: activeColor,
         inactiveColor: inactiveColor,

@@ -6,7 +6,6 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/styl
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/common_pincode_field.dart';
 import '../../../../core/route/route_name.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final otpControllerProvider = Provider.autoDispose(
@@ -24,7 +23,7 @@ class SignupOtp extends ConsumerWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 60.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 60.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,6 +54,7 @@ class SignupOtp extends ConsumerWidget {
               CommonPinField(
                 length: 6,
                 onCompleted: (otp) {},
+
                 controller: otpController,
               ),
 
@@ -69,7 +69,7 @@ class SignupOtp extends ConsumerWidget {
                 ),
                 containColor: AppColors.primary,
                 title: 'Submit Now',
-                padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+
                 borderRadius: BorderRadius.circular(100.r),
                 onTap: () {
                   Navigator.pushNamed(

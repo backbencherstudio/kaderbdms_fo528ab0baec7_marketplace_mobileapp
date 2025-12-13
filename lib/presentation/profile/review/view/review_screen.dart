@@ -150,7 +150,7 @@ class ReviewScreen extends StatelessWidget {
                   fontWeight: FontWeightManager.semiBold600,
                 ),
                 borderRadius: BorderRadius.circular(100.r),
-                padding: EdgeInsets.symmetric(vertical: 12.h),
+
                 onTap: () {
                   Navigator.pushNamed(context, RouteName.orderListRoute);
                 },

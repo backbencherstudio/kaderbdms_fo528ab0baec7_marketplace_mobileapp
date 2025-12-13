@@ -136,7 +136,7 @@ class LoginScreen extends ConsumerWidget {
                   children: [
                     CircleCheckIcon(
                       isChecked: rememberMe,
-                      size: 13,
+                      size: 18,
                       activeColor: ColorManager.forgotPasstext,
                       inactiveColor: ColorManager.defaultColor,
                       onTap: () {
@@ -145,7 +145,7 @@ class LoginScreen extends ConsumerWidget {
                       },
                     ),
 
-                    SizedBox(width: 3.w),
+                    SizedBox(width: 5.w),
                     Text(
                       "Remember me",
                       style: getRegular400Style16(
@@ -179,7 +179,7 @@ class LoginScreen extends ConsumerWidget {
               ),
               containColor: ColorManager.buttonSecondaryColor,
               title: 'Login',
-              padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+
               borderRadius: BorderRadius.circular(100.r),
               onTap: () {
                 Navigator.pushNamed(context, RouteName.welcomeRoute);
@@ -213,7 +213,7 @@ class LoginScreen extends ConsumerWidget {
 
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 12.h),
+              padding: EdgeInsets.symmetric(vertical: 15.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100.r),
                 border: Border.all(color: Colors.grey.shade300),

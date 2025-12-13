@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/bottom_sheet/view/filter_bottom_sheet.dart';
 
 class SearchSuggestion extends StatelessWidget {
   final String mainKeyword = "Shirt men";
@@ -17,6 +18,17 @@ class SearchSuggestion extends StatelessWidget {
     "Shirt women short",
     "Shirt branded looks",
   ];
+
+  void openFilterBottomSheet(context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) =>  FilterBottomSheet(),
+    );
+  }
 
   SearchSuggestion({super.key});
 
@@ -128,11 +140,14 @@ class SearchSuggestion extends StatelessWidget {
 
         ListTile(
           contentPadding: EdgeInsets.zero,
-          title: Text(
-            "Sort by Relevance",
-            style: getMedium500Style20(
-              fontSize: 20.sp,
-              color: ColorManager.textPrimaryBlack,
+          title: InkWell(
+            onTap: () => openFilterBottomSheet(context),
+            child: Text(
+              "Sort by Relevance",
+              style: getMedium500Style20(
+                fontSize: 20.sp,
+                color: ColorManager.textPrimaryBlack,
+              ),
             ),
           ),
           trailing: Image.asset(

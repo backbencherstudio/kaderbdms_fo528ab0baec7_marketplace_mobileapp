@@ -80,7 +80,7 @@ class CategoryScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 100.w,
+                    width: 95.w,
                     decoration: BoxDecoration(
                       color: ColorManager.backgroundColor,
                     ),
@@ -122,7 +122,7 @@ class CategoryScreen extends ConsumerWidget {
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
+                        horizontal: 5.w,
                         vertical: 5,
                       ),
                       child: Column(

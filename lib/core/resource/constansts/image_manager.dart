@@ -26,7 +26,7 @@ class ImageManager {
   static const String womenDress = '$baseUrl/women_dress.jpg';
   static const String womenPant = '$baseUrl/women_pant.jpg';
   static const String categoryElectronics = '$baseUrl/electronics.png';
-  static const String categoryShoes = '$baseUrl/shoes.png';
+  static const String categoryShoes = '$baseUrl/shoes.jpg';
   static const String categoryJewelry = '$baseUrl/jewelry.png';
   static const String categoryFashion = '$baseUrl/fashion.png';
   static const String longSweters = '$baseUrl/long_sweters.jpg';

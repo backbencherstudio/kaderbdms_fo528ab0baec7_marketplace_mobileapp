@@ -21,11 +21,10 @@ class OtpScreen extends ConsumerWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 60.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 60.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /// Title
               Text(
                 "Enter OTP",
                 style: customTextStyle(
@@ -52,10 +51,9 @@ class OtpScreen extends ConsumerWidget {
 
               CommonPinField(
                 length: 6,
+
                 controller: otpController,
-                onCompleted: (otp) {
-                  print("OTP → $otp");
-                },
+                onCompleted: (otp) {},
               ),
 
               SizedBox(height: 5.h),
@@ -69,7 +67,7 @@ class OtpScreen extends ConsumerWidget {
                 ),
                 containColor: AppColors.primary,
                 title: 'Submit',
-                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
+
                 borderRadius: BorderRadius.circular(100.r),
                 onTap: () {
                   Navigator.pushNamed(context, RouteName.successRoute);

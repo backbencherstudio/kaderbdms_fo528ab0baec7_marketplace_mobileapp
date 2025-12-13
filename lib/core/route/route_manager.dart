@@ -4,8 +4,7 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case RouteName.splashRoute:
-        return MaterialPageRoute(builder: (_) => SignupScreen());
-
+        return MaterialPageRoute(builder: (_) => SplashScreen());
       case RouteName.onBoadingRoute:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
 

@@ -88,7 +88,7 @@ class SignupScreen extends ConsumerWidget {
                 fontWeight: FontWeightManager.semiBold600,
               ),
               borderRadius: BorderRadius.circular(100.r),
-              padding: EdgeInsets.symmetric(vertical: 12.h),
+              padding: EdgeInsets.symmetric(vertical: 15.h),
               onTap: () {
                 Navigator.pushNamed(context, RouteName.signupOtpRoute);
               },

@@ -63,7 +63,7 @@ class BannerWidget extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             horizontal: 28.w,
-                            vertical: 13.h,
+                            vertical: 10.h,
                           ),
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -101,7 +101,7 @@ class BannerWidget extends StatelessWidget {
                     children: [
                       Positioned(
                         top: -2,
-                        right: 80,
+                        right: 60,
                         child: ClipRRect(
                           child: Image.asset(
                             ImageManager.homeBannerImage1,
@@ -113,7 +113,7 @@ class BannerWidget extends StatelessWidget {
 
                       Positioned(
                         top: 65.h,
-                        right: 20.w,
+                        right: 10.w,
                         child: ClipRRect(
                           child: Image.asset(
                             ImageManager.homeBannerImage3,

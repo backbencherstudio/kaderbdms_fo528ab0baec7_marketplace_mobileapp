@@ -98,10 +98,7 @@ class OnboardingScreen extends StatelessWidget {
                         ),
                         containColor: ColorManager.primaryColor,
                         title: 'Sign up',
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.h,
-                          vertical: 12.w,
-                        ),
+
                         borderRadius: BorderRadius.circular(100.r),
                         onTap: () {
                           Navigator.pushNamed(context, RouteName.registerRoute);
@@ -117,10 +114,7 @@ class OnboardingScreen extends StatelessWidget {
                         ),
                         containColor: ColorManager.buttonSecondaryColor,
                         title: 'Log in',
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 12.h,
-                          vertical: 12.w,
-                        ),
+
                         borderRadius: BorderRadius.circular(100.r),
                         onTap: () {
                           Navigator.pushNamed(context, RouteName.loginRoute);

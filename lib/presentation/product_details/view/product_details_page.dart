@@ -1,4 +1,4 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
@@ -6,7 +6,6 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/product_details/view/widgets/clickable_rating.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/product_details/view/widgets/review_card.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/product_details/view/widgets/slider_dot.dart';
@@ -68,8 +67,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           onTap: () {},
                           child: Image.asset(
                             IconManager.cartCount,
-                            height: 32.h,
-                            width: 32.w,
+                            height: 35.h,
+                            width: 35.w,
                           ),
                         ),
                       ],
@@ -232,38 +231,41 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
                 SizedBox(height: 15.h),
 
-                Row(
-                  children: List.generate(images.length, (index) {
-                    bool isSelected = index == selectedIndex;
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(images.length, (index) {
+                      bool isSelected = index == selectedIndex;
 
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                      },
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 2),
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: isSelected
-                                ? ColorManager.primaryColor
-                                : ColorManager.textBackgroundColor,
-                            width: isSelected ? 2.5 : 1,
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 2),
+                          padding: EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: isSelected
+                                  ? ColorManager.primaryColor
+                                  : ColorManager.textBackgroundColor,
+                              width: isSelected ? 2.5 : 1,
+                            ),
+                          ),
+                          child: CircleAvatar(
+                            radius: 28,
+                            backgroundColor: isSelected
+                                ? Colors.white
+                                : Colors.grey.shade100,
+                            backgroundImage: AssetImage(images[index]),
                           ),
                         ),
-                        child: CircleAvatar(
-                          radius: 28,
-                          backgroundColor: isSelected
-                              ? Colors.white
-                              : Colors.grey.shade100,
-                          backgroundImage: AssetImage(images[index]),
-                        ),
-                      ),
-                    );
-                  }),
+                      );
+                    }),
+                  ),
                 ),
 
                 SizedBox(height: 20.h),
@@ -279,7 +281,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 SizedBox(height: 20.h),
 
                 Wrap(
-                  spacing: 20,
+                  spacing: 10,
                   children: sizes.map((size) {
                     bool isSelected = selectedSize == size;
 
@@ -454,6 +456,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ],
                 ),
+                SizedBox(height: 20.h),
               ],
             ),
           ),

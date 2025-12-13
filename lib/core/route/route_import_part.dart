@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/FAQ/view/faq_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/cart_list/view/cart_list_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/view/cart_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/category/view/category_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chat_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chatting_history_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/Shirt/view/men_shirt_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/fashion/view/fashion_screen.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/search_item_pages/view/not_found_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/search_item_pages/view/product_search_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/search_item_pages/view/search_item_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/view/home_screen.dart';
@@ -25,9 +22,9 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profi
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_list/view/order_list_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/review/view/review_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_details/view/order_details.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/profile_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/wish_list/view/wish_list.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/wish_list/view/wish_list_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/splash/view/splash_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/termsofuse/view/termsofuse_screen.dart';
 
 import '../../presentation/Onboarding/view/onboarding_page.dart';
@@ -41,7 +38,6 @@ import '../../presentation/auth/welcomepage/success_reg_screen.dart';
 import '../../presentation/auth/welcomepage/success_screen.dart';
 import '../../presentation/auth/welcomepage/welcome_back_screen.dart';
 import '../../presentation/bottom_nav/view/bottom_nav_bar_screen.dart';
-import '../../presentation/splash/view/splash_screen.dart';
 import '../resource/app_strings.dart';
 import 'route_name.dart';
 

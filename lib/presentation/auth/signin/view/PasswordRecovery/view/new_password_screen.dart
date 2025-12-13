@@ -194,7 +194,7 @@ class NewPasswordPage extends ConsumerWidget {
                       text: "Must have at least a symbol or number",
                     ),
 
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 20.h),
 
                     PrimaryButton(
                       textStyle: TextStyle(
@@ -205,10 +205,7 @@ class NewPasswordPage extends ConsumerWidget {
                       ),
                       containColor: AppColors.primary,
                       title: 'Submit',
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.h,
-                        vertical: 12.w,
-                      ),
+
                       borderRadius: BorderRadius.circular(100.r),
                       onTap: () {
                         Navigator.pushNamed(context, RouteName.otpPageRoute);

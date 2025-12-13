@@ -29,7 +29,7 @@ class PasswordRequirementItem extends StatelessWidget {
       children: [
         CircleCheckIcon(
           isChecked: value,
-          size: 11,
+          size: 15,
           activeColor: AppColors.fotgotpassText,
           inactiveColor: AppColors.defaultColor,
           onTap: () {
