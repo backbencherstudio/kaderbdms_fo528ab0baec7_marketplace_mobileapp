@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
@@ -389,74 +388,79 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   ),
                 ),
                 SizedBox(height: 40.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(IconManager.message, height: 40.h, width: 40.w),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                              context,
-                              RouteName.cartScreenRoute,
-                            );
-                          },
-                          child: Container(
-                            height: 45.h,
-                            width: 150.w,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(
-                                color: ColorManager.primaryColor,
-                              ),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Add to Cart",
-                                style: getSemiBold600Style14(
-                                  fontSize: 14.sp,
+                SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(
+                        IconManager.message,
+                        height: 40.h,
+                        width: 40.w,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                RouteName.cartScreenRoute,
+                              );
+                            },
+                            child: Container(
+                              height: 45.h,
+                              width: 150.w,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
                                   color: ColorManager.primaryColor,
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-
-                        SizedBox(width: 4.w),
-
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                              context,
-                              RouteName.orderAddressScreenRoute,
-                            );
-                          },
-                          child: Container(
-                            height: 45.h,
-                            width: 150.w,
-                            decoration: BoxDecoration(
-                              color: ColorManager.primaryColor,
-                              borderRadius: BorderRadius.circular(12.r),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Buy Now",
-                                style: getSemiBold600Style14(
-                                  fontSize: 14.sp,
-                                  color: ColorManager.whiteColor,
+                              child: Center(
+                                child: Text(
+                                  "Add to Cart",
+                                  style: getSemiBold600Style14(
+                                    fontSize: 14.sp,
+                                    color: ColorManager.primaryColor,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+
+                          SizedBox(width: 4.w),
+
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                RouteName.orderAddressScreenRoute,
+                              );
+                            },
+                            child: Container(
+                              height: 45.h,
+                              width: 150.w,
+                              decoration: BoxDecoration(
+                                color: ColorManager.primaryColor,
+                                borderRadius: BorderRadius.circular(12.r),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Buy Now",
+                                  style: getSemiBold600Style14(
+                                    fontSize: 14.sp,
+                                    color: ColorManager.whiteColor,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 20.h),
               ],
             ),
           ),

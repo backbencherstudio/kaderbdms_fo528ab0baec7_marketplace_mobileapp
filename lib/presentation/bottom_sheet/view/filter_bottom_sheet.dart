@@ -312,47 +312,52 @@ class FilterBottomSheet extends ConsumerWidget {
 
           SizedBox(height: 20.h),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                onPressed: () {
-                  ref.read(selectedSizeProvider.notifier).state = "L";
-                  ref.read(selectedColorProvider.notifier).state = [];
-                  ref.read(priceRangeProvider.notifier).state = RangeValues(
-                    0,
-                    1000000,
-                  );
-                },
-                child: Text(
-                  "Clear all filters",
-                  style: getSemiBold600Style16(
-                    color: ColorManager.textRedColor,
-                    fontSize: 16.sp,
-                  ).copyWith(decoration: TextDecoration.underline),
+          SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    ref.read(selectedSizeProvider.notifier).state = "L";
+                    ref.read(selectedColorProvider.notifier).state = [];
+                    ref.read(priceRangeProvider.notifier).state = RangeValues(
+                      0,
+                      1000000,
+                    );
+                  },
+                  child: Text(
+                    "Clear all filters",
+                    style: getSemiBold600Style16(
+                      color: ColorManager.textRedColor,
+                      fontSize: 16.sp,
+                    ).copyWith(decoration: TextDecoration.underline),
+                  ),
                 ),
-              ),
 
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorManager.primaryColor,
-                  padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100.r),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorManager.primaryColor,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 30.w,
+                      vertical: 15,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100.r),
+                    ),
+                  ),
+                  onPressed: () {
+                    showRelatedProductsBottomSheet(context);
+                  },
+                  child: Text(
+                    "Apply Filter",
+                    style: getSemiBold600Style14(
+                      color: Colors.white,
+                      fontSize: 14.sp,
+                    ),
                   ),
                 ),
-                onPressed: () {
-                  showRelatedProductsBottomSheet(context);
-                },
-                child: Text(
-                  "Apply Filter",
-                  style: getSemiBold600Style14(
-                    color: Colors.white,
-                    fontSize: 14.sp,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
 
           SizedBox(height: 15.h),

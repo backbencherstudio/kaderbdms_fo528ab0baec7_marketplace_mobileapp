@@ -13,6 +13,8 @@ import '../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final showPasswordProvider = StateProvider<bool>((ref) => false);
+final emailErrorProvider = StateProvider<String?>((ref) => null);
+final passwordErrorProvider = StateProvider<String?>((ref) => null);
 
 final emailControllerProvider = Provider.autoDispose(
   (ref) => TextEditingController(),
@@ -33,7 +35,10 @@ class LoginScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final showPassword = ref.watch(showPasswordProvider);
     final emailController = ref.watch(emailControllerProvider);
+
+    final emailError = ref.watch(emailErrorProvider);
     final passwordController = ref.watch(passwordControllerProvider);
+    final passwordError = ref.watch(passwordErrorProvider);
 
     return Scaffold(
       backgroundColor: ColorManager.whiteColor,
@@ -76,18 +81,34 @@ class LoginScreen extends ConsumerWidget {
             ),
             SizedBox(height: 6.h),
 
+            // CustomTextField(
+            //   prefixIcon: Image.asset("assets/icons/email.png"),
+
+            //   hint: "Your email",
+            //   style: getRegular400Style16(
+            //     fontSize: 16.sp,
+            //     color: ColorManager.textSecondaryThree,
+            //   ),
+
+            //   keyboardType: TextInputType.emailAddress,
+            //   controller: emailController,
+
+            // ),
             CustomTextField(
               prefixIcon: Image.asset("assets/icons/email.png"),
-
               hint: "Your email",
-              style: getRegular400Style16(
-                fontSize: 16.sp,
-                color: ColorManager.textSecondaryThree,
-              ),
-
-              keyboardType: TextInputType.emailAddress,
               controller: emailController,
+              keyboardType: TextInputType.emailAddress,
             ),
+
+            if (emailError != null)
+              Padding(
+                padding: EdgeInsets.only(left: 15.w, top: 4.h),
+                child: Text(
+                  emailError,
+                  style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                ),
+              ),
 
             SizedBox(height: 15.h),
 
@@ -103,31 +124,57 @@ class LoginScreen extends ConsumerWidget {
             ),
             SizedBox(height: 6.h),
 
+            // CustomTextField(
+            //   prefixIcon: Padding(
+            //     padding: EdgeInsets.all(12),
+            //     child: Image.asset(IconManager.passwordIcon),
+            //   ),
+
+            //   hint: "Enter your password",
+            //   style: getRegular400Style16(
+            //     fontSize: 16.sp,
+            //     color: ColorManager.textSecondaryThree,
+            //   ),
+            //   controller: passwordController,
+            //   isPassword: !showPassword,
+            //   suffixIcon: IconButton(
+            //     icon: Icon(
+            //       showPassword ? Icons.visibility : Icons.visibility_off,
+            //       color: AppColors.blackHeadline,
+            //     ),
+            //     onPressed: () {
+            //       ref.read(showPasswordProvider.notifier).state = !showPassword;
+            //     },
+            //     splashColor: Colors.transparent,
+            //     highlightColor: Colors.transparent,
+            //   ),
+            // ),
             CustomTextField(
               prefixIcon: Padding(
                 padding: EdgeInsets.all(12),
                 child: Image.asset(IconManager.passwordIcon),
               ),
-
               hint: "Enter your password",
-              style: getRegular400Style16(
-                fontSize: 16.sp,
-                color: ColorManager.textSecondaryThree,
-              ),
               controller: passwordController,
               isPassword: !showPassword,
               suffixIcon: IconButton(
                 icon: Icon(
                   showPassword ? Icons.visibility : Icons.visibility_off,
-                  color: AppColors.blackHeadline,
                 ),
                 onPressed: () {
                   ref.read(showPasswordProvider.notifier).state = !showPassword;
                 },
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
               ),
             ),
+
+            if (passwordError != null)
+              Padding(
+                padding: EdgeInsets.only(left: 15.w, top: 4.h),
+                child: Text(
+                  passwordError,
+                  style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                ),
+              ),
 
             SizedBox(height: 12.h),
 

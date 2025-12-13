@@ -107,7 +107,10 @@ class _OrderPlaceScreenState extends State<OrderPlaceScreen> {
                     borderColor: ColorManager.primaryColor,
 
                     onTap: () {
-                      
+                      Navigator.pushNamed(
+                        context,
+                        RouteName.menShirtScreenRoute,
+                      );
                     },
                   ),
                 ],

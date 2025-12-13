@@ -291,32 +291,32 @@ class _orderDetailsState extends State<orderDetails> {
 
                 SizedBox(height: 40.h),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomButton(
-                      text: "Cancel",
-                      bgColor: ColorManager.buttonSecondaryColor,
-                      textColor: ColorManager.textSecondaryThree,
-                      onTap: () {},
-                    ),
+                SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomButton(
+                        text: "Cancel",
+                        bgColor: ColorManager.buttonSecondaryColor,
+                        textColor: ColorManager.textSecondaryThree,
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      ),
 
-                    SizedBox(width: 10.w),
+                      SizedBox(width: 10.w),
 
-                    CustomButton(
-                      text: "Review",
-                      bgColor: ColorManager.primaryColor,
-                      textColor: Colors.white,
-                      onTap: () {
-                        Navigator.pushNamed(context, RouteName.reviewRoute);
-                      },
-                    ),
-
-                    SizedBox(height: 40.h),
-                  ],
+                      CustomButton(
+                        text: "Review",
+                        bgColor: ColorManager.primaryColor,
+                        textColor: Colors.white,
+                        onTap: () {
+                          Navigator.pushNamed(context, RouteName.reviewRoute);
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-
-                SizedBox(height: 20.h),
               ],
             ),
           ),
