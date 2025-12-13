@@ -7,7 +7,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/CircleCheckIcon.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/circleCheckIcon.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import '../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -30,7 +30,7 @@ class LoginScreen extends ConsumerWidget {
   bool showPassword = false;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) { 
+  Widget build(BuildContext context, WidgetRef ref) {
     final showPassword = ref.watch(showPasswordProvider);
     final emailController = ref.watch(emailControllerProvider);
     final passwordController = ref.watch(passwordControllerProvider);
@@ -121,7 +121,9 @@ class LoginScreen extends ConsumerWidget {
                   showPassword ? Icons.visibility : Icons.visibility_off,
                   color: AppColors.blackHeadline,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  ref.read(showPasswordProvider.notifier).state = !showPassword;
+                },
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
               ),

@@ -106,7 +106,9 @@ class _OrderPlaceScreenState extends State<OrderPlaceScreen> {
                     borderRadius: BorderRadius.circular(100.r),
                     borderColor: ColorManager.primaryColor,
 
-                    onTap: () {},
+                    onTap: () {
+                      
+                    },
                   ),
                 ],
               ),

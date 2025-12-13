@@ -27,7 +27,7 @@ class ProductSellCard extends StatelessWidget {
   final VoidCallback? onLikeTap;
   final VoidCallback? onCartTap;
 
-  /// NEW → like state
+ 
   final bool isLiked;
 
   @override

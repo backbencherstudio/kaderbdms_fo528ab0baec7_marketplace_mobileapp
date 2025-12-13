@@ -17,7 +17,7 @@ final priceRangeProvider = StateProvider<RangeValues>(
 );
 
 class FilterBottomSheet extends ConsumerWidget {
-  FilterBottomSheet({super.key});
+  const FilterBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
