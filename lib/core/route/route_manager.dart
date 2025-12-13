@@ -4,7 +4,7 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case RouteName.splashRoute:
-        return MaterialPageRoute(builder: (_) => BottomNavBar());
+        return MaterialPageRoute(builder: (_) => SplashScreen());
 
       case RouteName.onBoadingRoute:
         return MaterialPageRoute(builder: (_) => const OnboardingScreen());
@@ -72,63 +72,57 @@ class AppRouter {
       case RouteName.categoryScreenRoute:
         return MaterialPageRoute(builder: (_) => const CategoryScreen());
 
-         case RouteName.searchItemScreenRoute:
-        return MaterialPageRoute(builder: (_) =>  SearchItemScreen());
+      case RouteName.searchItemScreenRoute:
+        return MaterialPageRoute(builder: (_) => SearchItemScreen());
 
-        
-         case RouteName.productSearchScreenRoute:
-        return MaterialPageRoute(builder: (_) =>  ProductSearchScreen());
+      case RouteName.productSearchScreenRoute:
+        return MaterialPageRoute(builder: (_) => ProductSearchScreen());
 
-         case RouteName.productDetailsPageRoute:
-        return MaterialPageRoute(builder: (_) =>   ProductDetailsPage());
+      case RouteName.productDetailsPageRoute:
+        return MaterialPageRoute(builder: (_) => ProductDetailsPage());
 
-         case RouteName.chatScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   ChatScreen());
+      case RouteName.chatScreenRoute:
+        return MaterialPageRoute(builder: (_) => ChatScreen());
 
-           case RouteName.homeScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   HomeScreen());
+      case RouteName.homeScreenRoute:
+        return MaterialPageRoute(builder: (_) => HomeScreen());
 
-             case RouteName.orderAddressScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   OrderAddressScreen());
+      case RouteName.orderAddressScreenRoute:
+        return MaterialPageRoute(builder: (_) => OrderAddressScreen());
 
-              case RouteName.confirmOrderScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   ConfirmOrderScreen());
+      case RouteName.confirmOrderScreenRoute:
+        return MaterialPageRoute(builder: (_) => ConfirmOrderScreen());
 
-                  case RouteName.orderPlaceScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   OrderPlaceScreen());
+      case RouteName.orderPlaceScreenRoute:
+        return MaterialPageRoute(builder: (_) => OrderPlaceScreen());
 
-                      case RouteName.faqScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   FaqScreen());
+      case RouteName.faqScreenRoute:
+        return MaterialPageRoute(builder: (_) => FaqScreen());
 
-                      case RouteName.privacyPolicyScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   PrivacyPolicyScreen());
+      case RouteName.privacyPolicyScreenRoute:
+        return MaterialPageRoute(builder: (_) => PrivacyPolicyScreen());
 
-                      case RouteName.termsofuseScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   TermsofuseScreen());
+      case RouteName.termsofuseScreenRoute:
+        return MaterialPageRoute(builder: (_) => TermsofuseScreen());
 
-                        case RouteName.notificationListRoute:
-        return MaterialPageRoute(builder: (_) =>   NotificationList());
+      case RouteName.notificationListRoute:
+        return MaterialPageRoute(builder: (_) => NotificationList());
 
-                        case RouteName.notificationSettingRoute:
-        return MaterialPageRoute(builder: (_) =>   NotificationSetting());
+      case RouteName.notificationSettingRoute:
+        return MaterialPageRoute(builder: (_) => NotificationSetting());
 
-                        case RouteName.notificationScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   NotificationScreen());
+      case RouteName.notificationScreenRoute:
+        return MaterialPageRoute(builder: (_) => NotificationScreen());
 
-           case RouteName.cartScreenRoute:
-        return MaterialPageRoute(builder: (_) =>   CartScreen());
-
-        
-
-
-        
-
+      case RouteName.cartScreenRoute:
+        return MaterialPageRoute(builder: (_) => CartScreen());
 
       default:
         return unDefineRoute();
     }
   }
-//CartScreen
+
+  //CartScreen
   static Route<dynamic> unDefineRoute() {
     return MaterialPageRoute(
       builder: (_) => Scaffold(

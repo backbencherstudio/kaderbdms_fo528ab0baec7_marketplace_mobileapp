@@ -232,38 +232,41 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
                 SizedBox(height: 15.h),
 
-                Row(
-                  children: List.generate(images.length, (index) {
-                    bool isSelected = index == selectedIndex;
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(images.length, (index) {
+                      bool isSelected = index == selectedIndex;
 
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                      },
-                      child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 2),
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: isSelected
-                                ? ColorManager.primaryColor
-                                : ColorManager.textBackgroundColor,
-                            width: isSelected ? 2.5 : 1,
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 2),
+                          padding: EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: isSelected
+                                  ? ColorManager.primaryColor
+                                  : ColorManager.textBackgroundColor,
+                              width: isSelected ? 2.5 : 1,
+                            ),
+                          ),
+                          child: CircleAvatar(
+                            radius: 28,
+                            backgroundColor: isSelected
+                                ? Colors.white
+                                : Colors.grey.shade100,
+                            backgroundImage: AssetImage(images[index]),
                           ),
                         ),
-                        child: CircleAvatar(
-                          radius: 28,
-                          backgroundColor: isSelected
-                              ? Colors.white
-                              : Colors.grey.shade100,
-                          backgroundImage: AssetImage(images[index]),
-                        ),
-                      ),
-                    );
-                  }),
+                      );
+                    }),
+                  ),
                 ),
 
                 SizedBox(height: 20.h),
@@ -454,6 +457,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ],
                 ),
+                SizedBox(height: 20.h),
               ],
             ),
           ),

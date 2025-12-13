@@ -63,7 +63,7 @@ class CommonWelcomeWidget extends StatelessWidget {
             ),
             containColor: AppColors.primary,
             title: buttonText,
-            padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+
             borderRadius: BorderRadius.circular(100.r),
             onTap: onButtonTap,
           ),

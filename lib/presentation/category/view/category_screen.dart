@@ -82,7 +82,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 100.w,
+                    width: 95.w,
                     decoration: BoxDecoration(
                       color: ColorManager.backgroundColor,
                     ),
@@ -123,7 +123,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
+                        horizontal: 5.w,
                         vertical: 5,
                       ),
                       child: Column(

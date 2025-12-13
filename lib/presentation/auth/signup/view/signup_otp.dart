@@ -29,11 +29,10 @@ class SignupOtpState extends State<SignupOtp> {
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 60.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 60.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
               Text(
                 "Enter OTP",
                 style: customTextStyle(
@@ -60,9 +59,7 @@ class SignupOtpState extends State<SignupOtp> {
 
               CommonPinField(
                 length: 6,
-                onCompleted: (otp) {
-                  print("OTP → $otp");
-                },
+                onCompleted: (otp) {},
                 controller: _otpController,
               ),
 
@@ -77,10 +74,13 @@ class SignupOtpState extends State<SignupOtp> {
                 ),
                 containColor: AppColors.primary,
                 title: 'Submit Now',
-                padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+
                 borderRadius: BorderRadius.circular(100.r),
                 onTap: () {
-                  Navigator.pushNamed(context, RouteName.successRegistrationRoute);
+                  Navigator.pushNamed(
+                    context,
+                    RouteName.successRegistrationRoute,
+                  );
                 },
               ),
             ],

@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     CircleCheckIcon(
                       isChecked: rememberMe,
-                      size: 13,
+                      size: 16,
                       activeColor: ColorManager.forgotPasstext,
                       inactiveColor: ColorManager.defaultColor,
                       onTap: () {
@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                     ),
 
-                    SizedBox(width: 3.w),
+                    SizedBox(width: 8.w),
                     Text(
                       "Remember me",
                       style: getRegular400Style16(
@@ -173,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               containColor: ColorManager.buttonSecondaryColor,
               title: 'Login',
-              padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
+
               borderRadius: BorderRadius.circular(100.r),
               onTap: () {
                 Navigator.pushNamed(context, RouteName.welcomeRoute);
@@ -207,7 +207,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 12.h),
+              padding: EdgeInsets.symmetric(vertical: 15.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100.r),
                 border: Border.all(color: Colors.grey.shade300),

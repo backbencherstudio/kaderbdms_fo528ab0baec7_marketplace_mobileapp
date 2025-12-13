@@ -26,7 +26,7 @@ class _LoaderWidgetState extends State<LoaderWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 75.w,
-      height: 65.h,
+      height: 75.h,
       child: CircularProgressIndicator(
         strokeWidth: 9.w,
         valueColor: AlwaysStoppedAnimation(ColorManager.whiteColor),

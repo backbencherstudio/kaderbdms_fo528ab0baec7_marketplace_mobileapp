@@ -28,11 +28,10 @@ class _OtpScreenState extends State<OtpScreen> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 60.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 60.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /// Title
               Text(
                 "Enter OTP",
                 style: customTextStyle(
@@ -59,9 +58,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
               CommonPinField(
                 length: 6,
-                onCompleted: (otp) {
-                  print("OTP → $otp");
-                },
+                onCompleted: (otp) {},
                 controller: _otpController,
               ),
 
@@ -76,7 +73,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
                 containColor: AppColors.primary,
                 title: 'Submit',
-                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
+
                 borderRadius: BorderRadius.circular(100.r),
                 onTap: () {
                   Navigator.pushNamed(context, RouteName.successRoute);

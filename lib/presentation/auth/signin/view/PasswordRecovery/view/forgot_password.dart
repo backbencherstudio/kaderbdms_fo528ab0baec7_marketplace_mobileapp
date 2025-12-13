@@ -90,10 +90,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   ),
                   containColor: AppColors.primary,
                   title: 'Submit',
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.h,
-                    vertical: 12.w,
-                  ),
+
                   borderRadius: BorderRadius.circular(100.r),
                   onTap: () {
                     Navigator.pushNamed(context, RouteName.newPasswordRoute);

@@ -42,7 +42,7 @@ class PrimaryButton extends StatelessWidget {
 
         child: Padding(
           padding:
-              padding ?? EdgeInsets.symmetric(horizontal: 15.h, vertical: 15.w),
+              padding ?? EdgeInsets.symmetric(horizontal: 12.h, vertical: 15.w),
           child: Text(
             textAlign: TextAlign.center,
             title,

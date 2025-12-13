@@ -26,7 +26,7 @@ class ChatPreviewCard extends StatelessWidget {
     return GestureDetector(
       onTap: onChatTap,
       child: Container(
-        height: 80.h,
+        height: 100.h,
         margin: const EdgeInsets.symmetric(vertical: 8),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(

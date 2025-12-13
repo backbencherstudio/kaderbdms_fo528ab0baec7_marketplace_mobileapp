@@ -194,13 +194,13 @@ class _ProfilePageScreenState extends State<ProfilePageScreen> {
                 children: [
                   Row(
                     children: [
-                      Image.asset("assets/icons/logout.png", width: 22.w),
+                      Image.asset("assets/icons/logout.png", width: 30.w),
                       SizedBox(width: 10.w),
                       Text(
                         "Log Out",
-                        style: getMedium500Style14(
+                        style: getMedium500Style16(
                           fontWeight: FontWeightManager.medium500,
-                          fontSize: 14.sp,
+                          fontSize: 16.sp,
                           color: ColorManager.logoutText,
                         ),
                       ),
