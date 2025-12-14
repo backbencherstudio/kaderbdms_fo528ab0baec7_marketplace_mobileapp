@@ -13,18 +13,19 @@ import '../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final showPasswordProvider = StateProvider<bool>((ref) => false);
-final emailErrorProvider = StateProvider<String?>((ref) => null);
-final passwordErrorProvider = StateProvider<String?>((ref) => null);
+final rememberMeProvider = StateProvider<bool>((ref) => false);
 
 final emailControllerProvider = Provider.autoDispose(
-  (ref) => TextEditingController(),
+  (ref) => TextEditingController(text: "test@gmail.com"),
 );
 
 final passwordControllerProvider = Provider.autoDispose(
-  (ref) => TextEditingController(),
+  (ref) => TextEditingController(text: "123456"),
 );
 
-// ignore: must_be_immutable
+final emailErrorProvider = StateProvider<String?>((ref) => null);
+final passwordErrorProvider = StateProvider<String?>((ref) => null);
+
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
 
@@ -34,11 +35,13 @@ class LoginScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final showPassword = ref.watch(showPasswordProvider);
-    final emailController = ref.watch(emailControllerProvider);
+    final rememberMe = ref.watch(rememberMeProvider);
 
-    final emailError = ref.watch(emailErrorProvider);
+    final emailController = ref.watch(emailControllerProvider);
     final passwordController = ref.watch(passwordControllerProvider);
-    final passwordError = ref.watch(passwordErrorProvider);
+
+    var emailError = ref.watch(emailErrorProvider);
+    var passwordError = ref.watch(passwordErrorProvider);
 
     return Scaffold(
       backgroundColor: ColorManager.whiteColor,
@@ -81,34 +84,26 @@ class LoginScreen extends ConsumerWidget {
             ),
             SizedBox(height: 6.h),
 
-            // CustomTextField(
-            //   prefixIcon: Image.asset("assets/icons/email.png"),
-
-            //   hint: "Your email",
-            //   style: getRegular400Style16(
-            //     fontSize: 16.sp,
-            //     color: ColorManager.textSecondaryThree,
-            //   ),
-
-            //   keyboardType: TextInputType.emailAddress,
-            //   controller: emailController,
-
-            // ),
             CustomTextField(
-              prefixIcon: Image.asset("assets/icons/email.png"),
+              prefixIcon: Image.asset(IconManager.emailIcon),
               hint: "Your email",
               controller: emailController,
               keyboardType: TextInputType.emailAddress,
+              errorText: emailError,
             ),
 
-            if (emailError != null)
-              Padding(
-                padding: EdgeInsets.only(left: 15.w, top: 4.h),
+            SizedBox(height: 6.h),
+
+            SizedBox(
+              height: 14.h,
+              child: Visibility(
+                visible: emailError != null,
                 child: Text(
-                  emailError,
+                  emailError ?? "",
                   style: TextStyle(color: Colors.red, fontSize: 12.sp),
                 ),
               ),
+            ),
 
             SizedBox(height: 15.h),
 
@@ -124,31 +119,6 @@ class LoginScreen extends ConsumerWidget {
             ),
             SizedBox(height: 6.h),
 
-            // CustomTextField(
-            //   prefixIcon: Padding(
-            //     padding: EdgeInsets.all(12),
-            //     child: Image.asset(IconManager.passwordIcon),
-            //   ),
-
-            //   hint: "Enter your password",
-            //   style: getRegular400Style16(
-            //     fontSize: 16.sp,
-            //     color: ColorManager.textSecondaryThree,
-            //   ),
-            //   controller: passwordController,
-            //   isPassword: !showPassword,
-            //   suffixIcon: IconButton(
-            //     icon: Icon(
-            //       showPassword ? Icons.visibility : Icons.visibility_off,
-            //       color: AppColors.blackHeadline,
-            //     ),
-            //     onPressed: () {
-            //       ref.read(showPasswordProvider.notifier).state = !showPassword;
-            //     },
-            //     splashColor: Colors.transparent,
-            //     highlightColor: Colors.transparent,
-            //   ),
-            // ),
             CustomTextField(
               prefixIcon: Padding(
                 padding: EdgeInsets.all(12),
@@ -157,52 +127,63 @@ class LoginScreen extends ConsumerWidget {
               hint: "Enter your password",
               controller: passwordController,
               isPassword: !showPassword,
+              errorText: passwordError,
               suffixIcon: IconButton(
                 icon: Icon(
                   showPassword ? Icons.visibility : Icons.visibility_off,
                 ),
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onPressed: () {
                   ref.read(showPasswordProvider.notifier).state = !showPassword;
                 },
               ),
             ),
 
-            if (passwordError != null)
-              Padding(
-                padding: EdgeInsets.only(left: 15.w, top: 4.h),
+            SizedBox(height: 6.h),
+
+            SizedBox(
+              height: 14.h,
+              child: Visibility(
+                visible: passwordError != null,
                 child: Text(
-                  passwordError,
+                  passwordError ?? "",
                   style: TextStyle(color: Colors.red, fontSize: 12.sp),
                 ),
               ),
+            ),
 
             SizedBox(height: 12.h),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    CircleCheckIcon(
-                      isChecked: rememberMe,
-                      size: 18,
-                      activeColor: ColorManager.forgotPasstext,
-                      inactiveColor: ColorManager.defaultColor,
-                      onTap: () {
-                        ref.read(showPasswordProvider.notifier).state = !ref
-                            .read(showPasswordProvider);
-                      },
-                    ),
-
-                    SizedBox(width: 5.w),
-                    Text(
-                      "Remember me",
-                      style: getRegular400Style16(
-                        fontSize: 16.sp,
-                        color: ColorManager.textSecondaryThree,
+                GestureDetector(
+                  onTap: () {
+                    ref.read(rememberMeProvider.notifier).state = !rememberMe;
+                  },
+                  child: Row(
+                    children: [
+                      CircleCheckIcon(
+                        isChecked: rememberMe,
+                        size: 18,
+                        activeColor: ColorManager.forgotPasstext,
+                        inactiveColor: ColorManager.defaultColor,
+                        onTap: () {
+                          ref.read(rememberMeProvider.notifier).state =
+                              !rememberMe;
+                        },
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        "Remember me",
+                        style: getRegular400Style16(
+                          fontSize: 16.sp,
+                          color: ColorManager.textSecondaryThree,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -228,10 +209,27 @@ class LoginScreen extends ConsumerWidget {
               ),
               containColor: ColorManager.buttonSecondaryColor,
               title: 'Login',
-
               borderRadius: BorderRadius.circular(100.r),
               onTap: () {
-                Navigator.pushNamed(context, RouteName.welcomeRoute);
+                ref.read(emailErrorProvider.notifier).state = null;
+                ref.read(passwordErrorProvider.notifier).state = null;
+
+                if (emailController.text.trim().isEmpty) {
+                  ref.read(emailErrorProvider.notifier).state =
+                      "Email is required";
+                }
+
+                if (passwordController.text.trim().isEmpty) {
+                  ref.read(passwordErrorProvider.notifier).state =
+                      "Password is required";
+                }
+
+                final emailError = ref.read(emailErrorProvider);
+                final passwordError = ref.read(passwordErrorProvider);
+
+                if (emailError == null && passwordError == null) {
+                  Navigator.pushNamed(context, RouteName.welcomeRoute);
+                }
               },
             ),
 

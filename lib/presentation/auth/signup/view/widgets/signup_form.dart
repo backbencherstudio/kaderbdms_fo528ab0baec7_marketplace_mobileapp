@@ -16,6 +16,10 @@ class SignupForm extends StatelessWidget {
   final bool confirmshowPassword;
   final VoidCallback onTogglePassword;
   final VoidCallback onconfirmTogglePassword;
+  final String? nameError;
+  final String? emailError;
+  final String? passwordError;
+  final String? confirmPasswordError;
 
   const SignupForm({
     super.key,
@@ -28,6 +32,10 @@ class SignupForm extends StatelessWidget {
     required this.confirmshowPassword,
     required this.onTogglePassword,
     required this.onconfirmTogglePassword,
+    this.nameError,
+    this.emailError,
+    this.passwordError,
+    this.confirmPasswordError,
   });
 
   @override
@@ -45,7 +53,24 @@ class SignupForm extends StatelessWidget {
           ),
           controller: nameController,
         ),
-        SizedBox(height: 12.h),
+
+        SizedBox(height: 6.h),
+
+        Align(
+          alignment: Alignment.centerLeft,
+          child: SizedBox(
+            height: 14.h,
+            child: Visibility(
+              visible: nameError != null,
+              child: Text(
+                nameError ?? "",
+                style: TextStyle(color: Colors.red, fontSize: 12.sp),
+              ),
+            ),
+          ),
+        ),
+
+        SizedBox(height: 6.h),
         CustomTextField(
           prefixIcon: Image.asset(IconManager.emailIcon),
           hint: "Your Email",
@@ -57,7 +82,22 @@ class SignupForm extends StatelessWidget {
           ),
           controller: emailController,
         ),
-        SizedBox(height: 12.h),
+        SizedBox(height: 6.h),
+
+        Align(
+          alignment: Alignment.centerLeft,
+          child: SizedBox(
+            height: 14.h,
+            child: Visibility(
+              visible: emailError != null,
+              child: Text(
+                emailError ?? "",
+                style: TextStyle(color: Colors.red, fontSize: 12.sp),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 6.h),
         CustomTextField(
           prefixIcon: Image.asset("assets/icons/calendar.png"),
           hint: "15/06/2000",
@@ -85,10 +125,42 @@ class SignupForm extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         _passwordField(controller: passController, hint: "Enter your password"),
-        SizedBox(height: 12.h),
+
+        SizedBox(height: 6.h),
+
+        Align(
+          alignment: Alignment.centerLeft,
+          child: SizedBox(
+            height: 14.h,
+            child: Visibility(
+              visible: passwordError != null,
+              child: Text(
+                passwordError ?? "",
+                style: TextStyle(color: Colors.red, fontSize: 12.sp),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 6.h),
         _passwordField(
           controller: confirmpassController,
           hint: "Confirm your password",
+        ),
+
+        SizedBox(height: 6.h),
+
+        Align(
+          alignment: Alignment.centerLeft,
+          child: SizedBox(
+            height: 14.h,
+            child: Visibility(
+              visible: confirmPasswordError != null,
+              child: Text(
+                confirmPasswordError ?? "",
+                style: TextStyle(color: Colors.red, fontSize: 12.sp),
+              ),
+            ),
+          ),
         ),
       ],
     );

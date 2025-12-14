@@ -19,6 +19,7 @@ class CustomTextField extends StatelessWidget {
   final Color? borderColor;
   final double? borderRadius;
   final Color? fillcolor;
+  final String? errorText;
 
   const CustomTextField({
     super.key,
@@ -38,6 +39,7 @@ class CustomTextField extends StatelessWidget {
     this.borderRadius,
     this.fillcolor,
     this.height,
+    this.errorText,
   });
 
   @override

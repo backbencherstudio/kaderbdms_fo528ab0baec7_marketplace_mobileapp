@@ -12,12 +12,15 @@ import '../../../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final passwordControllerOneProvider = Provider.autoDispose(
-  (ref) => TextEditingController(),
+  (ref) => TextEditingController(text: "123456"),
 );
 
 final passwordControllerTwoProvider = Provider.autoDispose(
-  (ref) => TextEditingController(),
+  (ref) => TextEditingController(text: "123456"),
 );
+
+final passwordErrorProvider = StateProvider<String?>((ref) => null);
+final confirmPasswordErrorProvider = StateProvider<String?>((ref) => null);
 
 final checkedOneProvider = StateProvider<bool>((ref) => false);
 final checkedTwoProvider = StateProvider<bool>((ref) => false);
@@ -37,6 +40,8 @@ class NewPasswordPage extends ConsumerWidget {
     final checkedThree = ref.watch(checkedThreeProvider);
     final showPassword = ref.watch(showPasswordProvider);
     final confirmShowPassword = ref.watch(confirmShowPasswordProvider);
+    final passwordError = ref.watch(passwordErrorProvider);
+    final confirmPasswordError = ref.watch(confirmPasswordErrorProvider);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -114,7 +119,23 @@ class NewPasswordPage extends ConsumerWidget {
                   ),
                 ),
 
-                SizedBox(height: 20.h),
+                SizedBox(height: 6.h),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    height: 14.h,
+                    child: Visibility(
+                      visible: passwordError != null,
+                      child: Text(
+                        passwordError ?? "",
+                        style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 15.h),
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -163,6 +184,22 @@ class NewPasswordPage extends ConsumerWidget {
                   ),
                 ),
 
+                SizedBox(height: 6.h),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    height: 14.h,
+                    child: Visibility(
+                      visible: confirmPasswordError != null,
+                      child: Text(
+                        confirmPasswordError ?? "",
+                        style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                      ),
+                    ),
+                  ),
+                ),
+
                 SizedBox(height: 10.h),
 
                 Column(
@@ -208,7 +245,33 @@ class NewPasswordPage extends ConsumerWidget {
 
                       borderRadius: BorderRadius.circular(100.r),
                       onTap: () {
-                        Navigator.pushNamed(context, RouteName.otpPageRoute);
+                        if (passwordControllerOne.text.trim().isEmpty) {
+                          ref.read(passwordErrorProvider.notifier).state =
+                              "Password is required";
+                        }
+
+                        if (passwordControllerTwo.text.trim().isEmpty) {
+                          ref
+                                  .read(confirmPasswordErrorProvider.notifier)
+                                  .state =
+                              "Confirm password is required";
+                        } else if (passwordControllerOne.text.trim() !=
+                            passwordControllerTwo.text.trim()) {
+                          ref
+                                  .read(confirmPasswordErrorProvider.notifier)
+                                  .state =
+                              "Password does not match";
+                        }
+
+                        final passwordError = ref.read(passwordErrorProvider);
+                        final confirmPasswordError = ref.read(
+                          confirmPasswordErrorProvider,
+                        );
+
+                        if (passwordError == null &&
+                            confirmPasswordError == null) {
+                          Navigator.pushNamed(context, RouteName.otpPageRoute);
+                        }
                       },
                     ),
                   ],
