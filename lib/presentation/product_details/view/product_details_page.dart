@@ -461,6 +461,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ],
                   ),
                 ),
+
+                SizedBox(height: 10.h),
               ],
             ),
           ),

@@ -317,6 +317,8 @@ class _orderDetailsState extends State<orderDetails> {
                     ],
                   ),
                 ),
+
+                SizedBox(height: 10.h),
               ],
             ),
           ),
