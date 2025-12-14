@@ -3,6 +3,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/welcomepage/widgets/common_welcome_widget.dart';
 import '../../../core/route/route_name.dart';
 
+// ignore: camel_case_types
 class successPage extends StatelessWidget {
   const successPage({super.key});
 

@@ -10,7 +10,7 @@ final soundProvider = StateProvider<bool>((ref) => false);
 final vibrateProvider = StateProvider<bool>((ref) => false);
 
 class NotificationSetting extends ConsumerWidget {
-  NotificationSetting({super.key});
+  const NotificationSetting({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final push = ref.watch(pushProvider);

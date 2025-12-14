@@ -8,6 +8,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/commo
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_details/view/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/order_details/view/widgets/item_card.dart';
 
+// ignore: camel_case_types
 class orderDetails extends StatefulWidget {
   const orderDetails({super.key});
 
@@ -15,6 +16,7 @@ class orderDetails extends StatefulWidget {
   State<orderDetails> createState() => _orderDetailsState();
 }
 
+// ignore: camel_case_types
 class _orderDetailsState extends State<orderDetails> {
   @override
   Widget build(BuildContext context) {

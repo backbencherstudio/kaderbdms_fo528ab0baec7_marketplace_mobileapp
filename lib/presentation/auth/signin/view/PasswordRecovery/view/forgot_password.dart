@@ -17,7 +17,7 @@ final emailControllerProvider = Provider.autoDispose(
 final emailErrorProvider = StateProvider<String?>((ref) => null);
 
 class ForgotPasswordPage extends ConsumerWidget {
-  ForgotPasswordPage({super.key});
+  const ForgotPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

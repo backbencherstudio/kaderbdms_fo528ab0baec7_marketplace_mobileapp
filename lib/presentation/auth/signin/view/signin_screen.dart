@@ -26,6 +26,7 @@ final passwordControllerProvider = Provider.autoDispose(
 final emailErrorProvider = StateProvider<String?>((ref) => null);
 final passwordErrorProvider = StateProvider<String?>((ref) => null);
 
+// ignore: must_be_immutable
 class LoginScreen extends ConsumerWidget {
   LoginScreen({super.key});
 

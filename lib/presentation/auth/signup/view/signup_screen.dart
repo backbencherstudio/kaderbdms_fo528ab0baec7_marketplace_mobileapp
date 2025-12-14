@@ -40,7 +40,7 @@ final passwordErrorProvider = StateProvider<String?>((ref) => null);
 final confirmPasswordErrorProvider = StateProvider<String?>((ref) => null);
 
 class SignupScreen extends ConsumerWidget {
-  SignupScreen({super.key});
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

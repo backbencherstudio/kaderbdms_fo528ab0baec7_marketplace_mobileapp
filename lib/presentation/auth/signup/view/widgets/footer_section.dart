@@ -6,7 +6,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/styl
 import '../../../../../core/route/route_name.dart';
 
 class FooterSection extends StatelessWidget {
-  const FooterSection();
+  const FooterSection({super.key});
 
   @override
   Widget build(BuildContext context) {

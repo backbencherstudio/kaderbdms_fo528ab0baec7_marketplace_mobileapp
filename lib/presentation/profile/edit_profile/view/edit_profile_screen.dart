@@ -25,6 +25,7 @@ final addressControllerProvider = Provider.autoDispose(
   (ref) => TextEditingController(),
 );
 
+// ignore: camel_case_types
 class editProfileScreen extends ConsumerWidget {
   const editProfileScreen({super.key});
 

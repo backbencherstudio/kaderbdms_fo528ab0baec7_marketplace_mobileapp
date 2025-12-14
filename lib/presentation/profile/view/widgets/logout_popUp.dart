@@ -21,7 +21,6 @@ class LogoutDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// Title Row
             Row(
               children: [
                 Image.asset(

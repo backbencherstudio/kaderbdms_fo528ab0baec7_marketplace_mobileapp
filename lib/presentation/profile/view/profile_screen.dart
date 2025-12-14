@@ -6,7 +6,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/widgets/log_out_popUp.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/widgets/logout_popUp.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/profile/view/widgets/setting_row.dart';
 
 class ProfilePageScreen extends StatefulWidget {
