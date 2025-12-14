@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/view/cart_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/category/view/category_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chatting_history_screen.dart';
@@ -34,44 +35,46 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
       backgroundColor: Colors.white,
       body: _screens[currentIndex],
       bottomNavigationBar: Container(
-        height: 80,
+        height: 90.h,
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _navItem(
-                icon: IconManager.homeIcon,
-                label: 'Home',
-                index: 0,
-                currentIndex: currentIndex,
-              ),
-              _navItem(
-                icon: IconManager.elementIcon,
-                label: 'Categories',
-                index: 1,
-                currentIndex: currentIndex,
-              ),
-              _navItem(
-                icon: IconManager.chatIcon,
-                label: 'Chat',
-                index: 2,
-                currentIndex: currentIndex,
-              ),
-              _navItem(
-                icon: IconManager.cartIcon,
-                label: 'Cart',
-                index: 3,
-                currentIndex: currentIndex,
-              ),
-              _navItem(
-                icon: IconManager.profileIcon,
-                label: 'Profile',
-                index: 4,
-                currentIndex: currentIndex,
-              ),
-            ],
+          child: SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _navItem(
+                  icon: IconManager.homeIcon,
+                  label: 'Home',
+                  index: 0,
+                  currentIndex: currentIndex,
+                ),
+                _navItem(
+                  icon: IconManager.elementIcon,
+                  label: 'Categories',
+                  index: 1,
+                  currentIndex: currentIndex,
+                ),
+                _navItem(
+                  icon: IconManager.chatIcon,
+                  label: 'Chat',
+                  index: 2,
+                  currentIndex: currentIndex,
+                ),
+                _navItem(
+                  icon: IconManager.cartIcon,
+                  label: 'Cart',
+                  index: 3,
+                  currentIndex: currentIndex,
+                ),
+                _navItem(
+                  icon: IconManager.profileIcon,
+                  label: 'Profile',
+                  index: 4,
+                  currentIndex: currentIndex,
+                ),
+              ],
+            ),
           ),
         ),
       ),

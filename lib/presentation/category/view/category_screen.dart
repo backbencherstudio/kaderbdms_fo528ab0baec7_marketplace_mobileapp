@@ -54,7 +54,7 @@ class CategoryScreen extends ConsumerWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 20.h),
+            SizedBox(height: 10.h),
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
