@@ -245,31 +245,33 @@ class NewPasswordPage extends ConsumerWidget {
 
                       borderRadius: BorderRadius.circular(100.r),
                       onTap: () {
-                        if (passwordControllerOne.text.trim().isEmpty) {
+                        ref.read(passwordErrorProvider.notifier).state = null;
+                        ref.read(confirmPasswordErrorProvider.notifier).state =
+                            null;
+
+                        final password = passwordControllerOne.text.trim();
+                        final confirmPass = passwordControllerTwo.text.trim();
+
+                        if (password.isEmpty) {
                           ref.read(passwordErrorProvider.notifier).state =
                               "Password is required";
                         }
 
-                        if (passwordControllerTwo.text.trim().isEmpty) {
+                        if (confirmPass.isEmpty) {
                           ref
                                   .read(confirmPasswordErrorProvider.notifier)
                                   .state =
                               "Confirm password is required";
-                        } else if (passwordControllerOne.text.trim() !=
-                            passwordControllerTwo.text.trim()) {
+                        } else if (password != confirmPass) {
                           ref
                                   .read(confirmPasswordErrorProvider.notifier)
                                   .state =
                               "Password does not match";
                         }
 
-                        final passwordError = ref.read(passwordErrorProvider);
-                        final confirmPasswordError = ref.read(
-                          confirmPasswordErrorProvider,
-                        );
-
-                        if (passwordError == null &&
-                            confirmPasswordError == null) {
+                        if (password.isNotEmpty &&
+                            confirmPass.isNotEmpty &&
+                            password == confirmPass) {
                           Navigator.pushNamed(context, RouteName.otpPageRoute);
                         }
                       },
