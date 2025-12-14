@@ -10,7 +10,7 @@ class ProductSellCard extends StatelessWidget {
     required this.imagePath,
     required this.title,
     required this.sellCount,
-
+    this.productId,
     required this.price,
     required this.rating,
     required this.onLikeTap,
@@ -21,13 +21,12 @@ class ProductSellCard extends StatelessWidget {
   final String imagePath;
   final String title;
   final String sellCount;
-
+  final int? productId;
   final String price;
   final String rating;
   final VoidCallback? onLikeTap;
   final VoidCallback? onCartTap;
 
- 
   final bool isLiked;
 
   @override
@@ -75,7 +74,6 @@ class ProductSellCard extends StatelessWidget {
                 ),
               ),
 
-            
               Positioned(
                 bottom: 8,
                 right: -6,

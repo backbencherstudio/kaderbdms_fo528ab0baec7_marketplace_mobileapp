@@ -6,6 +6,8 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/styl
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/product_card.dart';
 
 void showRelatedProductsBottomSheet(BuildContext context) {
+
+  
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,

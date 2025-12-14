@@ -1,22 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/product_card.dart';
 
-class WishListScreen extends StatefulWidget {
+final isLikedProvider = StateProvider.family<bool, int>(
+  (ref, productId) => true,
+);
+
+class WishListScreen extends ConsumerWidget {
   const WishListScreen({super.key});
 
-  @override
-  State<WishListScreen> createState() => _WishListScreenState();
-}
+  List<ProductCard> get products => [
+    ProductCard(
+      productId: 1,
+      imagePath: ImageManager.productShirt01,
+      title: 'Smart Men Shirt',
+      description: 'A yellow shirt with a bicycle logo on it',
+      price: '€321.99',
+      rating: '4.9',
+      isLiked: true,
+    ),
+    ProductCard(
+      productId: 2,
+      imagePath: ImageManager.productShirt02,
+      title: 'Smart Men Shirt',
+      description: 'A yellow shirt with a bicycle logo on it',
+      price: '€321.99',
+      rating: '4.9',
+      isLiked: true,
+    ),
+    ProductCard(
+      productId: 3,
+      imagePath: ImageManager.productShirt02,
+      title: 'Smart Men Shirt',
+      description: 'A yellow shirt with a bicycle logo on it',
+      price: '€321.99',
+      rating: '4.9',
+      isLiked: true,
+    ),
+    ProductCard(
+      productId: 4,
+      imagePath: ImageManager.productShirt01,
+      title: 'Smart Men Shirt',
+      description: 'A yellow shirt with a bicycle logo on it',
+      price: '€321.99',
+      rating: '4.9',
+      isLiked: true,
+    ),
+  ];
 
-class _WishListScreenState extends State<WishListScreen> {
-  bool isLiked = false;
-  List<bool> likedStatus = List.generate(10, (index) => false);
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -24,87 +61,39 @@ class _WishListScreenState extends State<WishListScreen> {
           child: Column(
             children: [
               SizedBox(height: 20.h),
-
               const CommonHeader(title: "Wishlist"),
-
               SizedBox(height: 20.h),
 
-              Row(
-                children: [
-                  Expanded(
-                    child: ProductCard(
-                      imagePath: ImageManager.productShirt01,
-                      title: 'Smart Men Shirt',
-                      description: 'A yellow shirt with a \nbicycle logo on it',
-                      price: '€321.99',
-                      rating: '4.9',
-                      onCartTap: () {},
-                      isLiked: isLiked,
-                      onLikeTap: () {
-                        setState(() {
-                          isLiked = !isLiked;
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Expanded(
-                    child: ProductCard(
-                      imagePath: ImageManager.productShirt02,
-                      title: 'Smart Men Shirt',
-                      description: 'A yellow shirt with a \nbicycle logo on it',
-                      price: '€321.99',
-                      rating: '4.9',
-                      onCartTap: () {},
-                      isLiked: isLiked,
-                      onLikeTap: () {
-                        setState(() {
-                          isLiked = !isLiked;
-                        });
-                      },
-                    ),
-                  ),
-                ],
-              ),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: products.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10.w,
+                  mainAxisSpacing: 15.h,
+                  childAspectRatio: 0.62,
+                ),
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  final productId = product.productId ?? index + 1;
 
-              SizedBox(height: 10.h),
+                  final isLiked = ref.watch(isLikedProvider(productId));
 
-              Row(
-                children: [
-                  Expanded(
-                    child: ProductCard(
-                      imagePath: ImageManager.productShirt02,
-                      title: 'Smart Men Shirt',
-                      description: 'A yellow shirt with a \nbicycle logo on it',
-                      price: '€321.99',
-                      rating: '4.9',
-                      onCartTap: () {},
-                      isLiked: isLiked,
-                      onLikeTap: () {
-                        setState(() {
-                          isLiked = !isLiked;
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Expanded(
-                    child: ProductCard(
-                      imagePath: ImageManager.productShirt01,
-                      title: 'Smart Men Shirt',
-                      description: 'A yellow shirt with a \nbicycle logo on it',
-                      price: '€321.99',
-                      rating: '4.9',
-                      onCartTap: () {},
-                      isLiked: isLiked,
-                      onLikeTap: () {
-                        setState(() {
-                          isLiked = !isLiked;
-                        });
-                      },
-                    ),
-                  ),
-                ],
+                  return ProductCard(
+                    imagePath: product.imagePath,
+                    title: product.title,
+                    description: product.description,
+                    price: product.price,
+                    rating: product.rating,
+                    isLiked: isLiked,
+                    onCartTap: () {},
+                    onLikeTap: () {
+                      ref.read(isLikedProvider(productId).notifier).state =
+                          !isLiked;
+                    },
+                  );
+                },
               ),
             ],
           ),

@@ -14,7 +14,47 @@ class JewelryScreen extends StatefulWidget {
 
 class _JewelryScreenState extends State<JewelryScreen> {
   int selectedCategory = 0;
-  bool isLiked = false;
+
+  final List<Map<String, dynamic>> products = [
+    {
+      "productId": 1,
+      "imagePath": ImageManager.ring,
+      "title": "Exclusive Ring set",
+      "description": "AMD Ryzen 5 3400G Processor with",
+    },
+    {
+      "productId": 2,
+      "imagePath": ImageManager.ring2,
+      "title": "Simple Earing",
+      "description": "AMD Ryzen 5 3400G Processor with",
+    },
+    {
+      "productId": 3,
+      "imagePath": ImageManager.ring3,
+      "title": "Exclusive Ring set",
+      "description": "AMD Ryzen 5 3400G Processor with",
+    },
+    {
+      "productId": 4,
+      "imagePath": ImageManager.earing,
+      "title": "Exclusive Pendant",
+      "description": "AMD Ryzen 5 3400G Processor with",
+    },
+    {
+      "productId": 5,
+      "imagePath": ImageManager.earing2,
+      "title": "Exclusive Earing",
+      "description": "AMD Ryzen 5 3400G Processor with",
+    },
+    {
+      "productId": 6,
+      "imagePath": ImageManager.nose,
+      "title": "Engagement Ring",
+      "description": "AMD Ryzen 5 3400G Processor with",
+    },
+  ];
+
+  final Set<int> likedProducts = {};
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +67,17 @@ class _JewelryScreenState extends State<JewelryScreen> {
               children: [
                 SizedBox(height: 20.h),
 
-                CommonHeader(title: "Jewelry"),
+                const CommonHeader(title: "Jewelry"),
                 SizedBox(height: 10.h),
 
                 CategorySelector(
-                  categories: ["All", "Neckless", "Ring", "Earring", "Bangle"],
+                  categories: const [
+                    "All",
+                    "Neckless",
+                    "Ring",
+                    "Earring",
+                    "Bangle",
+                  ],
                   selectedIndex: selectedCategory,
                   onSelect: (index) {
                     setState(() {
@@ -42,122 +88,40 @@ class _JewelryScreenState extends State<JewelryScreen> {
 
                 SizedBox(height: 20.h),
 
-                Row(
-                  children: [
-                    Expanded(
-                      child: ProductCard(
-                        imagePath: ImageManager.ring,
-                        title: 'Exclusive Ring set',
-                        description: 'AMD Ryzen 5 3400G Processor with ',
-                        price: '€321.99',
-                        rating: '4.9',
-                        onCartTap: () {},
-                        isLiked: isLiked,
-                        onLikeTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                      ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: ProductCard(
-                        imagePath: ImageManager.ring2,
-                        title: 'Simple Earing',
-                        description: 'AMD Ryzen 5 3400G Processor with ',
-                        price: '€321.99',
-                        rating: '4.9',
-                        onCartTap: () {},
-                        isLiked: isLiked,
-                        onLikeTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: products.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.w,
+                    mainAxisSpacing: 15.h,
+                    childAspectRatio: 0.62,
+                  ),
+                  itemBuilder: (context, index) {
+                    final product = products[index];
+                    final int productId = product["productId"];
+                    final bool isLiked = likedProducts.contains(productId);
 
-                SizedBox(height: 10.h),
-
-                Row(
-                  children: [
-                    Expanded(
-                      child: ProductCard(
-                        imagePath: ImageManager.ring3,
-                        title: 'Exclusive Ring set',
-                        description: 'AMD Ryzen 5 3400G Processor with ',
-                        price: '€321.99',
-                        rating: '4.9',
-                        onCartTap: () {},
-                        isLiked: isLiked,
-                        onLikeTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                      ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: ProductCard(
-                        imagePath: ImageManager.earing,
-                        title: 'Exclusive Pendant',
-                        description: 'AMD Ryzen 5 3400G Processor with',
-                        price: '€321.99',
-                        rating: '4.9',
-                        onCartTap: () {},
-                        isLiked: isLiked,
-                        onLikeTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 10.h),
-
-                Row(
-                  children: [
-                    Expanded(
-                      child: ProductCard(
-                        imagePath: ImageManager.earing2,
-                        title: 'Exclusive Earing',
-                        description: 'AMD Ryzen 5 3400G Processor with ',
-                        price: '€321.99',
-                        rating: '4.9',
-                        onCartTap: () {},
-                        isLiked: isLiked,
-                        onLikeTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                      ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: ProductCard(
-                        imagePath: ImageManager.nose,
-                        title: 'Engagement Ring',
-                        description: 'AMD Ryzen 5 3400G Processor with ',
-                        price: '€321.99',
-                        rating: '4.9',
-                        onCartTap: () {},
-                        isLiked: isLiked,
-                        onLikeTap: () {
-                          setState(() {
-                            isLiked = !isLiked;
-                          });
-                        },
-                      ),
-                    ),
-                  ],
+                    return ProductCard(
+                      imagePath: product["imagePath"],
+                      title: product["title"],
+                      description: product["description"],
+                      price: "€321.99",
+                      rating: "4.9",
+                      isLiked: isLiked,
+                      onCartTap: () {},
+                      onLikeTap: () {
+                        setState(() {
+                          if (isLiked) {
+                            likedProducts.remove(productId);
+                          } else {
+                            likedProducts.add(productId);
+                          }
+                        });
+                      },
+                    );
+                  },
                 ),
               ],
             ),

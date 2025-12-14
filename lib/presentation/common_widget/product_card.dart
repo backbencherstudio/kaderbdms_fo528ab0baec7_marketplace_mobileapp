@@ -13,11 +13,12 @@ class ProductCard extends StatelessWidget {
     required this.description,
     required this.price,
     required this.rating,
-    required this.onLikeTap,
-    required this.onCartTap,
-    required this.isLiked,
+     this.onLikeTap,
+     this.onCartTap,
+     required this.isLiked,
+    this.productId,
   });
-
+  final int? productId;
   final String imagePath;
   final String title;
   final String description;
@@ -79,7 +80,6 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
 
-                /// 🛒 Cart Button
                 Positioned(
                   bottom: 8,
                   right: -6,

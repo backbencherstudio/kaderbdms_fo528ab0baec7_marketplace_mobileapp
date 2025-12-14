@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
@@ -12,18 +14,33 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/view/widgets/home_header.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/home/view/widgets/search_box.dart';
 
-class HomeScreen extends StatefulWidget {
+final isLikedProvider = StateProvider.family<bool, int>(
+  (ref, productId) => false,
+);
+
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  bool isLiked = false;
-
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final isLiked1 = ref.watch(isLikedProvider(1));
+    final isLiked2 = ref.watch(isLikedProvider(2));
+    final isLiked3 = ref.watch(isLikedProvider(3));
+    final isLiked4 = ref.watch(isLikedProvider(4));
+    final isLiked5 = ref.watch(isLikedProvider(5));
+    final isLiked6 = ref.watch(isLikedProvider(6));
+    final isLiked7 = ref.watch(isLikedProvider(7));
+    final isLiked8 = ref.watch(isLikedProvider(8));
+    final isLiked9 = ref.watch(isLikedProvider(9));
+    final isLiked10 = ref.watch(isLikedProvider(10));
+    final isLiked11 = ref.watch(isLikedProvider(11));
+    final isLiked12 = ref.watch(isLikedProvider(12));
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -112,13 +129,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             rating: "4.9",
                             onCartTap: () {},
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(2).notifier).state =
+                                  !isLiked2;
                             },
-                            isLiked: isLiked,
+                            isLiked: isLiked2,
                           ),
                         ),
+
+                        SizedBox(width: 10.w),
                         Expanded(
                           child: ProductSellCard(
                             imagePath: ImageManager.blueShoes,
@@ -128,11 +146,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             rating: "4.9",
                             onCartTap: () {},
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(3).notifier).state =
+                                  !isLiked3;
                             },
-                            isLiked: isLiked,
+                            isLiked: isLiked3,
                           ),
                         ),
                       ],
@@ -175,13 +192,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             rating: "4.9",
                             onCartTap: () {},
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(4).notifier).state =
+                                  !isLiked4;
                             },
-                            isLiked: isLiked,
+                            isLiked: isLiked4,
                           ),
                         ),
+
+                        SizedBox(width: 10.w),
                         Expanded(
                           child: ProductSellCard(
                             imagePath: ImageManager.jewelry,
@@ -191,11 +209,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             rating: "4.9",
                             onCartTap: () {},
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(5).notifier).state =
+                                  !isLiked5;
                             },
-                            isLiked: isLiked,
+                            isLiked: isLiked5,
                           ),
                         ),
                       ],
@@ -227,11 +244,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked6,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(6).notifier).state =
+                                  !isLiked6;
                             },
                           ),
                         ),
@@ -245,11 +261,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked7,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(7).notifier).state =
+                                  !isLiked7;
                             },
                           ),
                         ),
@@ -269,11 +284,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked8,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(8).notifier).state =
+                                  !isLiked8;
                             },
                           ),
                         ),
@@ -287,11 +301,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked9,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(9).notifier).state =
+                                  !isLiked9;
                             },
                           ),
                         ),
@@ -311,11 +324,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked10,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(10).notifier).state =
+                                  !isLiked10;
                             },
                           ),
                         ),
@@ -329,11 +341,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked11,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(11).notifier).state =
+                                  !isLiked11;
                             },
                           ),
                         ),
@@ -352,17 +363,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked12,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(12).notifier).state =
+                                  !isLiked12;
                             },
                           ),
                         ),
                         SizedBox(width: 10.w),
                         Expanded(
                           child: ProductCard(
+                            productId: 1,
                             imagePath: ImageManager.languageTutor,
                             title: 'Language Tutoring',
                             description:
@@ -370,11 +381,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             price: '€321.99',
                             rating: '4.9',
                             onCartTap: () {},
-                            isLiked: isLiked,
+                            isLiked: isLiked1,
                             onLikeTap: () {
-                              setState(() {
-                                isLiked = !isLiked;
-                              });
+                              ref.read(isLikedProvider(1).notifier).state =
+                                  !isLiked1;
                             },
                           ),
                         ),
