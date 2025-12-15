@@ -32,8 +32,8 @@ class NotificationSetting extends ConsumerWidget {
               SettingBox(
                 title: "Push Notifications",
                 value: push,
-                onChanged: (v) {
-                  ref.read(pushProvider.notifier).state = v;
+                onChanged: (value) {
+                  ref.read(pushProvider.notifier).state = value;
                 },
               ),
 
@@ -42,8 +42,8 @@ class NotificationSetting extends ConsumerWidget {
               SettingBox(
                 title: "Sound",
                 value: sound,
-                onChanged: (v) {
-                  ref.read(soundProvider.notifier).state = v;
+                onChanged: (value) {
+                  ref.read(soundProvider.notifier).state = value;
                 },
               ),
 
@@ -52,8 +52,8 @@ class NotificationSetting extends ConsumerWidget {
               SettingBox(
                 title: "Vibrate",
                 value: vibrate,
-                onChanged: (v) {
-                  ref.read(vibrateProvider.notifier).state = v;
+                onChanged: (value) {
+                  ref.read(vibrateProvider.notifier).state = value;
                 },
               ),
             ],

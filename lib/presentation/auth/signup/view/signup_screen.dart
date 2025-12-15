@@ -33,7 +33,6 @@ final confirmpassProvider = Provider.autoDispose(
 
 final showPasswordProvider = StateProvider<bool>((ref) => false);
 final confirmPasswordProvider = StateProvider<bool>((ref) => false);
-
 final nameErrorProvider = StateProvider<String?>((ref) => null);
 final emailErrorProvider = StateProvider<String?>((ref) => null);
 final passwordErrorProvider = StateProvider<String?>((ref) => null);
@@ -103,13 +102,11 @@ class SignupScreen extends ConsumerWidget {
               borderRadius: BorderRadius.circular(100.r),
               padding: EdgeInsets.symmetric(vertical: 15.h),
               onTap: () {
-                // Navigator.pushNamed(context, RouteName.signupOtpRoute);
                 ref.read(nameErrorProvider.notifier).state = null;
                 ref.read(emailErrorProvider.notifier).state = null;
                 ref.read(passwordErrorProvider.notifier).state = null;
                 ref.read(confirmPasswordErrorProvider.notifier).state = null;
 
-                // validations
                 if (nameController.text.trim().isEmpty) {
                   ref.read(nameErrorProvider.notifier).state =
                       "Name is required";
@@ -134,7 +131,6 @@ class SignupScreen extends ConsumerWidget {
                       "Password does not match";
                 }
 
-                // read final state
                 final nameError = ref.read(nameErrorProvider);
                 final emailError = ref.read(emailErrorProvider);
                 final passwordError = ref.read(passwordErrorProvider);
@@ -142,7 +138,6 @@ class SignupScreen extends ConsumerWidget {
                   confirmPasswordErrorProvider,
                 );
 
-                // success
                 if (nameError == null &&
                     emailError == null &&
                     passwordError == null &&
