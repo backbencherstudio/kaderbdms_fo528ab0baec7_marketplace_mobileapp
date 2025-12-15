@@ -105,7 +105,7 @@ class OnboardingScreen extends StatelessWidget {
                         },
                       ),
 
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 15.h),
 
                       PrimaryButton(
                         textStyle: getSemiBold600Style16(
