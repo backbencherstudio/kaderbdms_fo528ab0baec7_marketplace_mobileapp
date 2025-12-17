@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-
-
 import '../../data/sources/local/shared_preference/shared_preference.dart' show SharedPreferenceData;
 import 'api_endpoints.dart';
 import 'error_handle.dart';

@@ -17,7 +17,6 @@ class OrderProductCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
-          // ignore: deprecated_member_use
           color: ColorManager.textSecondaryTwo.withOpacity(0.3),
         ),
         color: Colors.white,
@@ -29,7 +28,7 @@ class OrderProductCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.r),
             child: Image.asset(
               imagePath,
-              // ImageManager.cartProduct,
+
               height: 90.h,
               width: 90.h,
               fit: BoxFit.cover,
@@ -93,7 +92,6 @@ class OrderProductCard extends StatelessWidget {
 
                 SizedBox(height: 4.h),
 
-                /// Size Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -116,7 +114,6 @@ class OrderProductCard extends StatelessWidget {
 
                 SizedBox(height: 4.h),
 
-                /// Quantity Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

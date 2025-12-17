@@ -7,6 +7,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/route/route_name.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/order/view/widgets/common_text_field.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/common_header.dart';
 
 class OrderAddressScreen extends StatefulWidget {
@@ -112,21 +113,9 @@ class _OrderAddressScreenState extends State<OrderAddressScreen> {
 
                     SizedBox(height: 15.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "Full Name",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "Full Name",
+                      keyboardType: TextInputType.name,
                     ),
 
                     SizedBox(height: 15.h),
@@ -141,21 +130,9 @@ class _OrderAddressScreenState extends State<OrderAddressScreen> {
 
                     SizedBox(height: 15.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "Your phone number",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "Your phone number",
+                      keyboardType: TextInputType.phone,
                     ),
 
                     SizedBox(height: 15.h),
@@ -170,21 +147,9 @@ class _OrderAddressScreenState extends State<OrderAddressScreen> {
 
                     SizedBox(height: 12.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "Your email address",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "Your email address",
+                      keyboardType: TextInputType.emailAddress,
                     ),
 
                     SizedBox(height: 15.h),
@@ -199,97 +164,38 @@ class _OrderAddressScreenState extends State<OrderAddressScreen> {
 
                     SizedBox(height: 15.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "Street Address*",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "Apt/Suite/Other (optional)",
+                      keyboardType: TextInputType.streetAddress,
                     ),
 
                     SizedBox(height: 15.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "Apt/Suite/Other (optional)",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "Street Address*",
+                      keyboardType: TextInputType.streetAddress,
+                    ),
+
+                    //
+                    SizedBox(height: 15.h),
+
+                    CommonTextField(
+                      hintText: "City",
+                      keyboardType: TextInputType.name,
                     ),
 
                     SizedBox(height: 15.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "City*",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "State*",
+                      keyboardType: TextInputType.name,
                     ),
 
                     SizedBox(height: 15.h),
 
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "State*",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
-                    ),
-
-                    SizedBox(height: 15.h),
-
-                    TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 15.w,
-                          vertical: 15.h,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        hintText: "Zip code*",
-                        hintStyle: getMedium500Style14(
-                          color: ColorManager.textSecondaryTwo,
-                          fontSize: 14.sp,
-                        ),
-                      ),
+                    CommonTextField(
+                      hintText: "Zip code*",
+                      keyboardType: TextInputType.number,
                     ),
 
                     SizedBox(height: 30.h),

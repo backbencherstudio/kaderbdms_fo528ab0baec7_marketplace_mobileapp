@@ -13,9 +13,9 @@ class ProductCard extends StatelessWidget {
     required this.description,
     required this.price,
     required this.rating,
-     this.onLikeTap,
-     this.onCartTap,
-     required this.isLiked,
+    this.onLikeTap,
+    this.onCartTap,
+    required this.isLiked,
     this.productId,
   });
   final int? productId;
@@ -26,8 +26,6 @@ class ProductCard extends StatelessWidget {
   final String rating;
   final VoidCallback? onLikeTap;
   final VoidCallback? onCartTap;
-
-  /// NEW → like state
   final bool isLiked;
 
   @override
