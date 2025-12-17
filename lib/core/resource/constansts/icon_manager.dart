@@ -70,4 +70,7 @@ class IconManager {
   static String wish = '$baseUrl/wish.png';
   static String faq = '$baseUrl/faq.png';
   static String privacy = '$baseUrl/privacy.png';
+  static String chatCamera = '$baseUrl/chat_camera.png';
+  static String emoji = '$baseUrl/emoji.png';
+  static String attach = '$baseUrl/attach.png';
 }
