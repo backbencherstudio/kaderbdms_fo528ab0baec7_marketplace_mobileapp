@@ -140,55 +140,57 @@ class _ChatScreenState extends State<ChatScreen> {
 
                 SizedBox(height: 280.h),
 
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomTextField(
-                        hint: "Type message",
-                        controller: messageController,
-                        fillcolor: ColorManager.chatBoxbgColor,
+                SafeArea(
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: CustomTextField(
+                          hint: "Type message",
+                          controller: messageController,
+                          fillcolor: ColorManager.chatBoxbgColor,
 
-                        prefixIcon: GestureDetector(
-                          onTap: () {},
-                          child: Image.asset(
-                            IconManager.emoji,
-                            height: 22.h,
-                            width: 22.w,
+                          prefixIcon: GestureDetector(
+                            onTap: () {},
+                            child: Image.asset(
+                              IconManager.emoji,
+                              height: 22.h,
+                              width: 22.w,
+                            ),
                           ),
+
+                          showSendButton: true,
+                          onSendTap: () {
+                            final msg = messageController.text.trim();
+                            if (msg.isNotEmpty) {
+                              messageController.clear();
+                            }
+                          },
                         ),
-
-                        showSendButton: true,
-                        onSendTap: () {
-                          final msg = messageController.text.trim();
-                          if (msg.isNotEmpty) {
-                            messageController.clear();
-                          }
-                        },
                       ),
-                    ),
 
-                    SizedBox(width: 10.w),
+                      SizedBox(width: 6.w),
 
-                    GestureDetector(
-                      onTap: () {},
-                      child: Image.asset(
-                        IconManager.attach,
-                        height: 24.h,
-                        width: 24.h,
+                      GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          IconManager.attach,
+                          height: 24.h,
+                          width: 24.h,
+                        ),
                       ),
-                    ),
 
-                    SizedBox(width: 10.w),
+                      SizedBox(width: 6.w),
 
-                    GestureDetector(
-                      onTap: () {},
-                      child: Image.asset(
-                        IconManager.chatCamera,
-                        height: 24.h,
-                        width: 24.h,
+                      GestureDetector(
+                        onTap: () {},
+                        child: Image.asset(
+                          IconManager.chatCamera,
+                          height: 24.h,
+                          width: 24.h,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

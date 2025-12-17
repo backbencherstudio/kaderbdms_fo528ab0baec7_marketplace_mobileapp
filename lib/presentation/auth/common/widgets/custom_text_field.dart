@@ -71,7 +71,7 @@ class CustomTextField extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 10.h),
                   child: Icon(
                     Icons.send_rounded,
-                    size: 18.sp,
+                    size: 20.sp,
                     color: ColorManager.textSecondaryThree,
                   ),
                 ),
