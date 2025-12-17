@@ -16,7 +16,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  TextEditingController? get emailController => null;
+  final TextEditingController messageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -138,22 +138,32 @@ class _ChatScreenState extends State<ChatScreen> {
                   isTop: true,
                 ),
 
-                SizedBox(height: 300.h),
+                SizedBox(height: 280.h),
 
                 Row(
                   children: [
                     Expanded(
                       child: CustomTextField(
-                        prefixIcon: Image.asset(IconManager.emoji),
                         hint: "Type message",
-                        style: customTextStyle(
-                          fontFamily: FontConstants.fontFamilyInter,
-                          fontWeight: FontWeightManager.regural400,
-                          fontSize: 16.sp,
-                          color: AppColors.textFieldtextColor,
-                        ),
-                        controller: emailController,
+                        controller: messageController,
                         fillcolor: ColorManager.chatBoxbgColor,
+
+                        prefixIcon: GestureDetector(
+                          onTap: () {},
+                          child: Image.asset(
+                            IconManager.emoji,
+                            height: 22.h,
+                            width: 22.w,
+                          ),
+                        ),
+
+                        showSendButton: true,
+                        onSendTap: () {
+                          final msg = messageController.text.trim();
+                          if (msg.isNotEmpty) {
+                            messageController.clear();
+                          }
+                        },
                       ),
                     ),
 
@@ -168,7 +178,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                     ),
 
-                    SizedBox(width: 7.w),
+                    SizedBox(width: 10.w),
 
                     GestureDetector(
                       onTap: () {},

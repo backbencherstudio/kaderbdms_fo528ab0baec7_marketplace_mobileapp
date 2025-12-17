@@ -392,10 +392,18 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset(
-                        IconManager.message,
-                        height: 40.h,
-                        width: 40.w,
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            RouteName.chatScreenRoute,
+                          );
+                        },
+                        child: Image.asset(
+                          IconManager.message,
+                          height: 40.h,
+                          width: 40.w,
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

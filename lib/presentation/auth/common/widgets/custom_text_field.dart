@@ -21,6 +21,9 @@ class CustomTextField extends StatelessWidget {
   final Color? fillcolor;
   final String? errorText;
 
+  final bool showSendButton;
+  final VoidCallback? onSendTap;
+
   const CustomTextField({
     super.key,
     required this.hint,
@@ -40,49 +43,66 @@ class CustomTextField extends StatelessWidget {
     this.fillcolor,
     this.height,
     this.errorText,
+    this.showSendButton = false,
+    this.onSendTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: TextField(
-        controller: controller,
-        readOnly: onTap != null,
-        onTap: onTap,
-        obscureText: isPassword,
-        keyboardType: keyboardType,
-        onChanged: onChanged,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: fillcolor,
-          labelText: label,
-          hintText: hint,
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-          prefixIconConstraints: BoxConstraints(minWidth: 50, minHeight: 30),
+    return TextField(
+      controller: controller,
+      readOnly: onTap != null,
+      onTap: onTap,
+      obscureText: isPassword,
+      keyboardType: keyboardType,
+      onChanged: onChanged,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: fillcolor,
+        labelText: label,
+        hintText: hint,
 
-          contentPadding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 14.w),
+        prefixIcon: prefixIcon,
 
-    
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
-            borderSide: BorderSide(
-              color: borderColor ?? ColorManager.fieldText,
-              width: 1,
-            ),
+        suffixIcon: showSendButton
+            ? GestureDetector(
+                onTap: onSendTap,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.h),
+                  child: Icon(
+                    Icons.send_rounded,
+                    size: 18.sp,
+                    color: ColorManager.textSecondaryThree,
+                  ),
+                ),
+              )
+            : suffixIcon,
+
+        prefixIconConstraints: const BoxConstraints(
+          minWidth: 50,
+          minHeight: 30,
+        ),
+
+        contentPadding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 14.w),
+
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
+          borderSide: BorderSide(
+            color: borderColor ?? ColorManager.fieldText,
+            width: 1,
           ),
+        ),
 
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
-            borderSide: BorderSide(
-              color: borderColor ?? ColorManager.fieldText,
-              width: 1.5,
-            ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
+          borderSide: BorderSide(
+            color: borderColor ?? ColorManager.fieldText,
+            width: 1.5,
           ),
+        ),
 
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
-          ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 100.r),
         ),
       ),
     );
