@@ -104,7 +104,7 @@ class SignupForm extends StatelessWidget {
           style: customTextStyle(
             fontFamily: FontConstants.fontFamilyInter,
             fontWeight: FontWeightManager.regural400,
-            fontSize: 16.sp,
+            fontSize: 20.sp,
             color: AppColors.textFieldtextColor,
           ),
           onTap: () async {
@@ -123,7 +123,9 @@ class SignupForm extends StatelessWidget {
           },
           controller: dateController,
         ),
-        SizedBox(height: 12.h),
+
+        SizedBox(height: 25.h),
+
         _passwordField(controller: passController, hint: "Enter your password"),
 
         SizedBox(height: 6.h),

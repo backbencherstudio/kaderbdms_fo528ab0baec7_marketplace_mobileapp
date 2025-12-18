@@ -3,7 +3,7 @@ class IconManager {
   static String ballIcon = '$baseUrl/ball.png';
   static String splashLogo = '$baseUrl/LOGO.png';
   static String google = '$baseUrl/google.png';
-  static String calenderIcon = '$baseUrl/calender.png';
+  static String calenderIcon = '$baseUrl/calendar.png';
   static String cartIcon = '$baseUrl/cart.png';
   static String chatIcon = '$baseUrl/chat.png';
   static String elementIcon = '$baseUrl/element.png';
