@@ -58,7 +58,7 @@ class OnboardingScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 60.h),
+          SizedBox(height: 45.h),
 
           Image.asset(ImageManager.bannerPng),
 
