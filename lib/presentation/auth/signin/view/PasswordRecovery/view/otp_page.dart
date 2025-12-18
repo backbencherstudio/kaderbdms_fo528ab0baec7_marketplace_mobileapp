@@ -47,7 +47,7 @@ class OtpScreen extends ConsumerWidget {
                 ),
               ),
 
-              SizedBox(height: 30.h),
+              SizedBox(height: 40.h),
 
               CommonPinField(
                 length: 6,

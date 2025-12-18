@@ -62,7 +62,7 @@ class SignupScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10.h),
+            SizedBox(height: 30.h),
             const HeaderSection(),
             SizedBox(height: 25.h),
             SignupForm(

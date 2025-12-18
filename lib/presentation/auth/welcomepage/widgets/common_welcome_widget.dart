@@ -28,7 +28,7 @@ class CommonWelcomeWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(imagePath, width: 136.h, height: 136.h),
+          Image.asset(imagePath, width: 150.h, height: 150.h),
 
           SizedBox(height: 25.h),
           Text(
@@ -45,6 +45,7 @@ class CommonWelcomeWidget extends StatelessWidget {
           Text(
             subtitle,
             textAlign: TextAlign.center,
+            strutStyle: StrutStyle(height: 1.5),
             style: customTextStyle(
               fontFamily: FontConstants.fontFamilyInter,
               fontWeight: FontWeightManager.medium500,

@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
         Navigator.pushNamed(context, RouteName.productDetailsPageRoute);
       },
       child: Container(
-        height: 280.h,
+        height: 260.h,
         width: 165.w,
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
@@ -82,7 +82,9 @@ class ProductCard extends StatelessWidget {
                   bottom: 8,
                   right: -6,
                   child: GestureDetector(
-                    onTap: onCartTap,
+                    onTap: () {
+                      Navigator.pushNamed(context, RouteName.cartScreenRoute);
+                    },
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(

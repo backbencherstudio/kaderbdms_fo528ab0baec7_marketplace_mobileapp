@@ -5,7 +5,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/common_pincode_field.dart';
-import '../../../../core/route/route_name.dart';
+import '../../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final otpControllerProvider = Provider.autoDispose(

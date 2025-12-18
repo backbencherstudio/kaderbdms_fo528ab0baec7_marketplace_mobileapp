@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 
@@ -31,7 +32,7 @@ class CommonPinField extends StatelessWidget {
 
     this.activeColor = AppColors.textFieldBorder,
     this.inactiveColor = AppColors.textFieldBorder,
-    this.selectedColor = AppColors.textFieldBorder,
+    this.selectedColor = ColorManager.primaryColor,
 
     this.activeFillColor = Colors.white,
     this.inactiveFillColor = Colors.white,

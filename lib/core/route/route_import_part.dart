@@ -32,7 +32,7 @@ import '../../presentation/auth/signin/view/PasswordRecovery/view/forgot_passwor
 import '../../presentation/auth/signin/view/PasswordRecovery/view/new_password_screen.dart';
 import '../../presentation/auth/signin/view/PasswordRecovery/view/otp_page.dart';
 import '../../presentation/auth/signin/view/signin_screen.dart';
-import '../../presentation/auth/signup/view/signup_otp.dart';
+import '../../presentation/auth/signup/signup otp/view/signup_otp.dart';
 import '../../presentation/auth/signup/view/signup_screen.dart';
 import '../../presentation/auth/welcomepage/success_reg_screen.dart';
 import '../../presentation/auth/welcomepage/success_screen.dart';

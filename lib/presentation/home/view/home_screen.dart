@@ -278,8 +278,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         child: ProductCard(
                           imagePath: ImageManager.glowSerum,
                           title: 'Glow+ Vitamin C Serum',
-                          description:
-                              'A potent blend of 20% Vitamin C, Hyaluronic Acid',
+                          description: 'A potent of 20% ',
                           price: '€321.99',
                           rating: '4.9',
                           onCartTap: () {},
@@ -318,8 +317,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         child: ProductCard(
                           imagePath: ImageManager.customPortrait,
                           title: 'Custom Digital Portrait',
-                          description:
-                              'A custom illustrated portrait based on your photo.',
+                          description: 'A custom illustrated portrait based .',
                           price: '€321.99',
                           rating: '4.9',
                           onCartTap: () {},
@@ -335,8 +333,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         child: ProductCard(
                           imagePath: ImageManager.leatherJacket,
                           title: 'Leather Jacket',
-                          description:
-                              'Made from 100% genuine full-grain lambskin leather. ',
+                          description: 'Made from 100% genuine full-grain  ',
                           price: '€321.99',
                           rating: '4.9',
                           onCartTap: () {},
@@ -375,8 +372,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           productId: 1,
                           imagePath: ImageManager.languageTutor,
                           title: 'Language Tutoring',
-                          description:
-                              'A 60-minute private lesson in Spanish, French, or',
+                          description: 'A 60-minute private lesson in Spanish',
                           price: '€321.99',
                           rating: '4.9',
                           onCartTap: () {},

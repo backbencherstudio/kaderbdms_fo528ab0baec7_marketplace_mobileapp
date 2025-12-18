@@ -6,7 +6,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/cons
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/common_widget/custom_text_field.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signin/widgets/password_requirment.dart';
 import '../../../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -89,7 +89,7 @@ class NewPasswordPage extends ConsumerWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 6.h),
+                SizedBox(height: 10.h),
 
                 CustomTextField(
                   hint: "Enter your password",
@@ -100,7 +100,7 @@ class NewPasswordPage extends ConsumerWidget {
                     color: AppColors.textFieldtextColor,
                   ),
                   prefixIcon: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: EdgeInsets.symmetric(vertical: 5.w),
                     child: Image.asset(IconManager.passwordIcon),
                   ),
                   controller: passwordControllerOne,
@@ -152,7 +152,7 @@ class NewPasswordPage extends ConsumerWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 6.h),
+                SizedBox(height: 10.h),
 
                 CustomTextField(
                   hint: "Enter your password",
@@ -163,7 +163,7 @@ class NewPasswordPage extends ConsumerWidget {
                     color: AppColors.textFieldtextColor,
                   ),
                   prefixIcon: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: EdgeInsets.symmetric(vertical: 5.w),
                     child: Image.asset(IconManager.passwordIcon),
                   ),
                   controller: passwordControllerTwo,
@@ -213,6 +213,8 @@ class NewPasswordPage extends ConsumerWidget {
                       text: "Must be at least 8 characters",
                     ),
 
+                    SizedBox(height: 6.h),
+
                     PasswordRequirementItem(
                       value: checkedTwo,
                       onChanged: (v) {
@@ -221,6 +223,8 @@ class NewPasswordPage extends ConsumerWidget {
 
                       text: "Can’t include your name or email address",
                     ),
+
+                    SizedBox(height: 6.h),
 
                     PasswordRequirementItem(
                       value: checkedThree,
@@ -231,7 +235,7 @@ class NewPasswordPage extends ConsumerWidget {
                       text: "Must have at least a symbol or number",
                     ),
 
-                    SizedBox(height: 20.h),
+                    SizedBox(height: 25.h),
 
                     PrimaryButton(
                       textStyle: TextStyle(
