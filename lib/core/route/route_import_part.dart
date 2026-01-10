@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/FAQ/view/faq_screen.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/signup_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/cart/view/cart_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/category/view/category_screen.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/chat/view/chat_screen.dart';
@@ -33,7 +34,7 @@ import '../../presentation/auth/signin/view/PasswordRecovery/view/new_password_s
 import '../../presentation/auth/signin/view/PasswordRecovery/view/otp_page.dart';
 import '../../presentation/auth/signin/view/signin_screen.dart';
 import '../../presentation/auth/signup/signup otp/view/signup_otp.dart';
-import '../../presentation/auth/signup/view/signup_screen.dart';
+import '../../presentation/auth/signup/view/signup_screen.dart' hide SignupScreen;
 import '../../presentation/auth/welcomepage/success_reg_screen.dart';
 import '../../presentation/auth/welcomepage/success_screen.dart';
 import '../../presentation/auth/welcomepage/welcome_back_screen.dart';
