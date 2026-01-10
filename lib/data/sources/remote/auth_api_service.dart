@@ -10,7 +10,7 @@ class AuthApiService {
   Future<bool> register() async {
     final Response response = await apiClient.postRequest(
       
-      endpoints: ApiEndpoints.register,
+      endpoints: ApiEndpoints.signUp,
     );
     log(response.toString());
 

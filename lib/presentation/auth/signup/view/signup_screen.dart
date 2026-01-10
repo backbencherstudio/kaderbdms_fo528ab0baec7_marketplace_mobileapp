@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
@@ -7,6 +8,7 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/widgets/footer_section.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/widgets/signup_form.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/view/widgets/social_divider.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signup/viewmodel/signup_viewmodel.dart';
 import 'package:riverpod/legacy.dart';
 import '../../../../core/route/route_name.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,6 +31,11 @@ final passControllerProvider = Provider.autoDispose(
 
 final confirmpassProvider = Provider.autoDispose(
   (ref) => TextEditingController(text: "123456"),
+);
+
+// এটি উদাহরণ, আপনার ফাইল অনুযায়ী নাম দেখে নিন
+final signUpScreenProvider = ChangeNotifierProvider(
+  (ref) => SignUpScreenProvider(),
 );
 
 final showPasswordProvider = StateProvider<bool>((ref) => false);
@@ -90,62 +97,77 @@ class SignupScreen extends ConsumerWidget {
               },
             ),
             SizedBox(height: 20.h),
-            PrimaryButton(
-              title: "Continue",
-              containColor: AppColors.primary,
-              textStyle: TextStyle(
-                color: AppColors.textColor,
-                fontSize: 16.sp,
-                fontFamily: FontConstants.fontFamilyInter,
-                fontWeight: FontWeightManager.semiBold600,
-              ),
-              borderRadius: BorderRadius.circular(100.r),
-              padding: EdgeInsets.symmetric(vertical: 15.h),
-              onTap: () {
-                ref.read(nameErrorProvider.notifier).state = null;
-                ref.read(emailErrorProvider.notifier).state = null;
-                ref.read(passwordErrorProvider.notifier).state = null;
-                ref.read(confirmPasswordErrorProvider.notifier).state = null;
 
-                if (nameController.text.trim().isEmpty) {
-                  ref.read(nameErrorProvider.notifier).state =
-                      "Name is required";
-                }
+            Consumer(
+              builder: (context, ref, child) {
+                final signupState = ref.watch(signUpScreenProvider);
+                return PrimaryButton(
+                  title: signupState.isLoading ? "Loading..." : "Continue",
+                  containColor: AppColors.primary,
+                  textStyle: TextStyle(
+                    color: AppColors.textColor,
+                    fontSize: 16.sp,
+                    fontFamily: FontConstants.fontFamilyInter,
+                    fontWeight: FontWeightManager.semiBold600,
+                  ),
+                  borderRadius: BorderRadius.circular(100.r),
+                  padding: EdgeInsets.symmetric(vertical: 15.h),
+                  onTap: () async {
+                    ref.read(nameErrorProvider.notifier).state = null;
+                    ref.read(emailErrorProvider.notifier).state = null;
+                    ref.read(passwordErrorProvider.notifier).state = null;
+                    ref.read(confirmPasswordErrorProvider.notifier).state =
+                        null;
 
-                if (emailController.text.trim().isEmpty) {
-                  ref.read(emailErrorProvider.notifier).state =
-                      "Email is required";
-                }
+                    if (nameController.text.trim().isEmpty) {
+                      ref.read(nameErrorProvider.notifier).state =
+                          "Name is required";
+                    }
 
-                if (passController.text.trim().isEmpty) {
-                  ref.read(passwordErrorProvider.notifier).state =
-                      "Password is required";
-                }
+                    if (emailController.text.trim().isEmpty) {
+                      ref.read(emailErrorProvider.notifier).state =
+                          "Email is required";
+                    }
 
-                if (confirmPassController.text.trim().isEmpty) {
-                  ref.read(confirmPasswordErrorProvider.notifier).state =
-                      "Confirm password is required";
-                } else if (passController.text.trim() !=
-                    confirmPassController.text.trim()) {
-                  ref.read(confirmPasswordErrorProvider.notifier).state =
-                      "Password does not match";
-                }
+                    if (passController.text.trim().isEmpty) {
+                      ref.read(passwordErrorProvider.notifier).state =
+                          "Password is required";
+                    }
 
-                final nameError = ref.read(nameErrorProvider);
-                final emailError = ref.read(emailErrorProvider);
-                final passwordError = ref.read(passwordErrorProvider);
-                final confirmPasswordError = ref.read(
-                  confirmPasswordErrorProvider,
+                    if (confirmPassController.text.trim().isEmpty) {
+                      ref.read(confirmPasswordErrorProvider.notifier).state =
+                          "Confirm password is required";
+                    } else if (passController.text.trim() !=
+                        confirmPassController.text.trim()) {
+                      ref.read(confirmPasswordErrorProvider.notifier).state =
+                          "Password does not match";
+                    }
+
+                    final nameError = ref.read(nameErrorProvider);
+                    final emailError = ref.read(emailErrorProvider);
+                    final passwordError = ref.read(passwordErrorProvider);
+                    final confirmPasswordError = ref.read(
+                      confirmPasswordErrorProvider,
+                    );
+
+                    if (nameError == null &&
+                        emailError == null &&
+                        passwordError == null &&
+                        confirmPasswordError == null) {
+                      // Navigator.pushNamed(context, RouteName.signupOtpRoute);
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        RouteName.signupOtpRoute, // এখানে শুধু স্ট্রিংটি বসবে
+                        (route) => false,
+                        arguments: emailController.text
+                            .trim(), // আরগুমেন্ট হিসেবে ইমেইল পাঠান
+                      );
+                    }
+                  },
                 );
-
-                if (nameError == null &&
-                    emailError == null &&
-                    passwordError == null &&
-                    confirmPasswordError == null) {
-                  Navigator.pushNamed(context, RouteName.signupOtpRoute);
-                }
               },
             ),
+
             SizedBox(height: 25.h),
             const SocialLoginSection(),
             SizedBox(height: 25.h),
