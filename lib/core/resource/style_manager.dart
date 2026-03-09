@@ -25,10 +25,42 @@ TextStyle getLight300Style12({
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
 
+TextStyle getRegular400Style10({
+  double fontSize = FontSize.s10,
+  FontWeight fontWeight = FontWeightManager.regural400,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
 //regular  text style
 TextStyle getRegular400Style12({
   double fontSize = FontSize.s12,
   FontWeight fontWeight = FontWeightManager.regural400,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getRegular400Style14({
+  double fontSize = FontSize.s14,
+  FontWeight fontWeight = FontWeightManager.regural400,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getRegular400Style16({
+  double fontSize = FontSize.s16,
+  FontWeight fontWeight = FontWeightManager.regural400,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getMedium500Style10({
+  double fontSize = FontSize.s10,
+  FontWeight fontWeight = FontWeightManager.medium500,
   required Color color,
 }) {
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
@@ -43,10 +75,115 @@ TextStyle getMedium500Style12({
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
 
+TextStyle getMedium500Style14({
+  double fontSize = FontSize.s14,
+  FontWeight fontWeight = FontWeightManager.medium500,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getMedium500Style16({
+  double fontSize = FontSize.s16,
+  FontWeight fontWeight = FontWeightManager.medium500,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getMedium500Style18({
+  double fontSize = FontSize.s18,
+  FontWeight fontWeight = FontWeightManager.medium500,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getMedium500Style20({
+  double fontSize = FontSize.s20,
+  FontWeight fontWeight = FontWeightManager.medium500,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style10({
+  double fontSize = FontSize.s10,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
 //semi bold text style
 TextStyle getSemiBold600Style12({
   double fontSize = FontSize.s12,
   FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style14({
+  double fontSize = FontSize.s14,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style16({
+  double fontSize = FontSize.s16,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style18({
+  double fontSize = FontSize.s18,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style20({
+  double fontSize = FontSize.s20,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getSemiBold600Style24({
+  double fontSize = FontSize.s24,
+  FontWeight fontWeight = FontWeightManager.semiBold600,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+TextStyle getBold700Style16({
+  double fontSize = FontSize.s16,
+  FontWeight fontWeight = FontWeightManager.bold700,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+//large text style
+
+TextStyle getBold700Style28({
+  double fontSize = FontSize.s28,
+  FontWeight fontWeight = FontWeightManager.bold700,
+  required Color color,
+}) {
+  return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
+}
+
+TextStyle getBold700Style39({
+  double fontSize = FontSize.s39,
+  FontWeight fontWeight = FontWeightManager.bold700,
   required Color color,
 }) {
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
@@ -75,5 +212,3 @@ TextStyle getBold700Style18({
 }) {
   return _getTextStyle(fontSize, FontConstants.fontFamily, fontWeight, color);
 }
-
-

@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import '../../../../../../core/route/route_name.dart';
 
-class ForgotPasswordPage extends StatelessWidget {
+final emailControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(text: "test@gmail.com"),
+);
+
+final emailErrorProvider = StateProvider<String?>((ref) => null);
+
+class ForgotPasswordPage extends ConsumerWidget {
   ForgotPasswordPage({super.key});
 
-  final TextEditingController emailController = TextEditingController();
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final emailController = ref.watch(emailControllerProvider);
+
+    final emailError = ref.watch(emailErrorProvider);
+
     return Scaffold(
       body: Center(
         child: Padding(
@@ -68,7 +79,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(12),
                     child: Image.asset(
-                      "assets/icons/email.png",
+                      IconManager.emailIcon,
                       width: 22,
                       height: 22,
                     ),
@@ -76,6 +87,22 @@ class ForgotPasswordPage extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                   controller: emailController,
                   style: TextStyle(),
+                ),
+
+                SizedBox(height: 6.h),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    height: 14.h,
+                    child: Visibility(
+                      visible: emailError != null,
+                      child: Text(
+                        emailError ?? "",
+                        style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                      ),
+                    ),
+                  ),
                 ),
 
                 SizedBox(height: 20.h),
@@ -89,13 +116,21 @@ class ForgotPasswordPage extends StatelessWidget {
                   ),
                   containColor: AppColors.primary,
                   title: 'Submit',
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.h,
-                    vertical: 12.w,
-                  ),
+
                   borderRadius: BorderRadius.circular(100.r),
                   onTap: () {
-                    Navigator.pushNamed(context, RouteName.newPasswordRoute);
+                    ref.read(emailErrorProvider.notifier).state = null;
+
+                    if (emailController.text.trim().isEmpty) {
+                      ref.read(emailErrorProvider.notifier).state =
+                          "Email is required";
+                    }
+
+                    final emailError = ref.read(emailErrorProvider);
+
+                    if (emailError == null) {
+                      Navigator.pushNamed(context, RouteName.newPasswordRoute);
+                    }
                   },
                 ),
               ],

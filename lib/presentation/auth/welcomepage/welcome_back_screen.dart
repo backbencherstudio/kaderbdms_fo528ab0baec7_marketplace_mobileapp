@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/image_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/welcomepage/widgets/common_welcome_widget.dart';
 import '../../../core/route/route_name.dart';
 
@@ -11,13 +12,13 @@ class WelcomeBackPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Center(
         child: CommonWelcomeWidget(
-          imagePath: "assets/images/welcomeback.png",
+          imagePath: ImageManager.welcomeback,
           title: "Hey! Welcome Back",
           subtitle:
               "Nice to see you again. Let’s find your\nfavorite products and services!",
           buttonText: "Go to Home",
           onButtonTap: () {
-            Navigator.pushNamed(context, RouteName.bottomNavBar);
+            Navigator.pushReplacementNamed(context, RouteName.bottomNavBar);
           },
         ),
       ),

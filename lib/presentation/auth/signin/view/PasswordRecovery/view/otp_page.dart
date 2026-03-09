@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
@@ -7,32 +8,23 @@ import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboa
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/common_pincode_field.dart';
 import '../../../../../../core/route/route_name.dart';
 
-class OtpScreen extends StatefulWidget {
+final otpControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(),
+);
+
+class OtpScreen extends ConsumerWidget {
   const OtpScreen({super.key});
 
   @override
-  State<OtpScreen> createState() => _OtpScreenState();
-}
-
-class _OtpScreenState extends State<OtpScreen> {
-  final TextEditingController _otpController = TextEditingController();
-
-  @override
-  void dispose() {
-    _otpController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final otpController = ref.watch(otpControllerProvider);
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 60.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 60.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              /// Title
               Text(
                 "Enter OTP",
                 style: customTextStyle(
@@ -59,10 +51,9 @@ class _OtpScreenState extends State<OtpScreen> {
 
               CommonPinField(
                 length: 6,
-                onCompleted: (otp) {
-                  print("OTP → $otp");
-                },
-                controller: _otpController,
+
+                controller: otpController,
+                onCompleted: (otp) {},
               ),
 
               SizedBox(height: 5.h),
@@ -76,7 +67,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
                 containColor: AppColors.primary,
                 title: 'Submit',
-                padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.w),
+
                 borderRadius: BorderRadius.circular(100.r),
                 onTap: () {
                   Navigator.pushNamed(context, RouteName.successRoute);
