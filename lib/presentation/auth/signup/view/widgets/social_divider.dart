@@ -34,7 +34,7 @@ class SocialLoginSection extends StatelessWidget {
 
         Container(
           width: double.infinity,
-          padding: EdgeInsets.symmetric(vertical: 12.h),
+          padding: EdgeInsets.symmetric(vertical: 15.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100.r),
             border: Border.all(color: Colors.grey.shade300),

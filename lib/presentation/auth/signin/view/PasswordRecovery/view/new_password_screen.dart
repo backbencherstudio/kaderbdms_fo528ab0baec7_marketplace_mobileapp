@@ -1,40 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/signin/widgets/password_requirment.dart';
-
 import '../../../../../../core/route/route_name.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class NewPasswordPage extends StatefulWidget {
+final passwordControllerOneProvider = Provider.autoDispose(
+  (ref) => TextEditingController(text: "123456"),
+);
+
+final passwordControllerTwoProvider = Provider.autoDispose(
+  (ref) => TextEditingController(text: "123456"),
+);
+
+final passwordErrorProvider = StateProvider<String?>((ref) => null);
+final confirmPasswordErrorProvider = StateProvider<String?>((ref) => null);
+
+final checkedOneProvider = StateProvider<bool>((ref) => false);
+final checkedTwoProvider = StateProvider<bool>((ref) => false);
+final checkedThreeProvider = StateProvider<bool>((ref) => false);
+final showPasswordProvider = StateProvider<bool>((ref) => false);
+final confirmShowPasswordProvider = StateProvider<bool>((ref) => false);
+
+class NewPasswordPage extends ConsumerWidget {
   const NewPasswordPage({super.key});
 
   @override
-  State<NewPasswordPage> createState() => _NewPasswordPageState();
-}
-
-class _NewPasswordPageState extends State<NewPasswordPage> {
-  final passwordControllerOne = TextEditingController();
-  final passwordControllerTwo = TextEditingController();
-
-  bool checkedOne = false;
-  bool checkedTwo = false;
-  bool checkedThree = false;
-  bool showPassword = false;
-  bool confirmShowPassword = false;
-
-  @override
-  void dispose() {
-    passwordControllerOne.dispose();
-    passwordControllerTwo.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final passwordControllerOne = ref.watch(passwordControllerOneProvider);
+    final passwordControllerTwo = ref.watch(passwordControllerTwoProvider);
+    final checkedOne = ref.watch(checkedOneProvider);
+    final checkedTwo = ref.watch(checkedTwoProvider);
+    final checkedThree = ref.watch(checkedThreeProvider);
+    final showPassword = ref.watch(showPasswordProvider);
+    final confirmShowPassword = ref.watch(confirmShowPasswordProvider);
+    final passwordError = ref.watch(passwordErrorProvider);
+    final confirmPasswordError = ref.watch(confirmPasswordErrorProvider);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -94,7 +101,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   ),
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(12),
-                    child: Image.asset("assets/icons/password.png"),
+                    child: Image.asset(IconManager.passwordIcon),
                   ),
                   controller: passwordControllerOne,
                   isPassword: !showPassword,
@@ -104,12 +111,31 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       color: AppColors.blackHeadline,
                     ),
                     onPressed: () {
-                      setState(() => showPassword = !showPassword);
+                      ref.read(showPasswordProvider.notifier).state =
+                          !showPassword;
                     },
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                   ),
                 ),
 
-                SizedBox(height: 20.h),
+                SizedBox(height: 6.h),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    height: 14.h,
+                    child: Visibility(
+                      visible: passwordError != null,
+                      child: Text(
+                        passwordError ?? "",
+                        style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 15.h),
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -138,7 +164,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   ),
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(12),
-                    child: Image.asset("assets/icons/password.png"),
+                    child: Image.asset(IconManager.passwordIcon),
                   ),
                   controller: passwordControllerTwo,
                   isPassword: !confirmShowPassword,
@@ -150,10 +176,27 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       color: AppColors.blackHeadline,
                     ),
                     onPressed: () {
-                      setState(
-                        () => confirmShowPassword = !confirmShowPassword,
-                      );
+                      ref.read(confirmShowPasswordProvider.notifier).state =
+                          !confirmShowPassword;
                     },
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                  ),
+                ),
+
+                SizedBox(height: 6.h),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    height: 14.h,
+                    child: Visibility(
+                      visible: confirmPasswordError != null,
+                      child: Text(
+                        confirmPasswordError ?? "",
+                        style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                      ),
+                    ),
                   ),
                 ),
 
@@ -163,26 +206,32 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   children: [
                     PasswordRequirementItem(
                       value: checkedOne,
-                      onChanged: (v) => setState(() => checkedOne = v),
+                      onChanged: (v) {
+                        ref.read(checkedOneProvider.notifier).state = v;
+                      },
 
                       text: "Must be at least 8 characters",
                     ),
 
                     PasswordRequirementItem(
                       value: checkedTwo,
-                      onChanged: (v) => setState(() => checkedTwo = v),
+                      onChanged: (v) {
+                        ref.read(checkedTwoProvider.notifier).state = v;
+                      },
 
                       text: "Can’t include your name or email address",
                     ),
 
                     PasswordRequirementItem(
                       value: checkedThree,
-                      onChanged: (v) => setState(() => checkedThree = v),
+                      onChanged: (v) {
+                        ref.read(checkedThreeProvider.notifier).state = v;
+                      },
 
                       text: "Must have at least a symbol or number",
                     ),
 
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 20.h),
 
                     PrimaryButton(
                       textStyle: TextStyle(
@@ -193,13 +242,38 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                       ),
                       containColor: AppColors.primary,
                       title: 'Submit',
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.h,
-                        vertical: 12.w,
-                      ),
+
                       borderRadius: BorderRadius.circular(100.r),
                       onTap: () {
-                        Navigator.pushNamed(context, RouteName.otpPageRoute);
+                        ref.read(passwordErrorProvider.notifier).state = null;
+                        ref.read(confirmPasswordErrorProvider.notifier).state =
+                            null;
+
+                        final password = passwordControllerOne.text.trim();
+                        final confirmPass = passwordControllerTwo.text.trim();
+
+                        if (password.isEmpty) {
+                          ref.read(passwordErrorProvider.notifier).state =
+                              "Password is required";
+                        }
+
+                        if (confirmPass.isEmpty) {
+                          ref
+                                  .read(confirmPasswordErrorProvider.notifier)
+                                  .state =
+                              "Confirm password is required";
+                        } else if (password != confirmPass) {
+                          ref
+                                  .read(confirmPasswordErrorProvider.notifier)
+                                  .state =
+                              "Password does not match";
+                        }
+
+                        if (password.isNotEmpty &&
+                            confirmPass.isNotEmpty &&
+                            password == confirmPass) {
+                          Navigator.pushNamed(context, RouteName.otpPageRoute);
+                        }
                       },
                     ),
                   ],

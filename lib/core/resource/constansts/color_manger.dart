@@ -9,21 +9,52 @@ class ColorManager {
   static const Color primary = Color(0xFF00136B);
   static const Color primaryLight = Color(0xFF334289);
   static const Color primaryDark = Color(0xFF000C48);
+  static const Color primaryColor = Color(0xFF003C80);
 
   // ===== Background Colors =====
   static const Color background = Color(0xFFF5F5F5);
   static const Color backgroundDark = Color(0xFF121212);
   static const Color scaffoldLight = Color(0xFFFFFFFF);
   static const Color scaffoldDark = Color(0xFF1E1E1E);
+  static const Color textFieldInnerColor = Color(0xFFF6F8FA);
+  static const Color buttonSecondaryColor = Color(0xFFECEFF3);
+  static const Color toggleOnColor = Color(0xFF2F54EB);
+  static const Color toggleOffColor = Color(0xFFE8E8E8);
+  static const Color arrowColor = Color(0xFF091412);
+  static const Color backgroundColor = Color(0xFFf2f4f7);
+  static const Color textbackgroundColor = Color(0xFFA5A5AB);
+  static const Color textbackgroundColorTwo = Color(0xFFf2f2f2);
+  static const Color testbackgroundColor = Color(0xFFf5f7fa);
+  static const Color textFieldBorder = Color(0xFFd9d9d9);
+  static const Color chatBoxbgColor = Color(0xFFf5f7fa);
+  static const Color minusButtoncolor = Color(0xFFdcdcde);
+  static const Color orderTextcolor = Color(0xFF9da3a3);
 
   // ===== Text Colors =====
   static const Color textPrimary = Color(0xFF212121);
-  static const Color textSecondary = Color(0xFF757575);
+  static const Color textPrimaryBlack = Color(0xFF070707);
+  static const Color textSecondary = Color(0xFF4A4C56);
+  static const Color textSecondaryTwo = Color(0xFFA5A5AB);
+  static const Color textSecondaryThree = Color(0xFF777980);
+  static const Color textBackgroundColor = Color(0xFFF6F8FA);
+  static const Color itemTextColor = Color(0xFF232F30);
+  static const Color categoryTextColor = Color(0xFF1D1D35);
+  static const Color chatTextColor = Color(0xFF9A9A9A);
+  static const Color chatTextColorTwo = Color(0xFF4b4d57);
+  static const Color forgotPasstext = Color(0xFF1E78F0);
+  static const Color defaultColor = Color(0xFF707070);
+  static const Color googleText = Color(0xFF1D1F2C);
+
+  static const Color fieldText = Color(0xFFE9E9EA);
+  static const Color textRedColor = Color(0xFFEB3D4D);
+  static const Color textGreenColor = Color(0xFF22CAAD);
+  static const Color textGreenStatusColor = Color(0xFFE9FAF7);
   static const Color titleText = Color(0xFF2F3131);
   static const Color titleText1 = Color(0xFF535353);
   static const Color subtitleText = Color(0xFF686868);
   static const Color subtitleText1 = Color(0xFF60655C);
   static const Color mediumText = Color(0xFF363A33);
+  static const Color logoutText = Color(0xFFD33415);
 
   // ===== Button & Label Colors =====
   static const Color buttonText = Color(0xFF334289);

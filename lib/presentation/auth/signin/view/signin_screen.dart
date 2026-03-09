@@ -1,31 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/constansts/app_colors.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/color_manger.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/constansts/icon_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/font_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/core/resource/style_manager.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/Onboarding/widgets/custom_button.dart';
-import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/CircleCheckIcon.dart';
+import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/circleCheckIcon.dart';
 import 'package:kaderbdms_fo528ab0baec7_marketplace_mobileapp/presentation/auth/common/widgets/custom_text_field.dart';
 import '../../../../core/route/route_name.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+final showPasswordProvider = StateProvider<bool>((ref) => false);
+final rememberMeProvider = StateProvider<bool>((ref) => false);
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
+final emailControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(text: "test@gmail.com"),
+);
 
-class _LoginScreenState extends State<LoginScreen> {
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+final passwordControllerProvider = Provider.autoDispose(
+  (ref) => TextEditingController(text: "123456"),
+);
+
+final emailErrorProvider = StateProvider<String?>((ref) => null);
+final passwordErrorProvider = StateProvider<String?>((ref) => null);
+
+class LoginScreen extends ConsumerWidget {
+  LoginScreen({super.key});
 
   bool rememberMe = false;
   bool showPassword = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final showPassword = ref.watch(showPasswordProvider);
+    final rememberMe = ref.watch(rememberMeProvider);
+
+    final emailController = ref.watch(emailControllerProvider);
+    final passwordController = ref.watch(passwordControllerProvider);
+
+    var emailError = ref.watch(emailErrorProvider);
+    var passwordError = ref.watch(passwordErrorProvider);
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.whiteColor,
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 50.h),
         child: Column(
@@ -36,9 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
             Text(
               "Hi! Welcome Back",
               style: getSemiBold600Style12(
-                fontWeight: FontWeightManager.semiBold600,
                 fontSize: 24.sp,
-                color: AppColors.textColorBlack,
+                color: ColorManager.textPrimaryBlack,
               ),
             ),
 
@@ -46,10 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Text(
               "Log in to your account",
-              style: getSemiBold600Style12(
-                fontWeight: FontWeightManager.medium500,
+              style: getSemiBold600Style18(
                 fontSize: 18.sp,
-                color: AppColors.secondaryTextColor,
+                color: ColorManager.textSecondary,
               ),
             ),
 
@@ -59,28 +76,33 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 "E-mail",
-                style: getSemiBold600Style12(
-                  fontWeight: FontWeightManager.medium500,
+                style: getSemiBold600Style16(
                   fontSize: 16.sp,
-                  color: AppColors.textColorBlack,
+                  color: ColorManager.textPrimaryBlack,
                 ),
               ),
             ),
             SizedBox(height: 6.h),
 
             CustomTextField(
-              prefixIcon: Image.asset("assets/icons/email.png"),
-
+              prefixIcon: Image.asset(IconManager.emailIcon),
               hint: "Your email",
-              style: customTextStyle(
-                fontFamily: FontConstants.fontFamilyInter,
-                fontWeight: FontWeightManager.regural400,
-                fontSize: 16.sp,
-                color: AppColors.textFieldtextColor,
-              ),
-
-              keyboardType: TextInputType.emailAddress,
               controller: emailController,
+              keyboardType: TextInputType.emailAddress,
+              errorText: emailError,
+            ),
+
+            SizedBox(height: 6.h),
+
+            SizedBox(
+              height: 14.h,
+              child: Visibility(
+                visible: emailError != null,
+                child: Text(
+                  emailError ?? "",
+                  style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                ),
+              ),
             ),
 
             SizedBox(height: 15.h),
@@ -89,11 +111,9 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 "Password",
-                style: customTextStyle(
-                  fontFamily: FontConstants.fontFamilyInter,
-                  fontWeight: FontWeightManager.regural400,
+                style: getSemiBold600Style16(
                   fontSize: 16.sp,
-                  color: AppColors.textColorBlack,
+                  color: ColorManager.textPrimaryBlack,
                 ),
               ),
             ),
@@ -102,27 +122,34 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomTextField(
               prefixIcon: Padding(
                 padding: EdgeInsets.all(12),
-                child: Image.asset("assets/icons/password.png"),
+                child: Image.asset(IconManager.passwordIcon),
               ),
-
               hint: "Enter your password",
-              style: customTextStyle(
-                fontFamily: FontConstants.fontFamilyInter,
-                fontWeight: FontWeightManager.medium500,
-                fontSize: 16.sp,
-                color: AppColors.textFieldtextColor,
-              ),
-
               controller: passwordController,
               isPassword: !showPassword,
+              errorText: passwordError,
               suffixIcon: IconButton(
                 icon: Icon(
                   showPassword ? Icons.visibility : Icons.visibility_off,
-                  color: AppColors.blackHeadline,
                 ),
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onPressed: () {
-                  setState(() => showPassword = !showPassword);
+                  ref.read(showPasswordProvider.notifier).state = !showPassword;
                 },
+              ),
+            ),
+
+            SizedBox(height: 6.h),
+
+            SizedBox(
+              height: 14.h,
+              child: Visibility(
+                visible: passwordError != null,
+                child: Text(
+                  passwordError ?? "",
+                  style: TextStyle(color: Colors.red, fontSize: 12.sp),
+                ),
               ),
             ),
 
@@ -131,31 +158,32 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    CircleCheckIcon(
-                      isChecked: rememberMe,
-                      size: 13,
-                      activeColor: AppColors.fotgotpassText,
-                      inactiveColor: AppColors.defaultColor,
-                      onTap: () {
-                        setState(() {
-                          rememberMe = !rememberMe;
-                        });
-                      },
-                    ),
-
-                    SizedBox(width: 3.w),
-                    Text(
-                      "Remember me",
-                      style: customTextStyle(
-                        fontFamily: FontConstants.fontFamilyInter,
-                        fontWeight: FontWeightManager.regural400,
-                        fontSize: 16.sp,
-                        color: AppColors.textFieldtextColor,
+                GestureDetector(
+                  onTap: () {
+                    ref.read(rememberMeProvider.notifier).state = !rememberMe;
+                  },
+                  child: Row(
+                    children: [
+                      CircleCheckIcon(
+                        isChecked: rememberMe,
+                        size: 18,
+                        activeColor: ColorManager.forgotPasstext,
+                        inactiveColor: ColorManager.defaultColor,
+                        onTap: () {
+                          ref.read(rememberMeProvider.notifier).state =
+                              !rememberMe;
+                        },
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 5.w),
+                      Text(
+                        "Remember me",
+                        style: getRegular400Style16(
+                          fontSize: 16.sp,
+                          color: ColorManager.textSecondaryThree,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -163,36 +191,49 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: Text(
                     "Forgot Password?",
-                    style: customTextStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
-                      fontWeight: FontWeightManager.regural400,
+                    style: getRegular400Style16(
                       fontSize: 16.sp,
-                      color: AppColors.fotgotpassText,
+                      color: ColorManager.forgotPasstext,
                     ),
                   ),
                 ),
               ],
             ),
 
-            SizedBox(height: 25.h),
+            SizedBox(height: 40.h),
 
             PrimaryButton(
-              textStyle: TextStyle(
-                color: AppColors.secondaryTextColor,
+              textStyle: getSemiBold600Style16(
+                color: ColorManager.textSecondary,
                 fontSize: 16.sp,
-                fontFamily: FontConstants.fontFamilyInter,
-                fontWeight: FontWeightManager.semiBold600,
               ),
-              containColor: AppColors.buttonColorNoHover,
+              containColor: ColorManager.buttonSecondaryColor,
               title: 'Login',
-              padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 12.w),
               borderRadius: BorderRadius.circular(100.r),
               onTap: () {
-                Navigator.pushNamed(context, RouteName.welcomeRoute);
+                ref.read(emailErrorProvider.notifier).state = null;
+                ref.read(passwordErrorProvider.notifier).state = null;
+
+                if (emailController.text.trim().isEmpty) {
+                  ref.read(emailErrorProvider.notifier).state =
+                      "Email is required";
+                }
+
+                if (passwordController.text.trim().isEmpty) {
+                  ref.read(passwordErrorProvider.notifier).state =
+                      "Password is required";
+                }
+
+                final emailError = ref.read(emailErrorProvider);
+                final passwordError = ref.read(passwordErrorProvider);
+
+                if (emailError == null && passwordError == null) {
+                  Navigator.pushNamed(context, RouteName.welcomeRoute);
+                }
               },
             ),
 
-            SizedBox(height: 25.h),
+            SizedBox(height: 40.h),
 
             Row(
               children: [
@@ -203,11 +244,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: Text(
                     "Or",
-                    style: customTextStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
-                      fontWeight: FontWeightManager.medium500,
+                    style: getMedium500Style14(
                       fontSize: 14.sp,
-                      color: AppColors.textColorBlack,
+                      color: ColorManager.textPrimaryBlack,
                     ),
                   ),
                 ),
@@ -217,11 +256,11 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
 
-            SizedBox(height: 25.h),
+            SizedBox(height: 40.h),
 
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 12.h),
+              padding: EdgeInsets.symmetric(vertical: 15.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100.r),
                 border: Border.all(color: Colors.grey.shade300),
@@ -229,15 +268,13 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/icons/google.png", height: 20.h),
+                  Image.asset(IconManager.google, height: 20.h),
                   SizedBox(width: 10.w),
                   Text(
                     "Continue with Google",
-                    style: customTextStyle(
-                      fontFamily: FontConstants.fontFamilyInter,
-                      fontWeight: FontWeightManager.medium500,
+                    style: getMedium500Style16(
                       fontSize: 16.sp,
-                      color: AppColors.conGoogleText,
+                      color: ColorManager.googleText,
                     ),
                   ),
                 ],
@@ -249,7 +286,10 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, RouteName.registerRoute);
+                  Navigator.pushReplacementNamed(
+                    context,
+                    RouteName.registerRoute,
+                  );
                 },
                 child: RichText(
                   text: TextSpan(
